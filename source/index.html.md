@@ -117,9 +117,7 @@ This API is used to signup users to our portal.
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3004/admin/user/create`</p>
 <h3>Sample Request Body</h5>
-<div class="center-column">
-</div>
-
+<div class="center-column"></div>
 ```json
 {"email":{"address":"emailid@provider.com"},
 "username":"user_name",
