@@ -491,7 +491,7 @@ This API is used to add a brand.
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3004/admin/brand/create/`</p>
 
-##View all brands
+##View all Brands
 
 >The below code sample shows you how to use this api
 
@@ -575,6 +575,92 @@ This API is used to view all brands.
 <br>
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3004/admin/brand/all/read/`</p>
+
+
+##View individual Brand information
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3004/admin/brand/read/5e858b46c0277b3163e40a00"
+headers = {
+    'cache-control': "no-cache",
+    'postman-token': "10d30b31-ec06-ea76-f890-11c37d27a981"
+    }
+response = requests.request("GET", url, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3004/admin/brand/read/5e858b46c0277b3163e40a00")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Get.new(url)
+request["cache-control"] = 'no-cache'
+request["postman-token"] = '0dcb7c54-a6c9-8fd7-9975-04bd71908382'
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+var data = null;
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("GET", "http://52.77.255.121:3004/admin/brand/read/5e858b46c0277b3163e40a00");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "4beede58-bab1-c77a-2f58-81530da67c28");
+xhr.send(data);
+
+```
+```shell
+curl -X GET \
+  http://52.77.255.121:3004/admin/brand/read/5e858b46c0277b3163e40a00 \
+  -H 'cache-control: no-cache' \
+  -H 'postman-token: 2fffa260-5a47-8899-dea6-ef140f5f0e4b'
+
+```
+>Below is a sample response
+
+```json
+{
+    "_id": "5e858b46c0277b3163e40a00",
+    "brand_name": "Maruti Suzuki",
+    "models": [
+        {
+            "variants": [
+                "lxi",
+                "ldi",
+                "vxi"
+            ],
+            "years": [
+                "2018",
+                "2019",
+                "2020"
+            ],
+            "_id": "5e858b46c0277b3163e40a01",
+            "name": "Swift"
+        }
+    ],
+    "createdAt": "2020-04-02T06:50:46.547Z",
+    "updatedAt": "2020-04-02T06:50:46.547Z",
+    "__v": 0
+}
+
+
+```
+
+This API is used to view information about a single brand.
+<br>
+<h3>Http request</h5>
+<p>`GET : http://52.77.255.121:3004/admin/brand/read/<BrandID>`</p>
+
 
 
 ##Product&Service
