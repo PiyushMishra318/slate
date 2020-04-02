@@ -114,19 +114,16 @@ curl --request POST \
 ```
 This API is used to signup users to our portal.
 <br>
-<h5>Http request</h5>
+<h3>Http request</h5>
 `POST : http://52.77.255.121:3004/admin/user/create`
-<h5>Sample Request Body</h5>
-<pre>
-<code>
-{"email":{"address":"emailid@provider.com"},
-"username":"user_name",
-"password":"password",
-"mobile":"1234567890",
-"user_type":"customer"
+<h3>Sample Request Body</h5>
+{"email":{"address":"emailid@provider.com"},<br>
+"username":"user_name",<br>
+"password":"password",<br>
+"mobile":"1234567890",<br>
+"user_type":"customer"<br>
 }
-</code>
-</pre>
+
 ##Car
 for all apis related to car
 ##Document
