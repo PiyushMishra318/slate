@@ -292,6 +292,66 @@ This API is used to verify the loggedin user.
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3004/admin/user/verify</p>
 
+##Logout
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3001/auth/logout"
+headers = {
+    'cache-control': "no-cache",
+    'postman-token': "9727c1ab-d038-d2e9-aed8-75f9c2a72a5e"
+    }
+response = requests.request("GET", url, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3001/auth/logout")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Get.new(url)
+request["cache-control"] = 'no-cache'
+request["postman-token"] = '6f402703-bbd6-d373-8a49-0801960eefed'
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+var data = null;
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("GET", "http://52.77.255.121:3001/auth/logout");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "f02b6550-cfc3-0e3c-231d-666baba407eb");
+xhr.send(data);
+
+
+```
+```shell
+curl -X GET \
+  http://52.77.255.121:3001/auth/logout \
+  -H 'cache-control: no-cache' \
+  -H 'postman-token: 50f36d08-c0ee-6e4e-7889-e2b0fc84620b'
+
+
+```
+>Below is a sample response
+
+>Logout
+
+This API is used to logout user.
+<br>
+<h3>Http request</h5>
+<p>`GET : http://52.77.255.121:3001/auth/logout</p>
+
 
 ##Car
 for all apis related to car
