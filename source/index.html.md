@@ -661,6 +661,139 @@ This API is used to view information about a single brand.
 <h3>Http request</h5>
 <p>`GET : http://52.77.255.121:3004/admin/brand/read/<BrandID>`</p>
 
+##Update Brand data
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3004/admin/update/brand/5e858b46c0277b3163e40a00"
+payload = "{\r\n    \"brand_name\": \"Maruti Suzuki\",\r\n    \"models\": [\r\n        {\r\n            \"name\": \"Swift\",\r\n            \"variants\": [\r\n                \"lxi\",\r\n                \"ldi\",\r\n                \"vxi\",\r\n                \"vdi\"\r\n            ],\r\n            \"years\": [\r\n            \t2017,\r\n                2018,\r\n                2019,\r\n                2020\r\n            ]\r\n        }\r\n    ]\r\n}"
+headers = {
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'postman-token': "9587b413-bbdd-e0eb-1b44-fc26330032d0"
+    }
+response = requests.request("PUT", url, data=payload, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3004/admin/update/brand/5e858b46c0277b3163e40a00")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Put.new(url)
+request["content-type"] = 'application/json'
+request["cache-control"] = 'no-cache'
+request["postman-token"] = 'ce54023c-dee2-ddfc-6a81-49f399114173'
+request.body = "{\r\n    \"brand_name\": \"Maruti Suzuki\",\r\n    \"models\": [\r\n        {\r\n            \"name\": \"Swift\",\r\n            \"variants\": [\r\n                \"lxi\",\r\n                \"ldi\",\r\n                \"vxi\",\r\n                \"vdi\"\r\n            ],\r\n            \"years\": [\r\n            \t2017,\r\n                2018,\r\n                2019,\r\n                2020\r\n            ]\r\n        }\r\n    ]\r\n}"
+response = http.request(request)
+puts response.read_body
+
+
+```
+```javascript
+var data = JSON.stringify({
+  "brand_name": "Maruti Suzuki",
+  "models": [
+    {
+      "name": "Swift",
+      "variants": [
+        "lxi",
+        "ldi",
+        "vxi",
+        "vdi"
+      ],
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    }
+  ]
+});
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("PUT", "http://52.77.255.121:3004/admin/update/brand/5e858b46c0277b3163e40a00");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "b82844a9-396c-876b-3132-2521e747da0f");
+xhr.send(data);
+
+
+```
+```shell
+curl -X PUT \
+  http://52.77.255.121:3004/admin/update/brand/5e858b46c0277b3163e40a00 \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: a84abb4b-146c-61d9-26ba-0bfde775751e' \
+  -d '{
+    "brand_name": "Maruti Suzuki",
+    "models": [
+        {
+            "name": "Swift",
+            "variants": [
+                "lxi",
+                "ldi",
+                "vxi",
+                "vdi"
+            ],
+            "years": [
+            	2017,
+                2018,
+                2019,
+                2020
+            ]
+        }
+    ]
+}'
+
+```
+>Below is a sample response
+
+```json
+{
+    "_id": "5e858b46c0277b3163e40a00",
+    "brand_name": "Maruti Suzuki",
+    "models": [
+        {
+            "variants": [
+                "lxi",
+                "ldi",
+                "vxi",
+                "vdi"
+            ],
+            "years": [
+                "2017",
+                "2018",
+                "2019",
+                "2020"
+            ],
+            "_id": "5e8591e7c0277b3163e40a02",
+            "name": "Swift"
+        }
+    ],
+    "createdAt": "2020-04-02T06:50:46.547Z",
+    "updatedAt": "2020-04-02T07:19:03.152Z",
+    "__v": 0
+}
+
+
+```
+
+This API is used to update a particular brands information.
+<br>
+<h3>Http request</h5>
+<p>`PUT :  http://52.77.255.121:3004/admin/update/brand/<BrandID>`</p>
+
 
 
 ##Product&Service
