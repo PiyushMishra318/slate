@@ -22,7 +22,7 @@ We have language bindings in Shell, Ruby, Python, and JavaScript! You can view c
 
 #CUSTOMER
 ##General
-###Signup
+##Signup
 
 >The below code sample shows you how to use this api
 
