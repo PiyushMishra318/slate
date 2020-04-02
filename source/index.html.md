@@ -491,7 +491,7 @@ This API is used to add a brand.
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3004/admin/brand/create/`</p>
 
-##Add Brand
+##View all brands
 
 >The below code sample shows you how to use this api
 
