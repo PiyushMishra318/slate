@@ -186,7 +186,7 @@ curl -X POST \
 This API is used to allow users to login to our portal.
 <br>
 <h3>Http request</h5>
-<p>`POST : http://52.77.255.121:3001/auth/login/coot/start</p>
+<p>`POST : http://52.77.255.121:3001/auth/login/coot/start`</p>
 
 ##Login Verify
 
@@ -290,7 +290,7 @@ curl -X POST \
 This API is used to verify the loggedin user.
 <br>
 <h3>Http request</h5>
-<p>`POST : http://52.77.255.121:3004/admin/user/verify</p>
+<p>`POST : http://52.77.255.121:3004/admin/user/verify`</p>
 
 ##Logout
 
@@ -350,7 +350,7 @@ curl -X GET \
 This API is used to logout user.
 <br>
 <h3>Http request</h5>
-<p>`GET : http://52.77.255.121:3001/auth/logout</p>
+<p>`GET : http://52.77.255.121:3001/auth/logout`</p>
 
 
 ##Car
