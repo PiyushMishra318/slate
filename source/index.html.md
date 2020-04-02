@@ -83,9 +83,46 @@ curl --request POST \
   --data '{"email":{"address":"emailid@email.com"},\n"username":"user1",\n"password":"password",\n"mobile":"1234567890",\n"user_type":"customer"\n}'
 
 ```
+>Below is a sample response
+```json
+{
+    "auth": true,
+    "user": {
+        "email": {
+            "verficationStatus": {
+                "isVerified": false
+            },
+            "address": " emailid@provider.com "
+        },
+        "username": "user_name",
+        "mobile": 1234567890,
+        "user_type": "customer",
+        "personal_details": {
+            "_id": "5e84a786bfd0c32be46fa2b1",
+            "mobile_nos": [],
+            "emails": []
+        },
+        "_id": "5e84a78618ad3431e0f0fe98",
+        "createdAt": "2020-04-01T14:39:02.196Z",
+        "updatedAt": "2020-04-01T14:39:02.196Z",
+        "__v": 0,
+        "bank_accounts": []
+    }
+}
+
+```
 This API is used to signup users to our portal.
-ENDPOINT&METHOD
-`POST http://52.77.255.121:3004/admin/user/create`
+<br>
+<h5>Http request</h5>
+`POST : http://52.77.255.121:3004/admin/user/create`
+<h5>Sample Request Body</h5>
+{"email":{"address":"emailid@provider.com"},
+"username":"user_name",
+"password":"password",
+"mobile":"1234567890",
+"user_type":"customer"
+}
+
 ##Car
 for all apis related to car
 ##Document
