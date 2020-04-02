@@ -26,7 +26,7 @@ We have language bindings in Shell, Ruby, Python, and JavaScript! You can view c
 ###Signup
 
 >The below code sample shows you how to use this api
-```python--requests
+```python
 import requests
 url = "http://52.77.255.121:3004/admin/user/create"
 payload = "{\"email\":{\"address\":\"emailid@email.com\"},\n\"username\":\"user1\",\n\"password\":\"password\",\n\"mobile\":\"1234567890\",\n\"user_type\":\"customer\"\n}"
