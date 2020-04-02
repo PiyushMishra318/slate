@@ -21,7 +21,9 @@ Welcome to the Greasy Monkey  API! You can use our API to access Greasy Monkey A
 We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
 #CUSTOMER
+This section explains about all the apis used in the user login of Greasy Monkey.
 ##General
+This section contains documentation for all the general apis used to build the Greasy Monkey platform.
 ##Signup
 
 >The below code sample shows you how to use this api
@@ -354,17 +356,17 @@ This API is used to logout user.
 
 
 ##Car
-for all apis related to car
+This section contains documentation for all the apis that handle Car data on the Greasy Monkey platform.
 ##Document
-for all apis related to documents
+This section contains documentation for all the apis that handle documents uploaded on the Greasy Monkey platform.
 ##Service request
-for all apis related to services
+This section contains documentation for all the apis that handle service requests on the Greasy Monkey platform.
 #ADMIN
-
+This section explains about all the apis used in the admin login of Greasy Monkey.
 ##Camp
-for all apis related to camps
+This section contains documentation for all the apis that handle camp data on the Greasy Monkey platform.
 ##Brand
-
+This section contains documentation for all the apis that handle brand data on the Greasy Monkey platform.
 ##Add Brand
 
 >The below code sample shows you how to use this api
@@ -491,4 +493,4 @@ This API is used to add a brand.
 
 
 ##Product&Service
-for all apis related to products and services
+This section contains documentation for all the apis that handle Product/Service information on the Greasy Monkey platform.
