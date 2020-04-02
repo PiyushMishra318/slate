@@ -4,8 +4,7 @@ title: API Documentation
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
   - ruby
-  - python--requests
-  - python--http
+  - python
   - javascript
 
 toc_footers:
