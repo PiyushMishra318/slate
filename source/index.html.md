@@ -117,13 +117,16 @@ This API is used to signup users to our portal.
 <h5>Http request</h5>
 `POST : http://52.77.255.121:3004/admin/user/create`
 <h5>Sample Request Body</h5>
+<pre>
+<code>
 {"email":{"address":"emailid@provider.com"},
 "username":"user_name",
 "password":"password",
 "mobile":"1234567890",
 "user_type":"customer"
 }
-
+</code>
+</pre>
 ##Car
 for all apis related to car
 ##Document
