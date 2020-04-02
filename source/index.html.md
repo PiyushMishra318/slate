@@ -25,6 +25,7 @@ We have language bindings in Shell, Ruby, Python, and JavaScript! You can view c
 ###Signup
 
 >The below code sample shows you how to use this api
+
 ```python
 import requests
 url = "http://52.77.255.121:3004/admin/user/create"
