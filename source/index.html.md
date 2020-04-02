@@ -4,7 +4,8 @@ title: API Documentation
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
   - ruby
-  - python
+  - python--requests
+  - python--http
   - javascript
 
 toc_footers:
@@ -22,7 +23,24 @@ We have language bindings in Shell, Ruby, Python, and JavaScript! You can view c
 
 #CUSTOMER
 ##General
-For signup,login,logout,login verify
+###Signup
+
+>The below code sample shows you how to use this api
+```python--requests
+import requests
+url = "http://52.77.255.121:3004/admin/user/create"
+payload = "{\"email\":{\"address\":\"emailid@email.com\"},\n\"username\":\"user1\",\n\"password\":\"password\",\n\"mobile\":\"1234567890\",\n\"user_type\":\"customer\"\n}"
+headers = {
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'postman-token': "80ce7eee-2b64-89da-08b4-565124529e8c"
+    }
+response = requests.request("POST", url, data=payload, headers=headers)
+print(response.text)
+```
+This API is used to signup users to our portal.
+ENDPOINT&METHOD
+`POST http://52.77.255.121:3004/admin/user/create`
 ##Car
 for all apis related to car
 ##Document
