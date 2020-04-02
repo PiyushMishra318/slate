@@ -84,6 +84,7 @@ curl --request POST \
 
 ```
 >Below is a sample response
+
 ```json
 {
     "auth": true,
