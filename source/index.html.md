@@ -20,53 +20,20 @@ Welcome to the Greasy Monkey  API! You can use our API to access Greasy Monkey A
 
 We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
-#Customer
+#CUSTOMER
+##General
+For signup,login,logout,login verify
+##Car
+for all apis related to car
+##Document
+for all apis related to documents
+##Service request
+for all apis related to services
+#ADMIN
 
-##Cars
-
-###Create/Add
-This Api is used to add customers cars.
-<br>
-### HTTP Request
-`POST customer/car/create`
-###Sample Body Format
-
-{<br>
-   {<br>
-    customer: 'Customer id',<br>
-    brand: 'TATA',<br>
-    model_name: 'Sumo',<br>
-    model_variant: 'Diesel',<br>
-    model_year: '2009',<br>
-    overview: {<br>
-      engine_oil: {<br>
-        type: false,<br>
-        default: true<br>
-      },<br>
-      tier: {<br>
-        type: false,<br>
-        default: true<br>
-      },<br>
-      suspension: {<br>
-        type: false,<br>
-        default: true<br>
-      },<br>
-      brakes: {<br>
-        type: false,<br>
-        default: true<br>
-      },<br>
-      electrical_checkup: {<br>
-        type: false,<br>
-        default: true<br>
-      },<br>
-      air_conditioner: {<br>
-        type: true,<br>
-        default: true<br>
-      }<br>
-    },<br>
-    fuel_type: 'Petrol'<br>
-  },<br>
-  {<br>
-    timestamps: true<br>
-  }<br>
-}<br>
+##Camp
+for all apis related to camps
+##Brand
+for all apis related to brands
+##Product&Service
+for all apis related to products and services
