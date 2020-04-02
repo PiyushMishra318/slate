@@ -117,6 +117,75 @@ This API is used to signup users to our portal.
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3004/admin/user/create`</p>
 
+###Login
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3001/auth/login/coot/start"
+payload = "{\"type\":\"email\",\n\"email\":\"emailid@email.com\",\n\"password\":\"password\"\n}"
+headers = {
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'postman-token': "6e51f45f-48f5-12f2-fe02-80553f827d17"
+    }
+response = requests.request("POST", url, data=payload, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3001/auth/login/coot/start")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Post.new(url)
+request["content-type"] = 'application/json'
+request["cache-control"] = 'no-cache'
+request["postman-token"] = '6a3f4c68-c19e-5edd-b8bd-220879b93129'
+```
+```javascript
+var data = JSON.stringify({
+  "type": "email",
+  "email": "emailid@email.com",
+  "password": "password"
+});
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("POST", "http://52.77.255.121:3001/auth/login/coot/start");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "4a3f2924-3750-c443-bc6c-86f925a9230a");
+xhr.send(data);
+
+```
+```shell
+curl -X POST \
+  http://52.77.255.121:3001/auth/login/coot/start \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 69defc5f-2335-1129-b04d-fbd5a69eee9a' \
+  -d '{"type":"email",
+"email":"emailid@email.com",
+"password":"password"
+}'
+
+
+```
+>Below is a sample response
+
+>"cookie set"
+
+This API is used to allow users to login to our portal.
+<br>
+<h3>Http request</h5>
+<p>`POST : http://52.77.255.121:3001/auth/login/coot/start</p>
+
 ##Car
 for all apis related to car
 ##Document
