@@ -491,6 +491,91 @@ This API is used to add a brand.
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3004/admin/brand/create/`</p>
 
+##Add Brand
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3004/admin/brand/all/read"
+headers = {
+    'cache-control': "no-cache",
+    'postman-token': "41c0358d-b867-a096-4fab-46cfa27bf95c"
+    }
+response = requests.request("POST", url, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3004/admin/brand/all/read")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Post.new(url)
+request["cache-control"] = 'no-cache'
+request["postman-token"] = 'b9279938-8cc5-e9dc-6786-7693b09d4c28'
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+var data = null;
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("POST", "http://52.77.255.121:3004/admin/brand/all/read");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "133dc108-5ea1-d417-e61a-05de0443c3de");
+xhr.send(data);
+
+```
+```shell
+curl -X POST \
+  http://52.77.255.121:3004/admin/brand/all/read \
+  -H 'cache-control: no-cache' \
+  -H 'postman-token: 0bc9e09f-e8a3-d06d-93fb-65c77c9c1f07'
+
+```
+>Below is a sample response
+
+```json
+[
+    {
+        "_id": "5e858b46c0277b3163e40a00",
+        "brand_name": "Maruti Suzuki",
+        "models": [
+            {
+                "variants": [
+                    "lxi",
+                    "ldi",
+                    "vxi"
+                ],
+                "years": [
+                    "2018",
+                    "2019",
+                    "2020"
+                ],
+                "_id": "5e858b46c0277b3163e40a01",
+                "name": "Swift"
+            }
+        ],
+        "createdAt": "2020-04-02T06:50:46.547Z",
+        "updatedAt": "2020-04-02T06:50:46.547Z",
+        "__v": 0
+    }
+]
+
+```
+
+This API is used to view all brands.
+<br>
+<h3>Http request</h5>
+<p>`POST : http://52.77.255.121:3004/admin/brand/all/read/`</p>
+
 
 ##Product&Service
 This section contains documentation for all the apis that handle Product/Service information on the Greasy Monkey platform.
