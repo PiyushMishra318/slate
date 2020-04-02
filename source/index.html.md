@@ -117,6 +117,8 @@ This API is used to signup users to our portal.
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3004/admin/user/create`</p>
 
+
+
 ##Login
 
 >The below code sample shows you how to use this api
@@ -185,6 +187,111 @@ This API is used to allow users to login to our portal.
 <br>
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3001/auth/login/coot/start</p>
+
+##Login Verify
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3004/admin/user/verify"
+payload = "{\"user_type\":\"customer\"}"
+headers = {
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'postman-token': "e4a0d895-1906-d302-6464-ef3b084291fd"
+    }
+response = requests.request("POST", url, data=payload, headers=headers)
+print(response.text)
+
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3004/admin/user/verify")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Post.new(url)
+request["content-type"] = 'application/json'
+request["cache-control"] = 'no-cache'
+request["postman-token"] = '3c3844fe-8358-b22e-157b-6417e5fb1488'
+request.body = "{\"user_type\":\"customer\"}"
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+var data = JSON.stringify({
+  "user_type": "customer"
+});
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("POST", "http://52.77.255.121:3004/admin/user/verify");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "cc887de5-2f8f-880b-6b07-b902792dd7e9");
+xhr.send(data);
+
+
+```
+```shell
+curl -X POST \
+  http://52.77.255.121:3004/admin/user/verify \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 2172a537-c26f-5e8b-0ece-68afc3b711c0' \
+  -d '{"user_type":"customer"}'
+
+
+
+```
+>Below is a sample response
+
+```json
+{
+    "auth": true,
+    "user": {
+        "user_type": "customer",
+        "email": {
+            "verficationStatus": {
+                "isVerified": false
+            },
+            "address": "emailid@email.com"
+        },
+        "personal_details": {
+            "_id": "5e84aee8c0277b3163e409fb",
+            "mobile_nos": [],
+            "emails": [
+                {
+                    "verficationStatus": {
+                        "isVerified": false
+                    },
+                    "_id": "5e84aee31fc621316c541ac2",
+                    "address": "emailid@email.com"
+                }
+            ]
+        },
+        "_id": "5e84aee31fc621316c541ac1",
+        "username": "emailid@email.com",
+        "createdAt": "2020-04-01T15:10:27.404Z",
+        "updatedAt": "2020-04-01T15:10:27.404Z",
+        "__v": 0,
+        "bank_accounts": []
+    }
+}
+
+```
+
+This API is used to verify the loggedin user.
+<br>
+<h3>Http request</h5>
+<p>`POST : http://52.77.255.121:3004/admin/user/verify</p>
+
 
 ##Car
 for all apis related to car
