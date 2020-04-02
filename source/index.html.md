@@ -364,6 +364,131 @@ for all apis related to services
 ##Camp
 for all apis related to camps
 ##Brand
-for all apis related to brands
+
+##Add Brand
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3004/admin/brand/create/"
+payload = "{\r\n    \"brand_name\": \"Maruti Suzuki\",\r\n    \"models\": [\r\n        {\r\n            \"name\": \"Swift\",\r\n            \"variants\": [\r\n                \"lxi\",\r\n                \"ldi\",\r\n                \"vxi\"\r\n            ],\r\n            \"years\": [\r\n                2018,\r\n                2019,\r\n                2020\r\n            ]\r\n        }\r\n    ]\r\n}"
+headers = {
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'postman-token': "8d0c84e3-7278-d6b6-e9be-70ffb2044246"
+    }
+response = requests.request("POST", url, data=payload, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3004/admin/brand/create/")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Post.new(url)
+request["content-type"] = 'application/json'
+request["cache-control"] = 'no-cache'
+request["postman-token"] = '014eaebc-d6d0-19b4-0a16-277c4eedff51'
+request.body = "{\r\n    \"brand_name\": \"Maruti Suzuki\",\r\n    \"models\": [\r\n        {\r\n            \"name\": \"Swift\",\r\n            \"variants\": [\r\n                \"lxi\",\r\n                \"ldi\",\r\n                \"vxi\"\r\n            ],\r\n            \"years\": [\r\n                2018,\r\n                2019,\r\n                2020\r\n            ]\r\n        }\r\n    ]\r\n}"
+response = http.request(request)
+puts response.read_body
+
+
+```
+```javascript
+var data = JSON.stringify({
+  "brand_name": "Maruti Suzuki",
+  "models": [
+    {
+      "name": "Swift",
+      "variants": [
+        "lxi",
+        "ldi",
+        "vxi"
+      ],
+      "years": [
+        2018,
+        2019,
+        2020
+      ]
+    }
+  ]
+});
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("POST", "http://52.77.255.121:3004/admin/brand/create/");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "9ab8982d-a5b0-b5fc-35c6-6b60c40cc790");
+xhr.send(data);
+
+```
+```shell
+curl -X POST \
+  http://52.77.255.121:3004/admin/brand/create/ \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: e9289e75-2674-3b82-5f0e-52a976de974d' \
+  -d '{
+    "brand_name": "Maruti Suzuki",
+    "models": [
+        {
+            "name": "Swift",
+            "variants": [
+                "lxi",
+                "ldi",
+                "vxi"
+            ],
+            "years": [
+                2018,
+                2019,
+                2020
+            ]
+        }
+    ]
+}'
+
+```
+>Below is a sample response
+
+```json
+{
+    "_id": "5e858b46c0277b3163e40a00",
+    "brand_name": "Maruti Suzuki",
+    "models": [
+        {
+            "variants": [
+                "lxi",
+                "ldi",
+                "vxi"
+            ],
+            "years": [
+                "2018",
+                "2019",
+                "2020"
+            ],
+            "_id": "5e858b46c0277b3163e40a01",
+            "name": "Swift"
+        }
+    ],
+    "createdAt": "2020-04-02T06:50:46.547Z",
+    "updatedAt": "2020-04-02T06:50:46.547Z",
+    "__v": 0
+}
+```
+
+This API is used to add a brand.
+<br>
+<h3>Http request</h5>
+<p>`POST : http://52.77.255.121:3004/admin/brand/create/`</p>
+
+
 ##Product&Service
 for all apis related to products and services
