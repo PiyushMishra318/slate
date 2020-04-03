@@ -884,7 +884,7 @@ This API is used to remove a particular brand.
 <h3>Http request</h5>
 <p>`PUT :  http://52.77.255.121:3004/admin/brand/delete/<BrandID>`</p>
 <aside class="notice">
-You must replace <BrandID> with the ID of the brand you want to remove.
+You must replace '<BrandID>' with the ID of the brand you want to remove.
 </aside>
 
 
