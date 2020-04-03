@@ -293,7 +293,9 @@ This API is used to verify the loggedin user.
 <br>
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3004/admin/user/verify`</p>
-
+<aside class="success">
+Note:It is important to verify users immediately after login to continue using any other api's.
+</aside>
 ##Logout
 
 >The below code sample shows you how to use this api
