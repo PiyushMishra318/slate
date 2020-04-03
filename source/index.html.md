@@ -462,6 +462,87 @@ This API is used to add a camp.
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3004/admin/camp/create`</p>
 
+##Add Camp
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3004/admin/camp/all/read"
+headers = {
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'postman-token': "90ddccf7-d9cc-e89f-4a31-2f2c35a57c68"
+    }
+response = requests.request("POST", url, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3004/admin/camp/all/read")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Post.new(url)
+request["content-type"] = 'application/json'
+request["cache-control"] = 'no-cache'
+request["postman-token"] = '2fae8b81-a29b-abd8-5e7e-0867f5e0f6fe'
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+var data = null;
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("POST", "http://52.77.255.121:3004/admin/camp/all/read");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "b0130254-d396-5e43-3f53-9de7d83775ad");
+xhr.send(data);
+
+```
+```shell
+curl -X POST \
+  http://52.77.255.121:3004/admin/camp/all/read \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: c7854106-2f59-e61f-3431-ec107c4dd089'
+
+```
+>Below is a sample response
+
+```json
+[
+    {
+        "total_revenue": 0,
+        "existing_customer_interactions": 0,
+        "new_customer_added": 0,
+        "_id": "5e85b50fdaf2b743d096632c",
+        "location": "#3,13th main road,shivaji nagar,delhi 20",
+        "status": "OPEN",
+        "date": "2020-04-02T00:00:00.000Z",
+        "start_time": "2020-04-02T00:00:00.000Z",
+        "end_time": "2020-04-02T00:00:00.000Z",
+        "registered_customers": [],
+        "createdAt": "2020-04-02T09:49:03.275Z",
+        "updatedAt": "2020-04-02T09:49:03.275Z",
+        "__v": 0
+    }
+]
+
+```
+
+This API is used to view all camps.
+<br>
+<h3>Http request</h5>
+<p>`GET : http://52.77.255.121:3004/admin/camp/all/read`</p>
+
 
 ##Brand
 This section contains documentation for all the apis that handle brand data on the Greasy Monkey platform.
