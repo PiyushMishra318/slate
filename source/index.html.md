@@ -31,7 +31,7 @@ This section contains documentation for all the general apis used to build the G
 ```python
 import requests
 url = "http://52.77.255.121:3004/admin/user/create"
-payload = "{\"email\":{\"address\":\"emailid@email.com\"},\n\"username\":\"user1\",\n\"password\":\"password\",\n\"mobile\":\"1234567890\",\n\"user_type\":\"customer\"\n}"
+payload = "{\"email\":{\"address\":\"emailid@provider.com\"},\n\"username\":\"user1\",\n\"password\":\"password\",\n\"mobile\":\"1234567890\",\n\"user_type\":\"customer\"\n}"
 headers = {
     'content-type': "application/json",
     'cache-control': "no-cache",
@@ -49,14 +49,14 @@ request = Net::HTTP::Post.new(url)
 request["content-type"] = 'application/json'
 request["cache-control"] = 'no-cache'
 request["postman-token"] = '2cc44f82-125c-d094-d2a5-9099e88eff6f'
-request.body = "{\"email\":{\"address\":\"emailid@email.com\"},\n\"username\":\"user1\",\n\"password\":\"password\",\n\"mobile\":\"1234567890\",\n\"user_type\":\"customer\"\n}"
+request.body = "{\"email\":{\"address\":\"emailid@provider.com\"},\n\"username\":\"user1\",\n\"password\":\"password\",\n\"mobile\":\"1234567890\",\n\"user_type\":\"customer\"\n}"
 response = http.request(request)
 puts response.read_body
 ```
 ```javascript
 var data = JSON.stringify({
   "email": {
-    "address": "emailid@email.com"
+    "address": "emailid@provider.com"
   },
   "username": "user1",
   "password": "password",
@@ -82,7 +82,7 @@ curl --request POST \
   --header 'cache-control: no-cache' \
   --header 'content-type: application/json' \
   --header 'postman-token: 8719af9e-af6d-68f7-2b2f-83a3b23ebf41' \
-  --data '{"email":{"address":"emailid@email.com"},\n"username":"user1",\n"password":"password",\n"mobile":"1234567890",\n"user_type":"customer"\n}'
+  --data '{"email":{"address":"emailid@provider.com"},\n"username":"user1",\n"password":"password",\n"mobile":"1234567890",\n"user_type":"customer"\n}'
 
 ```
 >Below is a sample response
@@ -128,7 +128,7 @@ This API is used to signup users to our portal.
 ```python
 import requests
 url = "http://52.77.255.121:3001/auth/login/coot/start"
-payload = "{\"type\":\"email\",\n\"email\":\"emailid@email.com\",\n\"password\":\"password\"\n}"
+payload = "{\"type\":\"email\",\n\"email\":\"emailid@provider.com\",\n\"password\":\"password\"\n}"
 headers = {
     'content-type': "application/json",
     'cache-control': "no-cache",
@@ -151,7 +151,7 @@ request["postman-token"] = '6a3f4c68-c19e-5edd-b8bd-220879b93129'
 ```javascript
 var data = JSON.stringify({
   "type": "email",
-  "email": "emailid@email.com",
+  "email": "emailid@provider.com",
   "password": "password"
 });
 var xhr = new XMLHttpRequest();
@@ -175,7 +175,7 @@ curl -X POST \
   -H 'content-type: application/json' \
   -H 'postman-token: 69defc5f-2335-1129-b04d-fbd5a69eee9a' \
   -d '{"type":"email",
-"email":"emailid@email.com",
+"email":"emailid@provider.com",
 "password":"password"
 }'
 
@@ -263,7 +263,7 @@ curl -X POST \
             "verficationStatus": {
                 "isVerified": false
             },
-            "address": "emailid@email.com"
+            "address": "emailid@provider.com"
         },
         "personal_details": {
             "_id": "5e84aee8c0277b3163e409fb",
@@ -274,12 +274,12 @@ curl -X POST \
                         "isVerified": false
                     },
                     "_id": "5e84aee31fc621316c541ac2",
-                    "address": "emailid@email.com"
+                    "address": "emailid@provider.com"
                 }
             ]
         },
         "_id": "5e84aee31fc621316c541ac1",
-        "username": "emailid@email.com",
+        "username": "emailid@provider.com",
         "createdAt": "2020-04-01T15:10:27.404Z",
         "updatedAt": "2020-04-01T15:10:27.404Z",
         "__v": 0,
