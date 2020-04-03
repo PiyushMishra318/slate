@@ -453,6 +453,104 @@ This API is used to add a car.
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3003/customer/car/create/`</p>
 
+##View all Cars
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3003/customer/car/all/get"
+headers = {
+    'cache-control': "no-cache",
+    'postman-token': "cb1d8808-7e40-9b2e-fcdd-db0991d3dae0"
+    }
+response = requests.request("POST", url, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3003/customer/car/all/get")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Post.new(url)
+request["cache-control"] = 'no-cache'
+request["postman-token"] = 'ace9beb3-891b-23a2-ea51-824cfe1fb86f'
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+var data = null;
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("POST", "http://52.77.255.121:3003/customer/car/all/get");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "c3ecfa6e-d2e5-657b-eeaa-49572d8ad0ff");
+xhr.send(data);
+
+```
+```shell
+curl -X POST \
+  http://52.77.255.121:3003/customer/car/all/get \
+  -H 'cache-control: no-cache' \
+  -H 'postman-token: 93d24eb5-fffc-873a-ec7c-39b287528db0'
+
+```
+>Below is a sample response
+
+```json
+[
+    {
+        "overview": {
+            "engine_oil": true,
+            "tier": true,
+            "suspension": true,
+            "brakes": true,
+            "electrical_checkup": true,
+            "air_conditioner": true
+        },
+        "_id": "5e859a3e377c0c3168f1b4b0",
+        "brand": "Maruti Suzuki",
+        "model_name": "Swift",
+        "model_variant": "ldi",
+        "model_year": "2019",
+        "createdAt": "2020-04-02T07:54:38.331Z",
+        "updatedAt": "2020-04-02T07:54:38.331Z",
+        "__v": 0
+    },
+    {
+        "overview": {
+            "engine_oil": true,
+            "tier": true,
+            "suspension": true,
+            "brakes": true,
+            "electrical_checkup": true,
+            "air_conditioner": true
+        },
+        "_id": "5e859a3e377c0c3168f1b4b1",
+        "brand": "Maruti Suzuki",
+        "model_name": "Swift Dzire",
+        "model_variant": "ldi",
+        "model_year": "2019",
+        "createdAt": "2020-04-02T07:54:38.331Z",
+        "updatedAt": "2020-04-02T07:54:38.331Z",
+        "__v": 0
+    }
+]
+
+```
+
+This API is used to view all cars of a customer.
+<br>
+<h3>Http request</h5>
+<p>`POST : http://52.77.255.121:3003/customer/car/all/get`</p>
+
 ##Document
 This section contains documentation for all the apis that handle documents uploaded on the Greasy Monkey platform.
 ##Service request
