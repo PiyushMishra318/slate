@@ -1126,3 +1126,113 @@ This API is used to add a service.
 <br>
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3004/admin/service/create/`</p>
+
+
+##View all services and products
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3004/admin/service/all/read/"
+headers = {
+    'cache-control': "no-cache",
+    'postman-token': "48364019-a48b-5911-b234-b049fcce5d41"
+    }
+response = requests.request("POST", url, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3004/admin/service/all/read/")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Post.new(url)
+request["cache-control"] = 'no-cache'
+request["postman-token"] = '374c9182-bc1c-cefc-5a54-fc66bd8accdf'
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+var data = null;
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("POST", "http://52.77.255.121:3004/admin/service/all/read/");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "db3d0019-347e-d311-c209-94e62c894f87");
+xhr.send(data);
+
+```
+```shell
+curl -X POST \
+  http://52.77.255.121:3004/admin/service/all/read/ \
+  -H 'cache-control: no-cache' \
+  -H 'postman-token: 1c30168b-b0c3-58ef-5bcb-c4b2d645825f'
+```
+>Below is a sample response
+
+```json
+[
+    {
+        "stock": 5,
+        "inclusions": [],
+        "add_on": [],
+        "direct_booking": false,
+        "recommended_service": false,
+        "keywords": [
+            "Oil",
+            "Engine",
+            "Smooth"
+        ],
+        "_id": "5e8584bac0277b3163e409fe",
+        "typeOf": "PRODUCT",
+        "image": "engineoil.png",
+        "name": "Engine Oil",
+        "description": "This is engine oil",
+        "cost": 100,
+        "qty_unit": "Bottles",
+        "createdAt": "2020-04-02T06:22:50.520Z",
+        "updatedAt": "2020-04-02T06:22:50.520Z",
+        "__v": 0
+    },
+    {
+        "stock": 0,
+        "inclusions": [
+            "5e8584bac0277b3163e409fe"
+        ],
+        "add_on": [
+            "5e8584bac0277b3163e409fe"
+        ],
+        "direct_booking": false,
+        "recommended_service": false,
+        "keywords": [
+            "quick",
+            "service",
+            "fast",
+            "one-day"
+        ],
+        "_id": "5e8586c6c0277b3163e409ff",
+        "typeOf": "SERVICE",
+        "image": "Quicck_service.png",
+        "name": "Quick Service",
+        "description": "Service your car in one day with excellant quality asurance",
+        "cost": 2000,
+        "createdAt": "2020-04-02T06:31:34.360Z",
+        "updatedAt": "2020-04-02T06:31:34.360Z",
+        "__v": 0
+    }
+]
+
+```
+
+This API is used to viewl all services and products.
+<br>
+<h3>Http request</h5>
+<p>`POST : http://52.77.255.121:3004/admin/service/all/read/`</p>
