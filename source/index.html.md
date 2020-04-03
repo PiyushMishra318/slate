@@ -635,7 +635,143 @@ Dont forget to replace \<CarId> with the id of the car you would like to view.
 ##Document
 This section contains documentation for all the apis that handle documents uploaded on the Greasy Monkey platform.
 ##Service request
-This section contains documentation for all the apis that handle service requests on the Greasy Monkey platform.
+This section contains documentation for all the apis that handle service requests made by users on the Greasy Monkey platform.
+
+##Make service request
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3003/customer/service_request/create"
+payload = "{\r\n  \"car\": \"5e859a3e377c0c3168f1b4b0\",\r\n  \"service\": \"5e8586c6c0277b3163e409ff\",\r\n  \"date\": \"2020-02-29T10:14:11.830Z\",\r\n  \"location\": \"testAddress\"\r\n}"
+headers = {
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'postman-token': "274f0e01-4bdc-00e4-04b5-566cfc7dade2"
+    }
+response = requests.request("POST", url, data=payload, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3003/customer/service_request/create")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Post.new(url)
+request["content-type"] = 'application/json'
+request["cache-control"] = 'no-cache'
+request["postman-token"] = '322db753-89c2-8a03-fea1-6f0758c7f2ed'
+request.body = "{\r\n  \"car\": \"5e859a3e377c0c3168f1b4b0\",\r\n  \"service\": \"5e8586c6c0277b3163e409ff\",\r\n  \"date\": \"2020-02-29T10:14:11.830Z\",\r\n  \"location\": \"testAddress\"\r\n}"
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+var data = JSON.stringify({
+  "car": "5e859a3e377c0c3168f1b4b0",
+  "service": "5e8586c6c0277b3163e409ff",
+  "date": "2020-02-29T10:14:11.830Z",
+  "location": "testAddress"
+});
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("POST", "http://52.77.255.121:3003/customer/service_request/create");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "5f1e44e7-81c7-30d5-65c5-2f07f8db10be");
+xhr.send(data);
+
+```
+```shell
+curl -X POST \
+  http://52.77.255.121:3003/customer/service_request/create \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 87661af2-2512-bd1f-a7b2-de5e84381071' \
+  -d '{
+  "car": "5e859a3e377c0c3168f1b4b0",
+  "service": "5e8586c6c0277b3163e409ff",
+  "date": "2020-02-29T10:14:11.830Z",
+  "location": "testAddress"
+}'
+
+```
+>Below is a sample response
+
+```json
+{
+    "payment": {
+        "done": false
+    },
+    "status": "BOOKED",
+    "_id": "5e85ac3fb981e543d6fa5729",
+    "car": {
+        "overview": {
+            "engine_oil": true,
+            "tier": true,
+            "suspension": true,
+            "brakes": true,
+            "electrical_checkup": true,
+            "air_conditioner": true
+        },
+        "_id": "5e859a3e377c0c3168f1b4b0",
+        "brand": "Maruti Suzuki",
+        "model_name": "Swift",
+        "model_variant": "ldi",
+        "model_year": "2019",
+        "createdAt": "2020-04-02T07:54:38.331Z",
+        "updatedAt": "2020-04-02T07:54:38.331Z",
+        "__v": 0
+    },
+    "service": {
+        "stock": 0,
+        "inclusions": [
+            "5e8584bac0277b3163e409fe"
+        ],
+        "add_on": [
+            "5e8584bac0277b3163e409fe"
+        ],
+        "direct_booking": false,
+        "recommended_service": false,
+        "keywords": [
+            "quick",
+            "service",
+            "fast",
+            "one-day"
+        ],
+        "_id": "5e8586c6c0277b3163e409ff",
+        "typeOf": "SERVICE",
+        "image": "Quicck_service.png",
+        "name": "Quick Service",
+        "description": "Service your car in one day with excellant quality asurance",
+        "cost": 2000,
+        "createdAt": "2020-04-02T06:31:34.360Z",
+        "updatedAt": "2020-04-02T06:31:34.360Z",
+        "__v": 0
+    },
+    "date": "2020-02-29T10:14:11.830Z",
+    "location": "testAddress",
+    "add_ons": [],
+    "createdAt": "2020-04-02T09:11:27.967Z",
+    "updatedAt": "2020-04-02T09:11:27.967Z",
+    "__v": 0
+}
+
+```
+
+This API is used to make a new request for a service.
+<br>
+<h3>Http request</h5>
+<p>`POST : http://52.77.255.121:3003/customer/service_request/create`</p>
+
+
 #ADMIN
 This section explains about all the apis used in the admin login of Greasy Monkey.
 ##Camp
