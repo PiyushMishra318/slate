@@ -890,3 +890,117 @@ You must replace \<BrandID> with the ID of the brand you want to remove.
 
 ##Product&Service
 This section contains documentation for all the apis that handle Product/Service information on the Greasy Monkey platform.
+##Add Product
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3004/admin/service/create/"
+payload = "{ \"typeOf\":\"PRODUCT\",\r\n\"image\": \"engineoil.png\",\r\n\"name\": \"Engine Oil\",\r\n\"description\": \"This is engine oil\",\r\n\"cost\": 100,\r\n\"stock\": 5,\r\n\"qty_unit\": \"Bottles\",\r\n\"inclusions\": [],\r\n\"add_on\": [],\r\n\"keywords\": [\"Oil\",\"Engine\",\"Smooth\"]\r\n}"
+headers = {
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'postman-token': "e6fb7bf0-6c78-b3c3-13a9-1de0a27e930a"
+    }
+response = requests.request("POST", url, data=payload, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3004/admin/service/create/")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Post.new(url)
+request["content-type"] = 'application/json'
+request["cache-control"] = 'no-cache'
+request["postman-token"] = 'dc383eb2-136a-d29b-c7a0-b7b3cd214b6a'
+request.body = "{ \"typeOf\":\"PRODUCT\",\r\n\"image\": \"engineoil.png\",\r\n\"name\": \"Engine Oil\",\r\n\"description\": \"This is engine oil\",\r\n\"cost\": 100,\r\n\"stock\": 5,\r\n\"qty_unit\": \"Bottles\",\r\n\"inclusions\": [],\r\n\"add_on\": [],\r\n\"keywords\": [\"Oil\",\"Engine\",\"Smooth\"]\r\n}"
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+var data = JSON.stringify({
+  "typeOf": "PRODUCT",
+  "image": "engineoil.png",
+  "name": "Engine Oil",
+  "description": "This is engine oil",
+  "cost": 100,
+  "stock": 5,
+  "qty_unit": "Bottles",
+  "inclusions": [],
+  "add_on": [],
+  "keywords": [
+    "Oil",
+    "Engine",
+    "Smooth"
+  ]
+});
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("POST", "http://52.77.255.121:3004/admin/service/create/");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "b6a424ce-e7ac-2dd2-bdac-af039199c97a");
+xhr.send(data);
+
+```
+```shell
+curl -X POST \
+  http://52.77.255.121:3004/admin/service/create/ \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 6ac61c32-0dfa-1b41-b379-9d626567db9a' \
+  -d '{ "typeOf":"PRODUCT",
+"image": "engineoil.png",
+"name": "Engine Oil",
+"description": "This is engine oil",
+"cost": 100,
+"stock": 5,
+"qty_unit": "Bottles",
+"inclusions": [],
+"add_on": [],
+"keywords": ["Oil","Engine","Smooth"]
+}'
+
+```
+>Below is a sample response
+
+```json
+{
+    "stock": 5,
+    "inclusions": [],
+    "add_on": [],
+    "direct_booking": false,
+    "recommended_service": false,
+    "keywords": [
+        "Oil",
+        "Engine",
+        "Smooth"
+    ],
+    "_id": "5e8584bac0277b3163e409fe",
+    "typeOf": "PRODUCT",
+    "image": "engineoil.png",
+    "name": "Engine Oil",
+    "description": "This is engine oil",
+    "cost": 100,
+    "qty_unit": "Bottles",
+    "createdAt": "2020-04-02T06:22:50.520Z",
+    "updatedAt": "2020-04-02T06:22:50.520Z",
+    "__v": 0
+}
+
+```
+
+This API is used to add a product.
+<br>
+<h3>Http request</h5>
+<p>`POST : http://52.77.255.121:3004/admin/service/create/`</p>
