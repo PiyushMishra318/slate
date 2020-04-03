@@ -551,6 +551,87 @@ This API is used to view all cars of a customer.
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3003/customer/car/all/get`</p>
 
+##View specific Car
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3003/customer/car/read/5e859a3e377c0c3168f1b4b0"
+headers = {
+    'cache-control': "no-cache",
+    'postman-token': "29239a7b-99e4-2a73-f8a8-5faf6f0e1002"
+    }
+response = requests.request("GET", url, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3003/customer/car/read/5e859a3e377c0c3168f1b4b0")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Get.new(url)
+request["cache-control"] = 'no-cache'
+request["postman-token"] = '8bb225d0-0e32-f1a3-14c7-7b4a45247162'
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+var data = null;
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("GET", "http://52.77.255.121:3003/customer/car/read/5e859a3e377c0c3168f1b4b0");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "4db331c1-d540-c8c3-d681-e4a5540e9e79");
+xhr.send(data);
+
+```
+```shell
+curl -X GET \
+  http://52.77.255.121:3003/customer/car/read/5e859a3e377c0c3168f1b4b0 \
+  -H 'cache-control: no-cache' \
+  -H 'postman-token: 32728b8f-c0b1-7f9e-7b88-e37c1f6ba914'
+
+```
+>Below is a sample response
+
+```json
+{
+    "overview": {
+        "engine_oil": true,
+        "tier": true,
+        "suspension": true,
+        "brakes": true,
+        "electrical_checkup": true,
+        "air_conditioner": true
+    },
+    "_id": "5e859a3e377c0c3168f1b4b0",
+    "brand": "Maruti Suzuki",
+    "model_name": "Swift",
+    "model_variant": "ldi",
+    "model_year": "2019",
+    "createdAt": "2020-04-02T07:54:38.331Z",
+    "updatedAt": "2020-04-02T07:54:38.331Z",
+    "__v": 0
+}
+
+```
+
+This API is used to view a specific car.
+<br>
+<h3>Http request</h5>
+<p>`GET : http://52.77.255.121:3003/customer/car/read/<CarId>`</p>
+<aside class="notice">
+Dont forget to replace \<CarId> with the id of the car you would like to view.
+</aside>
+
 ##Document
 This section contains documentation for all the apis that handle documents uploaded on the Greasy Monkey platform.
 ##Service request
