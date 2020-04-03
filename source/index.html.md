@@ -1375,6 +1375,89 @@ You must replace \<CampID> with the ID of the camp you want to update.
 </aside>
 
 
+##Remove Camp
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3004/admin/camp/delete/5e85b50fdaf2b743d096632c"
+headers = {
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'postman-token': "3a35f01e-579e-0f5b-f168-4a452b32dcd6"
+    }
+response = requests.request("DELETE", url, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3004/admin/camp/delete/5e85b50fdaf2b743d096632c")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Delete.new(url)
+request["content-type"] = 'application/json'
+request["cache-control"] = 'no-cache'
+request["postman-token"] = '853abc8d-4fc5-5881-b21f-f2ff6b4ccc40'
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+var data = null;
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("DELETE", "http://52.77.255.121:3004/admin/camp/delete/5e85b50fdaf2b743d096632c");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "34503d4b-c41c-1251-9421-b17105d7af08");
+xhr.send(data);
+
+```
+```shell
+curl -X DELETE \
+  http://52.77.255.121:3004/admin/camp/delete/5e85b50fdaf2b743d096632c \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 91187456-012f-845a-7a01-11097c6284d1'
+
+```
+>Below is a sample response
+
+```json
+{
+    "total_revenue": 0,
+    "existing_customer_interactions": 0,
+    "new_customer_added": 0,
+    "_id": "5e85b50fdaf2b743d096632c",
+    "location": "address-latest",
+    "status": "Close",
+    "date": "2020-04-01T14:39:02.196Z",
+    "start_time": "2020-04-01T14:39:02.196Z",
+    "end_time": "2020-04-02T00:00:00.000Z",
+    "registered_customers": [],
+    "createdAt": "2020-04-02T09:49:03.275Z",
+    "updatedAt": "2020-04-03T10:27:09.449Z",
+    "__v": 0
+}
+
+```
+
+This API is used to remove a particular camp.
+<br>
+<h3>Http request</h5>
+<p>`DELETE :  http://52.77.255.121:3004/admin/camp/delete/<CampID>`</p>
+<aside class="notice">
+You must replace \<CampID> with the ID of the camp you want to update.
+</aside>
+
+
 ##Brand
 This section contains documentation for all the apis that handle brand data on the Greasy Monkey platform.
 ##Add Brand
