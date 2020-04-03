@@ -1004,3 +1004,125 @@ This API is used to add a product.
 <br>
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3004/admin/service/create/`</p>
+
+
+##Add Service
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3004/admin/service/create/"
+payload = "{ \"typeOf\":\"SERVICE\",\r\n\"image\": \"Quicck_service.png\",\r\n\"name\": \"Quick Service\",\r\n\"description\": \"Service your car in one day with excellant quality asurance\",\r\n\"cost\": 2000,\r\n\"inclusions\": [\"5e8584bac0277b3163e409fe\"],\r\n\"add_on\": [\"5e8584bac0277b3163e409fe\"],\r\n\"keywords\": [\"quick\",\"service\",\"fast\",\"one-day\"]\r\n}"
+headers = {
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'postman-token': "b3e1d4b7-0a75-6fbb-4596-3132d801f27d"
+    }
+response = requests.request("POST", url, data=payload, headers=headers)
+print(response.text)
+
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3004/admin/service/create/")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Post.new(url)
+request["content-type"] = 'application/json'
+request["cache-control"] = 'no-cache'
+request["postman-token"] = '04c5c896-65fa-b3fc-b21c-f80fd1938f99'
+request.body = "{ \"typeOf\":\"SERVICE\",\r\n\"image\": \"Quicck_service.png\",\r\n\"name\": \"Quick Service\",\r\n\"description\": \"Service your car in one day with excellant quality asurance\",\r\n\"cost\": 2000,\r\n\"inclusions\": [\"5e8584bac0277b3163e409fe\"],\r\n\"add_on\": [\"5e8584bac0277b3163e409fe\"],\r\n\"keywords\": [\"quick\",\"service\",\"fast\",\"one-day\"]\r\n}"
+response = http.request(request)
+puts response.read_body
+
+
+```
+```javascript
+var data = JSON.stringify({
+  "typeOf": "SERVICE",
+  "image": "Quicck_service.png",
+  "name": "Quick Service",
+  "description": "Service your car in one day with excellant quality asurance",
+  "cost": 2000,
+  "inclusions": [
+    "5e8584bac0277b3163e409fe"
+  ],
+  "add_on": [
+    "5e8584bac0277b3163e409fe"
+  ],
+  "keywords": [
+    "quick",
+    "service",
+    "fast",
+    "one-day"
+  ]
+});
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("POST", "http://52.77.255.121:3004/admin/service/create/");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "b8083035-cc78-0fee-db69-ea0b59aa0eba");
+xhr.send(data);
+
+```
+```shell
+curl -X POST \
+  http://52.77.255.121:3004/admin/service/create/ \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: beedb573-3f71-e7c2-de03-2980d378d354' \
+  -d '{ "typeOf":"SERVICE",
+"image": "Quicck_service.png",
+"name": "Quick Service",
+"description": "Service your car in one day with excellant quality asurance",
+"cost": 2000,
+"inclusions": ["5e8584bac0277b3163e409fe"],
+"add_on": ["5e8584bac0277b3163e409fe"],
+"keywords": ["quick","service","fast","one-day"]
+}'
+
+```
+>Below is a sample response
+
+```json
+{
+    "stock": 0,
+    "inclusions": [
+        "5e8584bac0277b3163e409fe"
+    ],
+    "add_on": [
+        "5e8584bac0277b3163e409fe"
+    ],
+    "direct_booking": false,
+    "recommended_service": false,
+    "keywords": [
+        "quick",
+        "service",
+        "fast",
+        "one-day"
+    ],
+    "_id": "5e8586c6c0277b3163e409ff",
+    "typeOf": "SERVICE",
+    "image": "Quicck_service.png",
+    "name": "Quick Service",
+    "description": "Service your car in one day with excellant quality asurance",
+    "cost": 2000,
+    "createdAt": "2020-04-02T06:31:34.360Z",
+    "updatedAt": "2020-04-02T06:31:34.360Z",
+    "__v": 0
+}
+
+```
+
+This API is used to add a service.
+<br>
+<h3>Http request</h5>
+<p>`POST : http://52.77.255.121:3004/admin/service/create/`</p>
