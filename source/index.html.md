@@ -365,6 +365,9 @@ This section contains documentation for all the apis that handle service request
 This section explains about all the apis used in the admin login of Greasy Monkey.
 ##Camp
 This section contains documentation for all the apis that handle camp data on the Greasy Monkey platform.
+<aside class="notice">
+Camps are temporary locations where companies set up their equipment for service and people can register themselves for attending these camps.
+</aside>
 ##Add Camp
 
 >The below code sample shows you how to use this api
@@ -458,9 +461,7 @@ This API is used to add a camp.
 <br>
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3004/admin/camp/create`</p>
-<aside class="notice">
-Camps are temporary locations where companies set up their equipment for service and people can register themselves for attending these camps.
-</aside>
+
 
 ##Brand
 This section contains documentation for all the apis that handle brand data on the Greasy Monkey platform.
