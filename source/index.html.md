@@ -1236,3 +1236,91 @@ This API is used to viewl all services and products.
 <br>
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3004/admin/service/all/read/`</p>
+
+##View a single service/product
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3004/admin/service/read/5e8586c6c0277b3163e409ff"
+headers = {
+    'cache-control': "no-cache",
+    'postman-token': "53f5dcce-f89f-c206-5a23-3963f50b279c"
+    }
+response = requests.request("GET", url, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3004/admin/service/read/5e8586c6c0277b3163e409ff")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Get.new(url)
+request["cache-control"] = 'no-cache'
+request["postman-token"] = 'ae5486eb-4ab5-3ad1-4fb2-91f6299ff8bf'
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+var data = null;
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("GET", "http://52.77.255.121:3004/admin/service/read/5e8586c6c0277b3163e409ff");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "9cee61d1-fb5c-530d-18a5-ac285fc3bbb6");
+xhr.send(data);
+
+```
+```shell
+curl -X GET \
+  http://52.77.255.121:3004/admin/service/read/5e8586c6c0277b3163e409ff \
+  -H 'cache-control: no-cache' \
+  -H 'postman-token: a1d219b4-6b17-e02e-6095-acd1f213d9e7'
+```
+>Below is a sample response
+
+```json
+{
+    "stock": 0,
+    "inclusions": [
+        "5e8584bac0277b3163e409fe"
+    ],
+    "add_on": [
+        "5e8584bac0277b3163e409fe"
+    ],
+    "direct_booking": false,
+    "recommended_service": false,
+    "keywords": [
+        "quick",
+        "service",
+        "fast",
+        "one-day"
+    ],
+    "_id": "5e8586c6c0277b3163e409ff",
+    "typeOf": "SERVICE",
+    "image": "Quicck_service.png",
+    "name": "Quick Service",
+    "description": "Service your car in one day with excellant quality asurance",
+    "cost": 2000,
+    "createdAt": "2020-04-02T06:31:34.360Z",
+    "updatedAt": "2020-04-02T06:31:34.360Z",
+    "__v": 0
+} 
+
+```
+
+This API is used to view a single service/product.
+<br>
+<h3>Http request</h5>
+<p>`GET : http://52.77.255.121:3004/admin/service/read/<ServiceID>`</p>
+<aside class="notice">
+Dont forget to replace \<ServiceId> with the service id of the product/service.
+</aside>
