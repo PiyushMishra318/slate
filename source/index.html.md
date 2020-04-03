@@ -771,6 +771,125 @@ This API is used to make a new request for a service.
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3003/customer/service_request/create`</p>
 
+##View all service requests
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3003/customer/service_request/all/get"
+headers = {
+    'cache-control': "no-cache",
+    'postman-token': "30dc523c-a10e-5360-7f4b-39ffafca0b7f"
+    }
+response = requests.request("POST", url, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3003/customer/service_request/all/get")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Post.new(url)
+request["cache-control"] = 'no-cache'
+request["postman-token"] = 'd88f27c7-6460-d9a8-4d9c-2527f31aff7f'
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+var data = null;
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("POST", "http://52.77.255.121:3003/customer/service_request/all/get");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "046fa740-447d-1869-9f21-a528cca252b1");
+xhr.send(data);
+
+```
+```shell
+curl -X POST \
+  http://52.77.255.121:3003/customer/service_request/all/get \
+  -H 'cache-control: no-cache' \
+  -H 'postman-token: 0aeb4200-0579-435e-c376-5bb13f325f6c'
+
+```
+>Below is a sample response
+
+```json
+[
+    {
+        "payment": {
+            "done": false
+        },
+        "status": "BOOKED",
+        "_id": "5e85ac3fb981e543d6fa5729",
+        "car": {
+            "overview": {
+                "engine_oil": true,
+                "tier": true,
+                "suspension": true,
+                "brakes": true,
+                "electrical_checkup": true,
+                "air_conditioner": true
+            },
+            "_id": "5e859a3e377c0c3168f1b4b0",
+            "brand": "Maruti Suzuki",
+            "model_name": "Swift",
+            "model_variant": "ldi",
+            "model_year": "2019",
+            "createdAt": "2020-04-02T07:54:38.331Z",
+            "updatedAt": "2020-04-02T07:54:38.331Z",
+            "__v": 0
+        },
+        "service": {
+            "stock": 0,
+            "inclusions": [
+                "5e8584bac0277b3163e409fe"
+            ],
+            "add_on": [
+                "5e8584bac0277b3163e409fe"
+            ],
+            "direct_booking": false,
+            "recommended_service": false,
+            "keywords": [
+                "quick",
+                "service",
+                "fast",
+                "one-day"
+            ],
+            "_id": "5e8586c6c0277b3163e409ff",
+            "typeOf": "SERVICE",
+            "image": "Quicck_service.png",
+            "name": "Quick Service",
+            "description": "Service your car in one day with excellant quality asurance",
+            "cost": 2000,
+            "createdAt": "2020-04-02T06:31:34.360Z",
+            "updatedAt": "2020-04-02T06:31:34.360Z",
+            "__v": 0
+        },
+        "date": "2020-02-29T10:14:11.830Z",
+        "location": "testAddress",
+        "add_ons": [],
+        "createdAt": "2020-04-02T09:11:27.967Z",
+        "updatedAt": "2020-04-02T09:11:27.967Z",
+        "__v": 0
+    }
+]
+
+```
+
+This API is used to view all service requests made by a user.
+<br>
+<h3>Http request</h5>
+<p>`POST : http://52.77.255.121:3003/customer/service_request/all/get`</p>
+
 
 #ADMIN
 This section explains about all the apis used in the admin login of Greasy Monkey.
