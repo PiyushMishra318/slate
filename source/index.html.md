@@ -24,7 +24,7 @@ We have language bindings in Shell, Ruby, Python, and JavaScript! You can view c
 This section explains about all the apis used in the user login of Greasy Monkey.
 ##General
 This section contains documentation for all the general apis used to build the Greasy Monkey platform.
-###Signup
+##Signup
 
 >The below code sample shows you how to use this api
 
@@ -121,7 +121,7 @@ This API is used to signup users to our portal.
 
 
 
-###Login
+##Login
 
 >The below code sample shows you how to use this api
 
@@ -190,7 +190,7 @@ This API is used to allow users to login to our portal.
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3001/auth/login/coot/start`</p>
 
-###Login Verify
+##Login Verify
 
 >The below code sample shows you how to use this api
 
@@ -294,7 +294,7 @@ This API is used to verify the loggedin user.
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3004/admin/user/verify`</p>
 
-###Logout
+##Logout
 
 >The below code sample shows you how to use this api
 
@@ -368,7 +368,7 @@ This section contains documentation for all the apis that handle camp data on th
 <aside class="notice">
 Camps are temporary locations where companies set up their equipment for service and people can register themselves for attending these camps.
 </aside>
-###Add Camp
+##Add Camp
 
 >The below code sample shows you how to use this api
 
@@ -462,7 +462,7 @@ This API is used to add a camp.
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3004/admin/camp/create`</p>
 
-###View all Camps
+##View all Camps
 
 >The below code sample shows you how to use this api
 
@@ -546,7 +546,7 @@ This API is used to view all camps.
 
 ##Brand
 This section contains documentation for all the apis that handle brand data on the Greasy Monkey platform.
-###Add Brand
+##Add Brand
 
 >The below code sample shows you how to use this api
 
@@ -670,7 +670,7 @@ This API is used to add a brand.
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3004/admin/brand/create/`</p>
 
-###View all Brands
+##View all Brands
 
 >The below code sample shows you how to use this api
 
@@ -756,7 +756,7 @@ This API is used to view all brands.
 <p>`POST : http://52.77.255.121:3004/admin/brand/all/read/`</p>
 
 
-###View individual Brand information
+##View individual Brand information
 
 >The below code sample shows you how to use this api
 
@@ -840,7 +840,7 @@ This API is used to view information about a single brand.
 <h3>Http request</h5>
 <p>`GET : http://52.77.255.121:3004/admin/brand/read/<BrandID>`</p>
 
-###Update Brand data
+##Update Brand data
 
 >The below code sample shows you how to use this api
 
@@ -976,7 +976,7 @@ This API is used to update a particular brands information.
 You must replace \<BrandID> with the ID of the brand you want to update.
 </aside>
 
-###Delete Brand data
+##Delete Brand data
 
 >The below code sample shows you how to use this api
 
@@ -1069,7 +1069,7 @@ You must replace \<BrandID> with the ID of the brand you want to remove.
 
 ##Product&Service
 This section contains documentation for all the apis that handle Product/Service information on the Greasy Monkey platform.
-###Add Product
+##Add Product
 
 >The below code sample shows you how to use this api
 
@@ -1185,7 +1185,7 @@ This API is used to add a product.
 <p>`POST : http://52.77.255.121:3004/admin/service/create/`</p>
 
 
-###Add Service
+##Add Service
 
 >The below code sample shows you how to use this api
 
@@ -1307,7 +1307,7 @@ This API is used to add a service.
 <p>`POST : http://52.77.255.121:3004/admin/service/create/`</p>
 
 
-###View all services and products
+##View all services and products
 
 >The below code sample shows you how to use this api
 
@@ -1416,7 +1416,7 @@ This API is used to viewl all services and products.
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3004/admin/service/all/read/`</p>
 
-###View a single service/product
+##View a single service/product
 
 >The below code sample shows you how to use this api
 
@@ -1505,7 +1505,7 @@ Dont forget to replace \<ServiceId> with the service id of the product/service.
 </aside>
 
 
-###Remove a single service/product
+##Remove a single service/product
 
 >The below code sample shows you how to use this api
 
