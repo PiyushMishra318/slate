@@ -365,6 +365,103 @@ This section contains documentation for all the apis that handle service request
 This section explains about all the apis used in the admin login of Greasy Monkey.
 ##Camp
 This section contains documentation for all the apis that handle camp data on the Greasy Monkey platform.
+##Add Camp
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3004/admin/camp/create"
+payload = "{\r\n    \"location\": \"#3,13th main road,shivaji nagar,delhi 20\",\r\n    \"status\": \"OPEN\",\r\n    \"date\":\"2020-04-02\",\r\n\t\"start_time\":\"2020-04-02\",\r\n\t\"end_time\":\"2020-04-02\"\r\n}"
+headers = {
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'postman-token': "3398c148-556f-a2da-70d6-02673c91f767"
+    }
+response = requests.request("POST", url, data=payload, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3004/admin/camp/create")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Post.new(url)
+request["content-type"] = 'application/json'
+request["cache-control"] = 'no-cache'
+request["postman-token"] = '6a0ff31a-cefa-599f-e684-813559cd67ba'
+request.body = "{\r\n    \"location\": \"#3,13th main road,shivaji nagar,delhi 20\",\r\n    \"status\": \"OPEN\",\r\n    \"date\":\"2020-04-02\",\r\n\t\"start_time\":\"2020-04-02\",\r\n\t\"end_time\":\"2020-04-02\"\r\n}"
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+var data = JSON.stringify({
+  "location": "#3,13th main road,shivaji nagar,delhi 20",
+  "status": "OPEN",
+  "date": "2020-04-02",
+  "start_time": "2020-04-02",
+  "end_time": "2020-04-02"
+});
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("POST", "http://52.77.255.121:3004/admin/camp/create");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "22265417-a8f5-2b3a-da73-1460fb1192d3");
+xhr.send(data);
+
+```
+```shell
+curl -X POST \
+  http://52.77.255.121:3004/admin/camp/create \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 906ccc67-9076-84e0-82d9-a95fd8d2da46' \
+  -d '{
+    "location": "#3,13th main road,shivaji nagar,delhi 20",
+    "status": "OPEN",
+    "date":"2020-04-02",
+	"start_time":"2020-04-02",
+	"end_time":"2020-04-02"
+}'
+
+```
+>Below is a sample response
+
+```json
+{
+    "total_revenue": 0,
+    "existing_customer_interactions": 0,
+    "new_customer_added": 0,
+    "_id": "5e85b50fdaf2b743d096632c",
+    "location": "#3,13th main road,shivaji nagar,delhi 20",
+    "status": "OPEN",
+    "date": "2020-04-02T00:00:00.000Z",
+    "start_time": "2020-04-02T00:00:00.000Z",
+    "end_time": "2020-04-02T00:00:00.000Z",
+    "registered_customers": [],
+    "createdAt": "2020-04-02T09:49:03.275Z",
+    "updatedAt": "2020-04-02T09:49:03.275Z",
+    "__v": 0
+}
+
+```
+
+This API is used to add a camp.
+<br>
+<h3>Http request</h5>
+<p>`POST : http://52.77.255.121:3004/admin/camp/create`</p>
+<aside class="notice">
+Camps are temporary locations where companies set up their equipment for service and people can register themselves for attending these camps.
+</aside>
+
 ##Brand
 This section contains documentation for all the apis that handle brand data on the Greasy Monkey platform.
 ##Add Brand
