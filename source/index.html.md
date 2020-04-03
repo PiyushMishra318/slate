@@ -793,7 +793,99 @@ This API is used to update a particular brands information.
 <br>
 <h3>Http request</h5>
 <p>`PUT :  http://52.77.255.121:3004/admin/update/brand/<BrandID>`</p>
+<aside class="notice">
+You must replace <BrandID> with the ID of the brand you want to update.
+</aside>
 
+##Delete Brand data
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3004/admin/brand/delete/5e858b46c0277b3163e40a00"
+headers = {
+    'cache-control': "no-cache",
+    'postman-token': "64653f05-0a78-16cf-d63a-6c162181952a"
+    }
+response = requests.request("DELETE", url, headers=headers)
+print(response.text)
+
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3004/admin/brand/delete/5e858b46c0277b3163e40a00")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Delete.new(url)
+request["cache-control"] = 'no-cache'
+request["postman-token"] = '506104a2-4780-8b1b-aac4-b150cf68be38'
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+var data = null;
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("DELETE", "http://52.77.255.121:3004/admin/brand/delete/5e858b46c0277b3163e40a00");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "16e044ec-5405-707b-5215-fd004bacd0f5");
+xhr.send(data);
+
+```
+```shell
+curl -X DELETE \
+  http://52.77.255.121:3004/admin/brand/delete/5e858b46c0277b3163e40a00 \
+  -H 'cache-control: no-cache' \
+  -H 'postman-token: 2683f5de-6cda-1f2c-fc01-2340cd98044d'
+
+```
+>Below is a sample response
+
+```json
+{
+    "_id": "5e858b46c0277b3163e40a00",
+    "brand_name": "Maruti Suzuki",
+    "models": [
+        {
+            "variants": [
+                "lxi",
+                "ldi",
+                "vxi",
+                "vdi"
+            ],
+            "years": [
+                "2017",
+                "2018",
+                "2019",
+                "2020"
+            ],
+            "_id": "5e8591e7c0277b3163e40a02",
+            "name": "Swift"
+        }
+    ],
+    "createdAt": "2020-04-02T06:50:46.547Z",
+    "updatedAt": "2020-04-02T07:19:03.152Z",
+    "__v": 0
+}
+
+
+```
+
+This API is used to remove a particular brand.
+<br>
+<h3>Http request</h5>
+<p>`PUT :  http://52.77.255.121:3004/admin/brand/delete/<BrandID>`</p>
+<aside class="notice">
+You must replace <BrandID> with the ID of the brand you want to remove.
+</aside>
 
 
 ##Product&Service
