@@ -1324,3 +1324,93 @@ This API is used to view a single service/product.
 <aside class="notice">
 Dont forget to replace \<ServiceId> with the service id of the product/service.
 </aside>
+
+
+##Remove a single service/product
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3004/admin/service/delete/5e8584bac0277b3163e409fe"
+headers = {
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'postman-token': "28740626-c5ef-53d2-3be9-4defd43b4668"
+    }
+response = requests.request("DELETE", url, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3004/admin/service/delete/5e8584bac0277b3163e409fe")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Delete.new(url)
+request["content-type"] = 'application/json'
+request["cache-control"] = 'no-cache'
+request["postman-token"] = 'f32ea5fa-0fc4-2a9a-7f37-963d76da6096'
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+var data = null;
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("DELETE", "http://52.77.255.121:3004/admin/service/delete/5e8584bac0277b3163e409fe");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "3d243704-6048-9094-8dea-953572175151");
+xhr.send(data);
+
+```
+```shell
+curl -X DELETE \
+  http://52.77.255.121:3004/admin/service/delete/5e8584bac0277b3163e409fe \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 5d4cdcc6-1aee-1d72-a52f-9035ab7d9e58'
+
+```
+>Below is a sample response
+
+```json
+{
+    "stock": 5,
+    "inclusions": [],
+    "add_on": [],
+    "direct_booking": false,
+    "recommended_service": false,
+    "keywords": [
+        "Oil",
+        "Engine",
+        "Smooth"
+    ],
+    "_id": "5e8584bac0277b3163e409fe",
+    "typeOf": "PRODUCT",
+    "image": "engineoil.png",
+    "name": "Engine Oil",
+    "description": "This is engine oil",
+    "cost": 100,
+    "qty_unit": "Bottles",
+    "createdAt": "2020-04-02T06:22:50.520Z",
+    "updatedAt": "2020-04-02T06:22:50.520Z",
+    "__v": 0
+}
+
+```
+
+This API is used to delete a single product/service.
+<br>
+<h3>Http request</h5>
+<p>`DELETE : http://52.77.255.121:3004/admin/service/delete/<ServiceID/ProductID>`</p>
+<aside class="notice">
+Dont forget to replace \<ServiceId> with the service id of the product/service.
+</aside>
