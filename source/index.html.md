@@ -544,6 +544,85 @@ This API is used to view all camps.
 <p>`GET : http://52.77.255.121:3004/admin/camp/all/read`</p>
 
 
+##View specific Camp
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3004/admin/camp/read/5e85b50fdaf2b743d096632c"
+headers = {
+    'cache-control': "no-cache",
+    'postman-token': "9470eb05-13dc-03ec-c884-dc92e0e5040c"
+    }
+response = requests.request("GET", url, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3004/admin/camp/read/5e85b50fdaf2b743d096632c")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Get.new(url)
+request["cache-control"] = 'no-cache'
+request["postman-token"] = '37ccacf6-ba4e-29c0-868e-b697a01333da'
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+var data = null;
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("GET", "http://52.77.255.121:3004/admin/camp/read/5e85b50fdaf2b743d096632c");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "fe0383c6-f1a8-8b2b-d81d-96151505bba0");
+xhr.send(data);
+
+```
+```shell
+curl -X GET \
+  http://52.77.255.121:3004/admin/camp/read/5e85b50fdaf2b743d096632c \
+  -H 'cache-control: no-cache' \
+  -H 'postman-token: 0a220b8b-4a41-cb4c-a2c8-cf87684cdf52'
+
+```
+>Below is a sample response
+
+```json
+{
+    "total_revenue": 0,
+    "existing_customer_interactions": 0,
+    "new_customer_added": 0,
+    "_id": "5e85b50fdaf2b743d096632c",
+    "location": "#3,13th main road,shivaji nagar,delhi 20",
+    "status": "OPEN",
+    "date": "2020-04-02T00:00:00.000Z",
+    "start_time": "2020-04-02T00:00:00.000Z",
+    "end_time": "2020-04-02T00:00:00.000Z",
+    "registered_customers": [],
+    "createdAt": "2020-04-02T09:49:03.275Z",
+    "updatedAt": "2020-04-02T09:49:03.275Z",
+    "__v": 0
+} 
+
+```
+
+This API is used to view a specific camp.
+<br>
+<h3>Http request</h5>
+<p>`GET : http://52.77.255.121:3004/admin/camp/read/<CampId>`</p>
+<aside class="notice">
+Dont forget to replace \<CampId> with the id of the specific camp you want to view.
+</aside>
+
+
 ##Brand
 This section contains documentation for all the apis that handle brand data on the Greasy Monkey platform.
 ##Add Brand
