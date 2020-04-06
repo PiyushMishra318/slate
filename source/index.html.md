@@ -227,6 +227,7 @@ curl -X POST \
 >Below is a sample response
 
 >"cookie set"
+
 <h3>About the API</h3>
 After signing up a user the next step would be to prompt the user to login and get started with your application.This API helps you to login the user to use the services provided.
 <table>
