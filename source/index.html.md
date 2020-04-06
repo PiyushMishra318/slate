@@ -114,12 +114,24 @@ curl --request POST \
 }
 
 ```
-This API is used to signup users to our portal.
+A signup is the first and foremost thing needed for any modern day application,this section will guide you through using the signup API to seamlessly integrate your frontend and backend.
 <br>
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3004/admin/user/create`</p>
-
-
+<h3>Data Parameters</h3>
+<table>
+<tr><th>Parameter</th><th>Description</th><th>Type</th></tr>
+<tr><td>email</td><td>This is parameter is to forward the email address of the user being signed up</td><td>required</td></tr>
+<tr><td>username</td><td>This is parameter is to forward the username of the user being signed up</td><td>required</td></tr>
+<tr><td>password</td><td>This is parameter is to forward the password of the user being signed up</td><td>required</td></tr>
+<tr><td>mobile</td><td>This is parameter is to forward the mobile no. of the user being signed up</td><td>required</td></tr>
+<tr><td>user_type</td><td>This is parameter is to forward the type of the user being signed up it can take values like
+<ul>
+<li>Ground staff</li>
+<li>Customer</li>
+<li>Admin</li>
+</td><td>required</td></tr>
+</table>
 
 ##Login
 
