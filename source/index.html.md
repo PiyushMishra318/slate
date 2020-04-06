@@ -125,6 +125,7 @@ curl --request POST \
 }
 
 ```
+
 <h3>About the API</h3>
 A signup is the first and foremost thing needed for any modern day application,this section will guide you through using the signup API to seamlessly integrate your frontend and backend.
 <table>
