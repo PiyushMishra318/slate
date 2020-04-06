@@ -118,7 +118,12 @@ A signup is the first and foremost thing needed for any modern day application,t
 <br>
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3004/admin/user/create`</p>
-<h3>Data Parameters</h3>
+<h3>Request headers</h3>
+<table>
+<tr><th>Key</th><th>Value</th>
+<tr><td>Content-Type</td><td>application/json</td></tr>
+</table>
+<h3>Data parameters</h3>
 <table>
 <tr><th>Parameter</th><th>Description</th><th>Type</th></tr>
 <tr><td>email</td><td>This parameter is to forward the email address of the user being signed up</td><td>required</td></tr>
