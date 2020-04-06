@@ -224,14 +224,14 @@ After signing up a user the next step would be to prompt the user to login and g
 <h3>Data parameters</h3>
 <table>
 <tr><th>Parameter</th><th>Description</th><th>Type</th></tr>
-<tr><td>user_type</td><td>This parameter is to forward the type of the user being signed up it can take values like
+<tr><td>user_type</td><td>This parameter is to forward the type of the user being logged in it can take values like
 <ul>
 <li>Ground staff</li>
 <li>Customer</li>
 <li>Admin</li></ul>
 </td><td>required</td></tr>
-<tr><td>email</td><td>This parameter is to forward the email address of the user being signed up</td><td>required</td></tr>
-<tr><td>password</td><td>This parameter is to forward the password of the user being signed up</td><td>required</td></tr>
+<tr><td>email</td><td>This parameter is to forward the email address of the user being logged in</td><td>required</td></tr>
+<tr><td>password</td><td>This parameter is to forward the password of the user being logged in</td><td>required</td></tr>
 </table>
 <h3>Response Types</h3>
 <table>
@@ -356,7 +356,7 @@ Note:It is important to verify users immediately after login to continue using a
 <h3>Data parameters</h3>
 <table>
 <tr><th>Parameter</th><th>Description</th><th>Type</th></tr>
-<tr><td>user_type</td><td>This parameter is to forward the type of the user being signed up it can take values like
+<tr><td>user_type</td><td>This parameter is to forward the type of the user being verified it can take values like
 <ul>
 <li>Ground staff</li>
 <li>Customer</li>
