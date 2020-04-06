@@ -1,7 +1,7 @@
 ---
 title: API Documentation
 
-language_tabs: # must be one of https://git.io/vQNgJ
+language_tabs:
   - shell
   - ruby
   - python
@@ -16,9 +16,9 @@ search: true
 
 # Introduction
 
-Welcome to the Greasy Monkey  API! You can use our API to access Greasy Monkey API endpoints, which can help you to build and integrate frontend and backend efficiently.
+Welcome to the Greasy Monkey  technical documentation! You can use this document to understand how this software works from dataflow to user experience.
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+We have language bindings in Shell, Ruby, Python, and JavaScript for our APIS. You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
 # What is Greasy Monkey?
 
@@ -32,7 +32,9 @@ The Greasy Monkey platform is built on top of a few premade services that define
 <li>customer</li>
 </ul>
 
-# Authorization
+# UseCases
+## General
+## Authorization
 ##Signup
 
 >The below code sample shows you how to use this api
@@ -123,7 +125,12 @@ curl --request POST \
 }
 
 ```
+<h3>About the API</h3>
 A signup is the first and foremost thing needed for any modern day application,this section will guide you through using the signup API to seamlessly integrate your frontend and backend.
+<table>
+<tr><th>App</th></tr>
+<tr><td>admin</td></tr>
+</table>
 <br>
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3004/admin/user/create`</p>
@@ -218,8 +225,12 @@ curl -X POST \
 >Below is a sample response
 
 >"cookie set"
-
+<h3>About the API</h3>
 After signing up a user the next step would be to prompt the user to login and get started with your application.This API helps you to login the user to use the services provided.
+<table>
+<tr><th>ServiceApp</th></tr>
+<tr><td>Cootauth</td></tr>
+</table>
 <br>
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3001/auth/login/coot/start`</p>
@@ -348,8 +359,12 @@ curl -X POST \
 }
 
 ```
-
+<h3>About the API</h3>
 Once logged in the next step would be to verify your users authenticity,this section helps you to achieve the same objective.
+<table>
+<tr><th>AppName</th></tr>
+<tr><td>Admin</td></tr>
+</table>
 <br>
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3004/admin/user/verify`</p>
@@ -454,8 +469,12 @@ You don't want your user to ever stop using your platform but if they want to ac
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
+## admin
+## user
+## staff
 
-# CUSTOMER
+# App
+## CUSTOMER
 This section explains about all the apis in the customer app of the Greasy Monkey platform.
 ##Car
 This section contains documentation for all the apis that handle Car data on the Greasy Monkey platform.
@@ -1113,7 +1132,7 @@ Dont forget to replace \<RequestID> with the id of the service request you want 
 </aside>
 
 
-# ADMIN
+## ADMIN
 This section explains about all the apis in the admin app of the Greasy Monkey platform.
 ##Camp
 This section contains documentation for all the apis that handle camp data on the Greasy Monkey platform.
