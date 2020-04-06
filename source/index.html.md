@@ -19,11 +19,7 @@ search: true
 Welcome to the Greasy Monkey  API! You can use our API to access Greasy Monkey API endpoints, which can help you to build and integrate frontend and backend efficiently.
 
 We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-#CUSTOMER
-This section explains about all the apis used in the user login of Greasy Monkey.
-##General
-This section contains documentation for all the general apis used to build the Greasy Monkey platform.
+#Authorization
 ##Signup
 
 >The below code sample shows you how to use this api
@@ -425,7 +421,7 @@ curl -X GET \
 
 >Logout
 
-You don't want your user to ever stop using your platform but if they want to access your services from public system you need to allow them to logout.
+You don't want your user to ever stop using your platform but if they want to access your services from a public system you need to allow them to logout.
 <br>
 <h3>Http request</h5>
 <p>`GET : http://52.77.255.121:3001/auth/logout`</p>
@@ -445,6 +441,8 @@ You don't want your user to ever stop using your platform but if they want to ac
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
 
+#CUSTOMER
+This section explains about all the apis used in the user login of Greasy Monkey.
 ##Car
 This section contains documentation for all the apis that handle Car data on the Greasy Monkey platform.
 ##Add Car
