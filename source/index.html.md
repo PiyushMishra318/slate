@@ -219,12 +219,13 @@ After signing up a user the next step would be to prompt the user to login and g
 <table>
 <tr><th>Key</th><th>Value</th>
 <tr><td>Content-Type</td><td>application/json</td></tr>
+<tr><td>Access-Control-Allow-Credentials</td><td>true</td></tr>
 </table>
 <h3>Data parameters</h3>
 <table>
+<tr><th>Parameter</th><th>Description</th><th>Type</th></tr>
 <tr><td>user_type</td><td>This parameter is to forward the type of the user being signed up it can take values like
 </td><td>required</td></tr>
-<tr><th>Parameter</th><th>Description</th><th>Type</th></tr>
 <tr><td>email</td><td>This parameter is to forward the email address of the user being signed up</td><td>required</td></tr>
 <tr><td>password</td><td>This parameter is to forward the password of the user being signed up</td><td>required</td></tr>
 </table>
@@ -234,6 +235,7 @@ After signing up a user the next step would be to prompt the user to login and g
 <tr><td>200</td><td>Everything went well</td></tr>
 <tr><td>404</td><td>We might be on a service break,please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
+<tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
 ##Login Verify
 
