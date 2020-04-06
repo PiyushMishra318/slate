@@ -425,11 +425,25 @@ curl -X GET \
 
 >Logout
 
-This API is used to logout user.
+You don't want your user to ever stop using your platform but if they want to access your services from public system you need to allow them to logout.
 <br>
 <h3>Http request</h5>
 <p>`GET : http://52.77.255.121:3001/auth/logout`</p>
 
+<h3>Request headers</h3>
+<table>
+<tr><th>Key</th><th>Value</th>
+<tr><td>Content-Type</td><td>application/json</td></tr>
+<tr><td>Access-Control-Allow-Credentials</td><td>true</td></tr>
+</table>
+<h3>Response Types</h3>
+<table>
+<tr><th>Status Code</th><th>Description</th></tr>
+<tr><td>200</td><td>Everything went well</td></tr>
+<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
+<tr><td>500</td><td>Internal Server Error</td></tr>
+</table>
 
 ##Car
 This section contains documentation for all the apis that handle Car data on the Greasy Monkey platform.
