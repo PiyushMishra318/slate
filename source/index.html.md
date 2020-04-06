@@ -122,6 +122,7 @@ A signup is the first and foremost thing needed for any modern day application,t
 <table>
 <tr><th>Key</th><th>Value</th>
 <tr><td>Content-Type</td><td>application/json</td></tr>
+<tr><td>Access-Control-Allow-Credentials</td><td>true</td></tr>
 </table>
 <h3>Data parameters</h3>
 <table>
@@ -143,6 +144,7 @@ A signup is the first and foremost thing needed for any modern day application,t
 <tr><td>200</td><td>Everything went well</td></tr>
 <tr><td>404</td><td>We might be on a service break,please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
+<tr><td>500</td><td>Internal server error!!</td></td>
 </table>
 ##Login
 
@@ -208,11 +210,31 @@ curl -X POST \
 
 >"cookie set"
 
-This API is used to allow users to login to our portal.
+After signing up a user the next step would be to prompt the user to login and get started with your application.This API helps you to login the user to use the services provided.
 <br>
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3001/auth/login/coot/start`</p>
 
+<h3>Request headers</h3>
+<table>
+<tr><th>Key</th><th>Value</th>
+<tr><td>Content-Type</td><td>application/json</td></tr>
+</table>
+<h3>Data parameters</h3>
+<table>
+<tr><td>user_type</td><td>This parameter is to forward the type of the user being signed up it can take values like
+</td><td>required</td></tr>
+<tr><th>Parameter</th><th>Description</th><th>Type</th></tr>
+<tr><td>email</td><td>This parameter is to forward the email address of the user being signed up</td><td>required</td></tr>
+<tr><td>password</td><td>This parameter is to forward the password of the user being signed up</td><td>required</td></tr>
+</table>
+<h3>Response Types</h3>
+<table>
+<tr><th>Status Code</th><th>Description</th></tr>
+<tr><td>200</td><td>Everything went well</td></tr>
+<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
+</table>
 ##Login Verify
 
 >The below code sample shows you how to use this api
