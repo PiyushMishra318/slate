@@ -358,6 +358,7 @@ Note:It is important to verify users immediately after login to continue using a
 <li>Customer</li>
 <li>Admin</li></ul>
 </td><td>required</td></tr>
+</table>
 <h3>Response Types</h3>
 <table>
 <tr><th>Status Code</th><th>Description</th></tr>
