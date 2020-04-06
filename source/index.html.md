@@ -121,10 +121,10 @@ A signup is the first and foremost thing needed for any modern day application,t
 <h3>Data Parameters</h3>
 <table>
 <tr><th>Parameter</th><th>Description</th><th>Type</th></tr>
-<tr><td>email</td><td>This is parameter is to forward the email address of the user being signed up</td><td>required</td></tr>
-<tr><td>username</td><td>This is parameter is to forward the username of the user being signed up</td><td>required</td></tr>
-<tr><td>password</td><td>This is parameter is to forward the password of the user being signed up</td><td>required</td></tr>
-<tr><td>mobile</td><td>This is parameter is to forward the mobile no. of the user being signed up</td><td>required</td></tr>
+<tr><td>email</td><td>This parameter is to forward the email address of the user being signed up</td><td>required</td></tr>
+<tr><td>username</td><td>This parameter is to forward the username of the user being signed up</td><td>required</td></tr>
+<tr><td>password</td><td>This parameter is to forward the password of the user being signed up</td><td>required</td></tr>
+<tr><td>mobile</td><td>This parameter is to forward the mobile no. of the user being signed up</td><td>required</td></tr>
 <tr><td>user_type</td><td>This is parameter is to forward the type of the user being signed up it can take values like
 <ul>
 <li>Ground staff</li>
