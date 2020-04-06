@@ -19,7 +19,20 @@ search: true
 Welcome to the Greasy Monkey  API! You can use our API to access Greasy Monkey API endpoints, which can help you to build and integrate frontend and backend efficiently.
 
 We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-#Authorization
+
+# What is Greasy Monkey?
+
+Greasy Monkey is an online ecommerce platform for Automobile garages to manage their day to day activities effectively and efficiently.
+
+# How Greasy Monkey Works?
+
+The Greasy Monkey platform is built on top of a few premade services that define flow and 2 custom apps namely:
+<ul>
+<li>admin</li>
+<li>customer</li>
+</ul>
+
+# Authorization
 ##Signup
 
 >The below code sample shows you how to use this api
@@ -442,8 +455,8 @@ You don't want your user to ever stop using your platform but if they want to ac
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
 
-#CUSTOMER
-This section explains about all the apis used in the user login of Greasy Monkey.
+# CUSTOMER
+This section explains about all the apis in the customer app of the Greasy Monkey platform.
 ##Car
 This section contains documentation for all the apis that handle Car data on the Greasy Monkey platform.
 ##Add Car
@@ -1100,8 +1113,8 @@ Dont forget to replace \<RequestID> with the id of the service request you want 
 </aside>
 
 
-#ADMIN
-This section explains about all the apis used in the admin login of Greasy Monkey.
+# ADMIN
+This section explains about all the apis in the admin app of the Greasy Monkey platform.
 ##Camp
 This section contains documentation for all the apis that handle camp data on the Greasy Monkey platform.
 <aside class="notice">
