@@ -35,7 +35,7 @@ The Greasy Monkey platform is built on top of a few premade services that define
 # UseCases
 ## General
 ## Authorization
-##Signup
+## Signup
 
 >The below code sample shows you how to use this api
 
@@ -96,6 +96,7 @@ curl --request POST \
   --data '{"email":{"address":"emailid@provider.com"},\n"username":"user1",\n"password":"password",\n"mobile":"1234567890",\n"user_type":"customer"\n}'
 
 ```
+
 >Below is a sample response
 
 ```json
@@ -163,7 +164,7 @@ A signup is the first and foremost thing needed for any modern day application,t
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal server error!!</td></td>
 </table>
-##Login
+## Login
 
 >The below code sample shows you how to use this api
 
@@ -262,7 +263,7 @@ After signing up a user the next step would be to prompt the user to login and g
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
-##Login Verify
+## Login Verify
 
 >The below code sample shows you how to use this api
 
@@ -396,7 +397,7 @@ Note:It is important to verify users immediately after login to continue using a
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
-##Logout
+## Logout
 
 >The below code sample shows you how to use this api
 
