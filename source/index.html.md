@@ -132,7 +132,13 @@ A signup is the first and foremost thing needed for any modern day application,t
 <li>Admin</li>
 </td><td>required</td></tr>
 </table>
-
+<h3>Response Types</h3>
+<table>
+<tr><th>Status Code</th><th>Description</th></tr>
+<tr><td>200</td><td>Everything went well</td></tr>
+<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
+</table>
 ##Login
 
 >The below code sample shows you how to use this api
