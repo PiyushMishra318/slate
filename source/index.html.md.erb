@@ -877,6 +877,533 @@ Customers can view a specific car from the page below:
 <%= image_tag "images/images/cars/view_single.JPG" %>
 
 
+# Services
+
+This section contains documentation for all the apis that handle Product/Service information on the Greasy Monkey platform.
+##Add Product
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3004/admin/service/create/"
+payload = "{ \"typeOf\":\"PRODUCT\",\r\n\"image\": \"engineoil.png\",\r\n\"name\": \"Engine Oil\",\r\n\"description\": \"This is engine oil\",\r\n\"cost\": 100,\r\n\"stock\": 5,\r\n\"qty_unit\": \"Bottles\",\r\n\"inclusions\": [],\r\n\"add_on\": [],\r\n\"keywords\": [\"Oil\",\"Engine\",\"Smooth\"]\r\n}"
+headers = {
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'postman-token': "e6fb7bf0-6c78-b3c3-13a9-1de0a27e930a"
+    }
+response = requests.request("POST", url, data=payload, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3004/admin/service/create/")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Post.new(url)
+request["content-type"] = 'application/json'
+request["cache-control"] = 'no-cache'
+request["postman-token"] = 'dc383eb2-136a-d29b-c7a0-b7b3cd214b6a'
+request.body = "{ \"typeOf\":\"PRODUCT\",\r\n\"image\": \"engineoil.png\",\r\n\"name\": \"Engine Oil\",\r\n\"description\": \"This is engine oil\",\r\n\"cost\": 100,\r\n\"stock\": 5,\r\n\"qty_unit\": \"Bottles\",\r\n\"inclusions\": [],\r\n\"add_on\": [],\r\n\"keywords\": [\"Oil\",\"Engine\",\"Smooth\"]\r\n}"
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+var data = JSON.stringify({
+  "typeOf": "PRODUCT",
+  "image": "engineoil.png",
+  "name": "Engine Oil",
+  "description": "This is engine oil",
+  "cost": 100,
+  "stock": 5,
+  "qty_unit": "Bottles",
+  "inclusions": [],
+  "add_on": [],
+  "keywords": [
+    "Oil",
+    "Engine",
+    "Smooth"
+  ]
+});
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("POST", "http://52.77.255.121:3004/admin/service/create/");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "b6a424ce-e7ac-2dd2-bdac-af039199c97a");
+xhr.send(data);
+
+```
+```shell
+curl -X POST \
+  http://52.77.255.121:3004/admin/service/create/ \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 6ac61c32-0dfa-1b41-b379-9d626567db9a' \
+  -d '{ "typeOf":"PRODUCT",
+"image": "engineoil.png",
+"name": "Engine Oil",
+"description": "This is engine oil",
+"cost": 100,
+"stock": 5,
+"qty_unit": "Bottles",
+"inclusions": [],
+"add_on": [],
+"keywords": ["Oil","Engine","Smooth"]
+}'
+
+```
+>Below is a sample response
+
+```json
+{
+    "stock": 5,
+    "inclusions": [],
+    "add_on": [],
+    "direct_booking": false,
+    "recommended_service": false,
+    "keywords": [
+        "Oil",
+        "Engine",
+        "Smooth"
+    ],
+    "_id": "5e8584bac0277b3163e409fe",
+    "typeOf": "PRODUCT",
+    "image": "engineoil.png",
+    "name": "Engine Oil",
+    "description": "This is engine oil",
+    "cost": 100,
+    "qty_unit": "Bottles",
+    "createdAt": "2020-04-02T06:22:50.520Z",
+    "updatedAt": "2020-04-02T06:22:50.520Z",
+    "__v": 0
+}
+
+```
+
+This API is used to add a product.
+<br>
+<h3>Http request</h5>
+<p>`POST : http://52.77.255.121:3004/admin/service/create/`</p>
+
+
+##Add Service
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3004/admin/service/create/"
+payload = "{ \"typeOf\":\"SERVICE\",\r\n\"image\": \"Quicck_service.png\",\r\n\"name\": \"Quick Service\",\r\n\"description\": \"Service your car in one day with excellant quality asurance\",\r\n\"cost\": 2000,\r\n\"inclusions\": [\"5e8584bac0277b3163e409fe\"],\r\n\"add_on\": [\"5e8584bac0277b3163e409fe\"],\r\n\"keywords\": [\"quick\",\"service\",\"fast\",\"one-day\"]\r\n}"
+headers = {
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'postman-token': "b3e1d4b7-0a75-6fbb-4596-3132d801f27d"
+    }
+response = requests.request("POST", url, data=payload, headers=headers)
+print(response.text)
+
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3004/admin/service/create/")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Post.new(url)
+request["content-type"] = 'application/json'
+request["cache-control"] = 'no-cache'
+request["postman-token"] = '04c5c896-65fa-b3fc-b21c-f80fd1938f99'
+request.body = "{ \"typeOf\":\"SERVICE\",\r\n\"image\": \"Quicck_service.png\",\r\n\"name\": \"Quick Service\",\r\n\"description\": \"Service your car in one day with excellant quality asurance\",\r\n\"cost\": 2000,\r\n\"inclusions\": [\"5e8584bac0277b3163e409fe\"],\r\n\"add_on\": [\"5e8584bac0277b3163e409fe\"],\r\n\"keywords\": [\"quick\",\"service\",\"fast\",\"one-day\"]\r\n}"
+response = http.request(request)
+puts response.read_body
+
+
+```
+```javascript
+var data = JSON.stringify({
+  "typeOf": "SERVICE",
+  "image": "Quicck_service.png",
+  "name": "Quick Service",
+  "description": "Service your car in one day with excellant quality asurance",
+  "cost": 2000,
+  "inclusions": [
+    "5e8584bac0277b3163e409fe"
+  ],
+  "add_on": [
+    "5e8584bac0277b3163e409fe"
+  ],
+  "keywords": [
+    "quick",
+    "service",
+    "fast",
+    "one-day"
+  ]
+});
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("POST", "http://52.77.255.121:3004/admin/service/create/");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "b8083035-cc78-0fee-db69-ea0b59aa0eba");
+xhr.send(data);
+
+```
+```shell
+curl -X POST \
+  http://52.77.255.121:3004/admin/service/create/ \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: beedb573-3f71-e7c2-de03-2980d378d354' \
+  -d '{ "typeOf":"SERVICE",
+"image": "Quicck_service.png",
+"name": "Quick Service",
+"description": "Service your car in one day with excellant quality asurance",
+"cost": 2000,
+"inclusions": ["5e8584bac0277b3163e409fe"],
+"add_on": ["5e8584bac0277b3163e409fe"],
+"keywords": ["quick","service","fast","one-day"]
+}'
+
+```
+>Below is a sample response
+
+```json
+{
+    "stock": 0,
+    "inclusions": [
+        "5e8584bac0277b3163e409fe"
+    ],
+    "add_on": [
+        "5e8584bac0277b3163e409fe"
+    ],
+    "direct_booking": false,
+    "recommended_service": false,
+    "keywords": [
+        "quick",
+        "service",
+        "fast",
+        "one-day"
+    ],
+    "_id": "5e8586c6c0277b3163e409ff",
+    "typeOf": "SERVICE",
+    "image": "Quicck_service.png",
+    "name": "Quick Service",
+    "description": "Service your car in one day with excellant quality asurance",
+    "cost": 2000,
+    "createdAt": "2020-04-02T06:31:34.360Z",
+    "updatedAt": "2020-04-02T06:31:34.360Z",
+    "__v": 0
+}
+
+```
+
+This API is used to add a service.
+<br>
+<h3>Http request</h5>
+<p>`POST : http://52.77.255.121:3004/admin/service/create/`</p>
+
+
+##View all services and products
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3004/admin/service/all/read/"
+headers = {
+    'cache-control': "no-cache",
+    'postman-token': "48364019-a48b-5911-b234-b049fcce5d41"
+    }
+response = requests.request("POST", url, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3004/admin/service/all/read/")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Post.new(url)
+request["cache-control"] = 'no-cache'
+request["postman-token"] = '374c9182-bc1c-cefc-5a54-fc66bd8accdf'
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+var data = null;
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("POST", "http://52.77.255.121:3004/admin/service/all/read/");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "db3d0019-347e-d311-c209-94e62c894f87");
+xhr.send(data);
+
+```
+```shell
+curl -X POST \
+  http://52.77.255.121:3004/admin/service/all/read/ \
+  -H 'cache-control: no-cache' \
+  -H 'postman-token: 1c30168b-b0c3-58ef-5bcb-c4b2d645825f'
+```
+>Below is a sample response
+
+```json
+[
+    {
+        "stock": 5,
+        "inclusions": [],
+        "add_on": [],
+        "direct_booking": false,
+        "recommended_service": false,
+        "keywords": [
+            "Oil",
+            "Engine",
+            "Smooth"
+        ],
+        "_id": "5e8584bac0277b3163e409fe",
+        "typeOf": "PRODUCT",
+        "image": "engineoil.png",
+        "name": "Engine Oil",
+        "description": "This is engine oil",
+        "cost": 100,
+        "qty_unit": "Bottles",
+        "createdAt": "2020-04-02T06:22:50.520Z",
+        "updatedAt": "2020-04-02T06:22:50.520Z",
+        "__v": 0
+    },
+    {
+        "stock": 0,
+        "inclusions": [
+            "5e8584bac0277b3163e409fe"
+        ],
+        "add_on": [
+            "5e8584bac0277b3163e409fe"
+        ],
+        "direct_booking": false,
+        "recommended_service": false,
+        "keywords": [
+            "quick",
+            "service",
+            "fast",
+            "one-day"
+        ],
+        "_id": "5e8586c6c0277b3163e409ff",
+        "typeOf": "SERVICE",
+        "image": "Quicck_service.png",
+        "name": "Quick Service",
+        "description": "Service your car in one day with excellant quality asurance",
+        "cost": 2000,
+        "createdAt": "2020-04-02T06:31:34.360Z",
+        "updatedAt": "2020-04-02T06:31:34.360Z",
+        "__v": 0
+    }
+]
+
+```
+
+This API is used to viewl all services and products.
+<br>
+<h3>Http request</h5>
+<p>`POST : http://52.77.255.121:3004/admin/service/all/read/`</p>
+
+##View a single service/product
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3004/admin/service/read/5e8586c6c0277b3163e409ff"
+headers = {
+    'cache-control': "no-cache",
+    'postman-token': "53f5dcce-f89f-c206-5a23-3963f50b279c"
+    }
+response = requests.request("GET", url, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3004/admin/service/read/5e8586c6c0277b3163e409ff")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Get.new(url)
+request["cache-control"] = 'no-cache'
+request["postman-token"] = 'ae5486eb-4ab5-3ad1-4fb2-91f6299ff8bf'
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+var data = null;
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("GET", "http://52.77.255.121:3004/admin/service/read/5e8586c6c0277b3163e409ff");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "9cee61d1-fb5c-530d-18a5-ac285fc3bbb6");
+xhr.send(data);
+
+```
+```shell
+curl -X GET \
+  http://52.77.255.121:3004/admin/service/read/5e8586c6c0277b3163e409ff \
+  -H 'cache-control: no-cache' \
+  -H 'postman-token: a1d219b4-6b17-e02e-6095-acd1f213d9e7'
+```
+>Below is a sample response
+
+```json
+{
+    "stock": 0,
+    "inclusions": [
+        "5e8584bac0277b3163e409fe"
+    ],
+    "add_on": [
+        "5e8584bac0277b3163e409fe"
+    ],
+    "direct_booking": false,
+    "recommended_service": false,
+    "keywords": [
+        "quick",
+        "service",
+        "fast",
+        "one-day"
+    ],
+    "_id": "5e8586c6c0277b3163e409ff",
+    "typeOf": "SERVICE",
+    "image": "Quicck_service.png",
+    "name": "Quick Service",
+    "description": "Service your car in one day with excellant quality asurance",
+    "cost": 2000,
+    "createdAt": "2020-04-02T06:31:34.360Z",
+    "updatedAt": "2020-04-02T06:31:34.360Z",
+    "__v": 0
+} 
+
+```
+
+This API is used to view a single service/product.
+<br>
+<h3>Http request</h5>
+<p>`GET : http://52.77.255.121:3004/admin/service/read/<ServiceID>`</p>
+<aside class="notice">
+Dont forget to replace \<ServiceId> with the service id of the product/service.
+</aside>
+
+
+##Remove a single service/product
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3004/admin/service/delete/5e8584bac0277b3163e409fe"
+headers = {
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'postman-token': "28740626-c5ef-53d2-3be9-4defd43b4668"
+    }
+response = requests.request("DELETE", url, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3004/admin/service/delete/5e8584bac0277b3163e409fe")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Delete.new(url)
+request["content-type"] = 'application/json'
+request["cache-control"] = 'no-cache'
+request["postman-token"] = 'f32ea5fa-0fc4-2a9a-7f37-963d76da6096'
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+var data = null;
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("DELETE", "http://52.77.255.121:3004/admin/service/delete/5e8584bac0277b3163e409fe");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "3d243704-6048-9094-8dea-953572175151");
+xhr.send(data);
+
+```
+```shell
+curl -X DELETE \
+  http://52.77.255.121:3004/admin/service/delete/5e8584bac0277b3163e409fe \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 5d4cdcc6-1aee-1d72-a52f-9035ab7d9e58'
+
+```
+>Below is a sample response
+
+```json
+{
+    "stock": 5,
+    "inclusions": [],
+    "add_on": [],
+    "direct_booking": false,
+    "recommended_service": false,
+    "keywords": [
+        "Oil",
+        "Engine",
+        "Smooth"
+    ],
+    "_id": "5e8584bac0277b3163e409fe",
+    "typeOf": "PRODUCT",
+    "image": "engineoil.png",
+    "name": "Engine Oil",
+    "description": "This is engine oil",
+    "cost": 100,
+    "qty_unit": "Bottles",
+    "createdAt": "2020-04-02T06:22:50.520Z",
+    "updatedAt": "2020-04-02T06:22:50.520Z",
+    "__v": 0
+}
+
+```
+
+This API is used to delete a single product/service.
+<br>
+<h3>Http request</h5>
+<p>`DELETE : http://52.77.255.121:3004/admin/service/delete/<ServiceID/ProductID>`</p>
+<aside class="notice">
+Dont forget to replace \<ServiceId> with the service id of the product/service.
+</aside>
 
 # App
 ## CUSTOMER
@@ -2233,528 +2760,3 @@ You must replace \<BrandID> with the ID of the brand you want to remove.
 
 
 ##Product&Service
-This section contains documentation for all the apis that handle Product/Service information on the Greasy Monkey platform.
-##Add Product
-
->The below code sample shows you how to use this api
-
-```python
-import requests
-url = "http://52.77.255.121:3004/admin/service/create/"
-payload = "{ \"typeOf\":\"PRODUCT\",\r\n\"image\": \"engineoil.png\",\r\n\"name\": \"Engine Oil\",\r\n\"description\": \"This is engine oil\",\r\n\"cost\": 100,\r\n\"stock\": 5,\r\n\"qty_unit\": \"Bottles\",\r\n\"inclusions\": [],\r\n\"add_on\": [],\r\n\"keywords\": [\"Oil\",\"Engine\",\"Smooth\"]\r\n}"
-headers = {
-    'content-type': "application/json",
-    'cache-control': "no-cache",
-    'postman-token': "e6fb7bf0-6c78-b3c3-13a9-1de0a27e930a"
-    }
-response = requests.request("POST", url, data=payload, headers=headers)
-print(response.text)
-
-```
-```ruby
-require 'uri'
-require 'net/http'
-url = URI("http://52.77.255.121:3004/admin/service/create/")
-http = Net::HTTP.new(url.host, url.port)
-request = Net::HTTP::Post.new(url)
-request["content-type"] = 'application/json'
-request["cache-control"] = 'no-cache'
-request["postman-token"] = 'dc383eb2-136a-d29b-c7a0-b7b3cd214b6a'
-request.body = "{ \"typeOf\":\"PRODUCT\",\r\n\"image\": \"engineoil.png\",\r\n\"name\": \"Engine Oil\",\r\n\"description\": \"This is engine oil\",\r\n\"cost\": 100,\r\n\"stock\": 5,\r\n\"qty_unit\": \"Bottles\",\r\n\"inclusions\": [],\r\n\"add_on\": [],\r\n\"keywords\": [\"Oil\",\"Engine\",\"Smooth\"]\r\n}"
-response = http.request(request)
-puts response.read_body
-
-```
-```javascript
-var data = JSON.stringify({
-  "typeOf": "PRODUCT",
-  "image": "engineoil.png",
-  "name": "Engine Oil",
-  "description": "This is engine oil",
-  "cost": 100,
-  "stock": 5,
-  "qty_unit": "Bottles",
-  "inclusions": [],
-  "add_on": [],
-  "keywords": [
-    "Oil",
-    "Engine",
-    "Smooth"
-  ]
-});
-var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
-
-xhr.addEventListener("readystatechange", function () {
-  if (this.readyState === 4) {
-    console.log(this.responseText);
-  }
-});
-xhr.open("POST", "http://52.77.255.121:3004/admin/service/create/");
-xhr.setRequestHeader("content-type", "application/json");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "b6a424ce-e7ac-2dd2-bdac-af039199c97a");
-xhr.send(data);
-
-```
-```shell
-curl -X POST \
-  http://52.77.255.121:3004/admin/service/create/ \
-  -H 'cache-control: no-cache' \
-  -H 'content-type: application/json' \
-  -H 'postman-token: 6ac61c32-0dfa-1b41-b379-9d626567db9a' \
-  -d '{ "typeOf":"PRODUCT",
-"image": "engineoil.png",
-"name": "Engine Oil",
-"description": "This is engine oil",
-"cost": 100,
-"stock": 5,
-"qty_unit": "Bottles",
-"inclusions": [],
-"add_on": [],
-"keywords": ["Oil","Engine","Smooth"]
-}'
-
-```
->Below is a sample response
-
-```json
-{
-    "stock": 5,
-    "inclusions": [],
-    "add_on": [],
-    "direct_booking": false,
-    "recommended_service": false,
-    "keywords": [
-        "Oil",
-        "Engine",
-        "Smooth"
-    ],
-    "_id": "5e8584bac0277b3163e409fe",
-    "typeOf": "PRODUCT",
-    "image": "engineoil.png",
-    "name": "Engine Oil",
-    "description": "This is engine oil",
-    "cost": 100,
-    "qty_unit": "Bottles",
-    "createdAt": "2020-04-02T06:22:50.520Z",
-    "updatedAt": "2020-04-02T06:22:50.520Z",
-    "__v": 0
-}
-
-```
-
-This API is used to add a product.
-<br>
-<h3>Http request</h5>
-<p>`POST : http://52.77.255.121:3004/admin/service/create/`</p>
-
-
-##Add Service
-
->The below code sample shows you how to use this api
-
-```python
-import requests
-url = "http://52.77.255.121:3004/admin/service/create/"
-payload = "{ \"typeOf\":\"SERVICE\",\r\n\"image\": \"Quicck_service.png\",\r\n\"name\": \"Quick Service\",\r\n\"description\": \"Service your car in one day with excellant quality asurance\",\r\n\"cost\": 2000,\r\n\"inclusions\": [\"5e8584bac0277b3163e409fe\"],\r\n\"add_on\": [\"5e8584bac0277b3163e409fe\"],\r\n\"keywords\": [\"quick\",\"service\",\"fast\",\"one-day\"]\r\n}"
-headers = {
-    'content-type': "application/json",
-    'cache-control': "no-cache",
-    'postman-token': "b3e1d4b7-0a75-6fbb-4596-3132d801f27d"
-    }
-response = requests.request("POST", url, data=payload, headers=headers)
-print(response.text)
-
-
-```
-```ruby
-require 'uri'
-require 'net/http'
-url = URI("http://52.77.255.121:3004/admin/service/create/")
-http = Net::HTTP.new(url.host, url.port)
-request = Net::HTTP::Post.new(url)
-request["content-type"] = 'application/json'
-request["cache-control"] = 'no-cache'
-request["postman-token"] = '04c5c896-65fa-b3fc-b21c-f80fd1938f99'
-request.body = "{ \"typeOf\":\"SERVICE\",\r\n\"image\": \"Quicck_service.png\",\r\n\"name\": \"Quick Service\",\r\n\"description\": \"Service your car in one day with excellant quality asurance\",\r\n\"cost\": 2000,\r\n\"inclusions\": [\"5e8584bac0277b3163e409fe\"],\r\n\"add_on\": [\"5e8584bac0277b3163e409fe\"],\r\n\"keywords\": [\"quick\",\"service\",\"fast\",\"one-day\"]\r\n}"
-response = http.request(request)
-puts response.read_body
-
-
-```
-```javascript
-var data = JSON.stringify({
-  "typeOf": "SERVICE",
-  "image": "Quicck_service.png",
-  "name": "Quick Service",
-  "description": "Service your car in one day with excellant quality asurance",
-  "cost": 2000,
-  "inclusions": [
-    "5e8584bac0277b3163e409fe"
-  ],
-  "add_on": [
-    "5e8584bac0277b3163e409fe"
-  ],
-  "keywords": [
-    "quick",
-    "service",
-    "fast",
-    "one-day"
-  ]
-});
-var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
-  if (this.readyState === 4) {
-    console.log(this.responseText);
-  }
-});
-xhr.open("POST", "http://52.77.255.121:3004/admin/service/create/");
-xhr.setRequestHeader("content-type", "application/json");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "b8083035-cc78-0fee-db69-ea0b59aa0eba");
-xhr.send(data);
-
-```
-```shell
-curl -X POST \
-  http://52.77.255.121:3004/admin/service/create/ \
-  -H 'cache-control: no-cache' \
-  -H 'content-type: application/json' \
-  -H 'postman-token: beedb573-3f71-e7c2-de03-2980d378d354' \
-  -d '{ "typeOf":"SERVICE",
-"image": "Quicck_service.png",
-"name": "Quick Service",
-"description": "Service your car in one day with excellant quality asurance",
-"cost": 2000,
-"inclusions": ["5e8584bac0277b3163e409fe"],
-"add_on": ["5e8584bac0277b3163e409fe"],
-"keywords": ["quick","service","fast","one-day"]
-}'
-
-```
->Below is a sample response
-
-```json
-{
-    "stock": 0,
-    "inclusions": [
-        "5e8584bac0277b3163e409fe"
-    ],
-    "add_on": [
-        "5e8584bac0277b3163e409fe"
-    ],
-    "direct_booking": false,
-    "recommended_service": false,
-    "keywords": [
-        "quick",
-        "service",
-        "fast",
-        "one-day"
-    ],
-    "_id": "5e8586c6c0277b3163e409ff",
-    "typeOf": "SERVICE",
-    "image": "Quicck_service.png",
-    "name": "Quick Service",
-    "description": "Service your car in one day with excellant quality asurance",
-    "cost": 2000,
-    "createdAt": "2020-04-02T06:31:34.360Z",
-    "updatedAt": "2020-04-02T06:31:34.360Z",
-    "__v": 0
-}
-
-```
-
-This API is used to add a service.
-<br>
-<h3>Http request</h5>
-<p>`POST : http://52.77.255.121:3004/admin/service/create/`</p>
-
-
-##View all services and products
-
->The below code sample shows you how to use this api
-
-```python
-import requests
-url = "http://52.77.255.121:3004/admin/service/all/read/"
-headers = {
-    'cache-control': "no-cache",
-    'postman-token': "48364019-a48b-5911-b234-b049fcce5d41"
-    }
-response = requests.request("POST", url, headers=headers)
-print(response.text)
-
-```
-```ruby
-require 'uri'
-require 'net/http'
-url = URI("http://52.77.255.121:3004/admin/service/all/read/")
-http = Net::HTTP.new(url.host, url.port)
-request = Net::HTTP::Post.new(url)
-request["cache-control"] = 'no-cache'
-request["postman-token"] = '374c9182-bc1c-cefc-5a54-fc66bd8accdf'
-response = http.request(request)
-puts response.read_body
-
-```
-```javascript
-var data = null;
-var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
-  if (this.readyState === 4) {
-    console.log(this.responseText);
-  }
-});
-xhr.open("POST", "http://52.77.255.121:3004/admin/service/all/read/");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "db3d0019-347e-d311-c209-94e62c894f87");
-xhr.send(data);
-
-```
-```shell
-curl -X POST \
-  http://52.77.255.121:3004/admin/service/all/read/ \
-  -H 'cache-control: no-cache' \
-  -H 'postman-token: 1c30168b-b0c3-58ef-5bcb-c4b2d645825f'
-```
->Below is a sample response
-
-```json
-[
-    {
-        "stock": 5,
-        "inclusions": [],
-        "add_on": [],
-        "direct_booking": false,
-        "recommended_service": false,
-        "keywords": [
-            "Oil",
-            "Engine",
-            "Smooth"
-        ],
-        "_id": "5e8584bac0277b3163e409fe",
-        "typeOf": "PRODUCT",
-        "image": "engineoil.png",
-        "name": "Engine Oil",
-        "description": "This is engine oil",
-        "cost": 100,
-        "qty_unit": "Bottles",
-        "createdAt": "2020-04-02T06:22:50.520Z",
-        "updatedAt": "2020-04-02T06:22:50.520Z",
-        "__v": 0
-    },
-    {
-        "stock": 0,
-        "inclusions": [
-            "5e8584bac0277b3163e409fe"
-        ],
-        "add_on": [
-            "5e8584bac0277b3163e409fe"
-        ],
-        "direct_booking": false,
-        "recommended_service": false,
-        "keywords": [
-            "quick",
-            "service",
-            "fast",
-            "one-day"
-        ],
-        "_id": "5e8586c6c0277b3163e409ff",
-        "typeOf": "SERVICE",
-        "image": "Quicck_service.png",
-        "name": "Quick Service",
-        "description": "Service your car in one day with excellant quality asurance",
-        "cost": 2000,
-        "createdAt": "2020-04-02T06:31:34.360Z",
-        "updatedAt": "2020-04-02T06:31:34.360Z",
-        "__v": 0
-    }
-]
-
-```
-
-This API is used to viewl all services and products.
-<br>
-<h3>Http request</h5>
-<p>`POST : http://52.77.255.121:3004/admin/service/all/read/`</p>
-
-##View a single service/product
-
->The below code sample shows you how to use this api
-
-```python
-import requests
-url = "http://52.77.255.121:3004/admin/service/read/5e8586c6c0277b3163e409ff"
-headers = {
-    'cache-control': "no-cache",
-    'postman-token': "53f5dcce-f89f-c206-5a23-3963f50b279c"
-    }
-response = requests.request("GET", url, headers=headers)
-print(response.text)
-
-```
-```ruby
-require 'uri'
-require 'net/http'
-url = URI("http://52.77.255.121:3004/admin/service/read/5e8586c6c0277b3163e409ff")
-http = Net::HTTP.new(url.host, url.port)
-request = Net::HTTP::Get.new(url)
-request["cache-control"] = 'no-cache'
-request["postman-token"] = 'ae5486eb-4ab5-3ad1-4fb2-91f6299ff8bf'
-response = http.request(request)
-puts response.read_body
-
-```
-```javascript
-var data = null;
-var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
-  if (this.readyState === 4) {
-    console.log(this.responseText);
-  }
-});
-xhr.open("GET", "http://52.77.255.121:3004/admin/service/read/5e8586c6c0277b3163e409ff");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "9cee61d1-fb5c-530d-18a5-ac285fc3bbb6");
-xhr.send(data);
-
-```
-```shell
-curl -X GET \
-  http://52.77.255.121:3004/admin/service/read/5e8586c6c0277b3163e409ff \
-  -H 'cache-control: no-cache' \
-  -H 'postman-token: a1d219b4-6b17-e02e-6095-acd1f213d9e7'
-```
->Below is a sample response
-
-```json
-{
-    "stock": 0,
-    "inclusions": [
-        "5e8584bac0277b3163e409fe"
-    ],
-    "add_on": [
-        "5e8584bac0277b3163e409fe"
-    ],
-    "direct_booking": false,
-    "recommended_service": false,
-    "keywords": [
-        "quick",
-        "service",
-        "fast",
-        "one-day"
-    ],
-    "_id": "5e8586c6c0277b3163e409ff",
-    "typeOf": "SERVICE",
-    "image": "Quicck_service.png",
-    "name": "Quick Service",
-    "description": "Service your car in one day with excellant quality asurance",
-    "cost": 2000,
-    "createdAt": "2020-04-02T06:31:34.360Z",
-    "updatedAt": "2020-04-02T06:31:34.360Z",
-    "__v": 0
-} 
-
-```
-
-This API is used to view a single service/product.
-<br>
-<h3>Http request</h5>
-<p>`GET : http://52.77.255.121:3004/admin/service/read/<ServiceID>`</p>
-<aside class="notice">
-Dont forget to replace \<ServiceId> with the service id of the product/service.
-</aside>
-
-
-##Remove a single service/product
-
->The below code sample shows you how to use this api
-
-```python
-import requests
-url = "http://52.77.255.121:3004/admin/service/delete/5e8584bac0277b3163e409fe"
-headers = {
-    'content-type': "application/json",
-    'cache-control': "no-cache",
-    'postman-token': "28740626-c5ef-53d2-3be9-4defd43b4668"
-    }
-response = requests.request("DELETE", url, headers=headers)
-print(response.text)
-
-```
-```ruby
-require 'uri'
-require 'net/http'
-url = URI("http://52.77.255.121:3004/admin/service/delete/5e8584bac0277b3163e409fe")
-http = Net::HTTP.new(url.host, url.port)
-request = Net::HTTP::Delete.new(url)
-request["content-type"] = 'application/json'
-request["cache-control"] = 'no-cache'
-request["postman-token"] = 'f32ea5fa-0fc4-2a9a-7f37-963d76da6096'
-response = http.request(request)
-puts response.read_body
-
-```
-```javascript
-var data = null;
-var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
-  if (this.readyState === 4) {
-    console.log(this.responseText);
-  }
-});
-xhr.open("DELETE", "http://52.77.255.121:3004/admin/service/delete/5e8584bac0277b3163e409fe");
-xhr.setRequestHeader("content-type", "application/json");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "3d243704-6048-9094-8dea-953572175151");
-xhr.send(data);
-
-```
-```shell
-curl -X DELETE \
-  http://52.77.255.121:3004/admin/service/delete/5e8584bac0277b3163e409fe \
-  -H 'cache-control: no-cache' \
-  -H 'content-type: application/json' \
-  -H 'postman-token: 5d4cdcc6-1aee-1d72-a52f-9035ab7d9e58'
-
-```
->Below is a sample response
-
-```json
-{
-    "stock": 5,
-    "inclusions": [],
-    "add_on": [],
-    "direct_booking": false,
-    "recommended_service": false,
-    "keywords": [
-        "Oil",
-        "Engine",
-        "Smooth"
-    ],
-    "_id": "5e8584bac0277b3163e409fe",
-    "typeOf": "PRODUCT",
-    "image": "engineoil.png",
-    "name": "Engine Oil",
-    "description": "This is engine oil",
-    "cost": 100,
-    "qty_unit": "Bottles",
-    "createdAt": "2020-04-02T06:22:50.520Z",
-    "updatedAt": "2020-04-02T06:22:50.520Z",
-    "__v": 0
-}
-
-```
-
-This API is used to delete a single product/service.
-<br>
-<h3>Http request</h5>
-<p>`DELETE : http://52.77.255.121:3004/admin/service/delete/<ServiceID/ProductID>`</p>
-<aside class="notice">
-Dont forget to replace \<ServiceId> with the service id of the product/service.
-</aside>
