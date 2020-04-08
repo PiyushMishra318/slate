@@ -2227,6 +2227,9 @@ curl -X POST \
 The customers can request a service from the below page.
 <%= image_tag "images/images/service-request/add.png" %>
 
+Once the customer chooses a service they are given an option to choose addons they would like
+<%= image_tag "images/images/service-request/add_addon.png" %>
+
 ##View all service requests
 
 >The below code sample shows you how to use this api
@@ -2341,10 +2344,38 @@ curl -X POST \
 
 ```
 
-This API is used to view all service requests made by a user.
+Viewing all service requests will help you efficiently manage your staffing and planning.
 <br>
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3003/customer/service_request/all/get`</p>
+
+
+<h3>Request headers</h3>
+<table>
+<tr><th>Key</th><th>Value</th>
+<tr><td>Content-Type</td><td>application/json</td></tr>
+<tr><td>Access-Control-Allow-Credentials</td><td>true</td></tr>
+</table>
+<h3>Response Types</h3>
+<table>
+<tr><th>Status Code</th><th>Description</th></tr>
+<tr><td>200</td><td>Everything went well</td></tr>
+<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
+<tr><td>500</td><td>Internal Server Error</td></tr>
+</table>
+
+###Customer View
+The customers can view all their service requests from the page below.
+<%= image_tag "images/images/service-request/view_all_cust.png" %>
+
+###Admin View
+The admin can view all service requests from the page below.Once the admin views a new service request they are provided with an option to accept and assign a mechanic or reject a service request.
+<%= image_tag "images/images/service-request/view_all_admin.png" %>
+
+###Staff View
+Once the admin assigns a service to a mechanic a job card is created under that mechanic and the details are displayed in the job card so the mechanic can navigate to the customers location and perform the service.
+<%= image_tag "images/images/service-request/view_all_staff.png" %>
 
 ##View specific service request
 
