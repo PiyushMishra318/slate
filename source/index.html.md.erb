@@ -22,16 +22,16 @@ We have language bindings in Shell, Ruby, Python, and JavaScript for our APIS. Y
 
 ## What is Greasy Monkey?
 
-Greasy Monkey is a cluster of cross platform  apps available for android,ios,desktop,mobile platforms,it helps customers to keep their automobiles serviced and in good condition along with giving automobile garage owners a smart an efficient tool to manage their day to day activities. 
+Greasy Monkey is a cluster of cross platform  apps available for android, ios, desktop, mobile platforms,  it helps customers to keep their automobiles serviced and in good condition along with giving automobile garage owners a smart an efficient tool to manage their day to day activities. 
 
 ##User types and roles
 This platform is intended for the following types of users
 ###Customers
 They are the customers who purchase services and products for their vehicles,rate the service/product from the greasy monkey platform.
 ###Admin/Staff
-They are the administrative staff  working at garages who perform various roles of adding products/services,accepting/rejecting service/product request,assigning jobs to mechanics.
+They are the administrative staff  working at garages who perform various roles of adding products/services,accepting/rejecting service/product request, assigning jobs to mechanics.
 ###Ground staff/mechanic
-They are the ground staff mechanics,drivers working at garages who interact with customers directly.
+They are the ground staff mechanics, drivers working at garages who interact with customers directly.
 
 #Tech Stack
 ## Programming Languages & Frameworks:
@@ -54,37 +54,37 @@ They are the ground staff mechanics,drivers working at garages who interact with
 <p>Node.js is an open-source and cross-platform JavaScript runtime environment. It is used for developing server side scripts and has an advantage that any front end web developer with javascript expertise can learn to use this as they dont need to learn a new language.</p>
 </li>
 <li><h3>Express JS</h3>
-<p>Express JS is a modern Node.js framework(a program/tool that structures the server side code into many small applications).It provides one of the most simple yet powerful ways to create a web server. Its minimalist approach, unopinionated, focused on the core features of a server, is key to its success.
+<p>Express JS is a modern Node.js framework(a program/tool that structures the server side code into many small applications).It provides one of the most simple yet powerful ways to create a web server. Its minimalist approach,  unopinionated, focused on the core features of a server, is key to its success.
 </li>
 </ul>
 ##Applications
 The backend of this platform is structured into many small applications. There are 6 main applications:
 <ul>
-<li><h3>auth</h3><p>
+<li><h3>Auth</h3><p>
 Authorization is the most basics feature any application is expected to have in todays day and age.This application helps us achieve the same.Making sure the authenticity of our users gives us assurance about how safe the data or request is.
 </p></li>
-<li><h3>communication</h3><p>
+<li><h3>Communication</h3><p>
 Customer service determines customer retention.This app helps all users to communicate with appropriate access levels to other users data.
 </p></li>
-<li><h3>payment</h3><p>
+<li><h3>Payment</h3><p>
 Making payment process hassle free for customers makes a huge impact on the user experience.This app takes care of secure payment processing along with financial handling. 
 </p></li>
-<li><h3>referral</h3><p>
-Ever application in todays day and age has a refer and earn feature,which encourages people to refer your services.This app is used to handle all referal functions and data.
+<li><h3>Affiliate</h3><p>
+Ever application in todays day and age has a refer and earn feature, which encourages people to refer your services.This app is used to handle all referal functions and data.
 </p></li>
-<li><h3>admin</h3><p>This app is used for administrative tasks such as adding garages,adding products etc..</p></h3>
-<li><h3>customer</h3><p>This app is used for all customer actions like adding car,requesting services</p></li> 
+<li><h3>admin</h3><p>This app is used for administrative tasks such as adding garages, adding products etc..</p></h3>
+<li><h3>customer</h3><p>This app is used for all customer actions like adding car, requesting services</p></li> 
 </ul>
 ##Cloud Architecture
 
-<p>The platform is structured to be scalable, it can be hosted on cloud platforms aws,azure and google cloud platform</p>
+<p>The platform is structured to be scalable,  it can be hosted on cloud platforms aws, azure and google cloud platform</p>
 
 ###AWS 
 
 <p>AWS short for amazon web services is a child company of amazon and focusses on giving users the best experience and minimal down time of services. They have various scalable solutions to deploy Node.js applications.This platform will be hosted on aws Lightsail with an in house database server using mongodb on the server itself. </p>
 
 <h3>AWS Lightsail</h3>
-<p>Amazon Lightsail is the easiest way to get started with AWS for developers who just need virtual private servers. Lightsail includes everything you need to launch your project quickly – a virtual machine, SSD-based storage, data transfer, DNS management, and a static IP – for a low, predictable price.</p>
+<p>Amazon Lightsail is the easiest way to get started with AWS for developers who just need virtual private servers. Lightsail includes everything you need to launch your project quickly – a virtual machine,  SSD-based storage,  data transfer,  DNS management,  and a static IP – for a low,  predictable price.</p>
 <br>
 
 # Authorization 
@@ -96,25 +96,25 @@ Ever application in todays day and age has a refer and earn feature,which encour
 ```python
 import requests
 url = "http://52.77.255.121:3004/admin/user/create"
-payload = "{\"email\":{\"address\":\"emailid@provider.com\"},\n\"username\":\"user1\",\n\"password\":\"password\",\n\"mobile\":\"1234567890\",\n\"user_type\":\"customer\"\n}"
+payload = "{\"email\":{\"address\":\"emailid@provider.com\"}, \n\"username\":\"user1\", \n\"password\":\"password\", \n\"mobile\":\"1234567890\", \n\"user_type\":\"customer\"\n}"
 headers = {
-    'content-type': "application/json",
-    'cache-control': "no-cache",
+    'content-type': "application/json", 
+    'cache-control': "no-cache", 
     'postman-token': "80ce7eee-2b64-89da-08b4-565124529e8c"
     }
-response = requests.request("POST", url, data=payload, headers=headers)
+response = requests.request("POST",  url,  data=payload,  headers=headers)
 print(response.text)
 ```
 ```ruby
 require 'uri'
 require 'net/http'
 url = URI("http://52.77.255.121:3004/admin/user/create")
-http = Net::HTTP.new(url.host, url.port)
+http = Net::HTTP.new(url.host,  url.port)
 request = Net::HTTP::Post.new(url)
 request["content-type"] = 'application/json'
 request["cache-control"] = 'no-cache'
 request["postman-token"] = '2cc44f82-125c-d094-d2a5-9099e88eff6f'
-request.body = "{\"email\":{\"address\":\"emailid@provider.com\"},\n\"username\":\"user1\",\n\"password\":\"password\",\n\"mobile\":\"1234567890\",\n\"user_type\":\"customer\"\n}"
+request.body = "{\"email\":{\"address\":\"emailid@provider.com\"}, \n\"username\":\"user1\", \n\"password\":\"password\", \n\"mobile\":\"1234567890\", \n\"user_type\":\"customer\"\n}"
 response = http.request(request)
 puts response.read_body
 ```
@@ -122,23 +122,23 @@ puts response.read_body
 var data = JSON.stringify({
   "email": {
     "address": "emailid@provider.com"
-  },
-  "username": "user1",
-  "password": "password",
-  "mobile": "1234567890",
+  }, 
+  "username": "user1", 
+  "password": "password", 
+  "mobile": "1234567890", 
   "user_type": "customer"
 });
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
+xhr.addEventListener("readystatechange",  function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
-xhr.open("POST", "http://52.77.255.121:3004/admin/user/create");
-xhr.setRequestHeader("content-type", "application/json");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "4ff2a68d-d0dc-742b-f7e2-f85a64e0c141");
+xhr.open("POST",  "http://52.77.255.121:3004/admin/user/create");
+xhr.setRequestHeader("content-type",  "application/json");
+xhr.setRequestHeader("cache-control",  "no-cache");
+xhr.setRequestHeader("postman-token",  "4ff2a68d-d0dc-742b-f7e2-f85a64e0c141");
 xhr.send(data);
 ```
 ```shell
@@ -147,7 +147,7 @@ curl --request POST \
   --header 'cache-control: no-cache' \
   --header 'content-type: application/json' \
   --header 'postman-token: 8719af9e-af6d-68f7-2b2f-83a3b23ebf41' \
-  --data '{"email":{"address":"emailid@provider.com"},\n"username":"user1",\n"password":"password",\n"mobile":"1234567890",\n"user_type":"customer"\n}'
+  --data '{"email":{"address":"emailid@provider.com"}, \n"username":"user1", \n"password":"password", \n"mobile":"1234567890", \n"user_type":"customer"\n}'
 
 ```
 
@@ -155,26 +155,26 @@ curl --request POST \
 
 ```json
 {
-    "auth": true,
+    "auth": true, 
     "user": {
         "email": {
             "verficationStatus": {
                 "isVerified": false
-            },
+            }, 
             "address": " emailid@provider.com "
-        },
-        "username": "user_name",
-        "mobile": 1234567890,
-        "user_type": "customer",
+        }, 
+        "username": "user_name", 
+        "mobile": 1234567890, 
+        "user_type": "customer", 
         "personal_details": {
-            "_id": "5e84a786bfd0c32be46fa2b1",
-            "mobile_nos": [],
+            "_id": "5e84a786bfd0c32be46fa2b1", 
+            "mobile_nos": [], 
             "emails": []
-        },
-        "_id": "5e84a78618ad3431e0f0fe98",
-        "createdAt": "2020-04-01T14:39:02.196Z",
-        "updatedAt": "2020-04-01T14:39:02.196Z",
-        "__v": 0,
+        }, 
+        "_id": "5e84a78618ad3431e0f0fe98", 
+        "createdAt": "2020-04-01T14:39:02.196Z", 
+        "updatedAt": "2020-04-01T14:39:02.196Z", 
+        "__v": 0, 
         "bank_accounts": []
     }
 }
@@ -191,7 +191,7 @@ curl --request POST \
 </p>
 
 <h3>About the API</h3>
-<p>A signup is the first and foremost thing needed for any modern day application,this section will guide you through using the signup API to seamlessly integrate your frontend and backend.</p>
+<p>A signup is the first and foremost thing needed for any modern day application, this section will guide you through using the signup API to seamlessly integrate your frontend and backend.</p>
 <br>
 <p>`App:Admin`</p>
 <br>
@@ -221,7 +221,7 @@ curl --request POST \
 <table>
 <tr><th>Status Code</th><th>Description</th></tr>
 <tr><td>200</td><td>Everything went well</td></tr>
-<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal server error!!</td></td>
 </table>
@@ -252,13 +252,13 @@ The staff can be onboarded by admin using the onboarding page shown below:
 ```python
 import requests
 url = "http://52.77.255.121:3001/auth/login/coot/start"
-payload = "{\"type\":\"email\",\n\"email\":\"emailid@provider.com\",\n\"password\":\"password\"\n}"
+payload = "{\"type\":\"email\", \n\"email\":\"emailid@provider.com\", \n\"password\":\"password\"\n}"
 headers = {
-    'content-type': "application/json",
-    'cache-control': "no-cache",
+    'content-type': "application/json", 
+    'cache-control': "no-cache", 
     'postman-token': "6e51f45f-48f5-12f2-fe02-80553f827d17"
     }
-response = requests.request("POST", url, data=payload, headers=headers)
+response = requests.request("POST",  url,  data=payload,  headers=headers)
 print(response.text)
 
 ```
@@ -266,7 +266,7 @@ print(response.text)
 require 'uri'
 require 'net/http'
 url = URI("http://52.77.255.121:3001/auth/login/coot/start")
-http = Net::HTTP.new(url.host, url.port)
+http = Net::HTTP.new(url.host,  url.port)
 request = Net::HTTP::Post.new(url)
 request["content-type"] = 'application/json'
 request["cache-control"] = 'no-cache'
@@ -274,21 +274,21 @@ request["postman-token"] = '6a3f4c68-c19e-5edd-b8bd-220879b93129'
 ```
 ```javascript
 var data = JSON.stringify({
-  "type": "email",
-  "email": "emailid@provider.com",
+  "type": "email", 
+  "email": "emailid@provider.com", 
   "password": "password"
 });
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
+xhr.addEventListener("readystatechange",  function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
-xhr.open("POST", "http://52.77.255.121:3001/auth/login/coot/start");
-xhr.setRequestHeader("content-type", "application/json");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "4a3f2924-3750-c443-bc6c-86f925a9230a");
+xhr.open("POST",  "http://52.77.255.121:3001/auth/login/coot/start");
+xhr.setRequestHeader("content-type",  "application/json");
+xhr.setRequestHeader("cache-control",  "no-cache");
+xhr.setRequestHeader("postman-token",  "4a3f2924-3750-c443-bc6c-86f925a9230a");
 xhr.send(data);
 
 ```
@@ -298,8 +298,8 @@ curl -X POST \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
   -H 'postman-token: 69defc5f-2335-1129-b04d-fbd5a69eee9a' \
-  -d '{"type":"email",
-"email":"emailid@provider.com",
+  -d '{"type":"email", 
+"email":"emailid@provider.com", 
 "password":"password"
 }'
 
@@ -336,7 +336,7 @@ curl -X POST \
 <h3>Data parameters</h3>
 <table>
 <tr><th>Parameter</th><th>Description</th><th>Type</th></tr>
-<tr><td>Type</td><td>This parameter is to forward the type of authentication the user being logged is trying to use ,it can take values like
+<tr><td>Type</td><td>This parameter is to forward the type of authentication the user being logged is trying to use , it can take values like
 <ul>
 <li>email</li>
 <li>username</li>
@@ -349,7 +349,7 @@ curl -X POST \
 <table>
 <tr><th>Status Code</th><th>Description</th></tr>
 <tr><td>200</td><td>Everything went well</td></tr>
-<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
@@ -372,11 +372,11 @@ import requests
 url = "http://52.77.255.121:3004/admin/user/verify"
 payload = "{\"user_type\":\"customer\"}"
 headers = {
-    'content-type': "application/json",
-    'cache-control': "no-cache",
+    'content-type': "application/json", 
+    'cache-control': "no-cache", 
     'postman-token': "e4a0d895-1906-d302-6464-ef3b084291fd"
     }
-response = requests.request("POST", url, data=payload, headers=headers)
+response = requests.request("POST",  url,  data=payload,  headers=headers)
 print(response.text)
 
 
@@ -385,7 +385,7 @@ print(response.text)
 require 'uri'
 require 'net/http'
 url = URI("http://52.77.255.121:3004/admin/user/verify")
-http = Net::HTTP.new(url.host, url.port)
+http = Net::HTTP.new(url.host,  url.port)
 request = Net::HTTP::Post.new(url)
 request["content-type"] = 'application/json'
 request["cache-control"] = 'no-cache'
@@ -401,15 +401,15 @@ var data = JSON.stringify({
 });
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
+xhr.addEventListener("readystatechange",  function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
-xhr.open("POST", "http://52.77.255.121:3004/admin/user/verify");
-xhr.setRequestHeader("content-type", "application/json");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "cc887de5-2f8f-880b-6b07-b902792dd7e9");
+xhr.open("POST",  "http://52.77.255.121:3004/admin/user/verify");
+xhr.setRequestHeader("content-type",  "application/json");
+xhr.setRequestHeader("cache-control",  "no-cache");
+xhr.setRequestHeader("postman-token",  "cc887de5-2f8f-880b-6b07-b902792dd7e9");
 xhr.send(data);
 
 
@@ -429,40 +429,40 @@ curl -X POST \
 
 ```json
 {
-    "auth": true,
+    "auth": true, 
     "user": {
-        "user_type": "customer",
+        "user_type": "customer", 
         "email": {
             "verficationStatus": {
                 "isVerified": false
-            },
+            }, 
             "address": "emailid@provider.com"
-        },
+        }, 
         "personal_details": {
-            "_id": "5e84aee8c0277b3163e409fb",
-            "mobile_nos": [],
+            "_id": "5e84aee8c0277b3163e409fb", 
+            "mobile_nos": [], 
             "emails": [
                 {
                     "verficationStatus": {
                         "isVerified": false
-                    },
-                    "_id": "5e84aee31fc621316c541ac2",
+                    }, 
+                    "_id": "5e84aee31fc621316c541ac2", 
                     "address": "emailid@provider.com"
                 }
             ]
-        },
-        "_id": "5e84aee31fc621316c541ac1",
-        "username": "emailid@provider.com",
-        "createdAt": "2020-04-01T15:10:27.404Z",
-        "updatedAt": "2020-04-01T15:10:27.404Z",
-        "__v": 0,
+        }, 
+        "_id": "5e84aee31fc621316c541ac1", 
+        "username": "emailid@provider.com", 
+        "createdAt": "2020-04-01T15:10:27.404Z", 
+        "updatedAt": "2020-04-01T15:10:27.404Z", 
+        "__v": 0, 
         "bank_accounts": []
     }
 }
 
 ```
 <h3>About the API</h3>
-<p>Once logged in the next step would be to verify your users authenticity,this section helps you to achieve the same objective.</p>
+<p>Once logged in the next step would be to verify your users authenticity, this section helps you to achieve the same objective.</p>
 <br>
 <p>`App:Admin`</p>
 <br>
@@ -491,7 +491,7 @@ Note:It is important to verify users immediately after login to continue using a
 <table>
 <tr><th>Status Code</th><th>Description</th></tr>
 <tr><td>200</td><td>Everything went well</td></tr>
-<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
@@ -503,10 +503,10 @@ Note:It is important to verify users immediately after login to continue using a
 import requests
 url = "http://52.77.255.121:3001/auth/logout"
 headers = {
-    'cache-control': "no-cache",
+    'cache-control': "no-cache", 
     'postman-token': "9727c1ab-d038-d2e9-aed8-75f9c2a72a5e"
     }
-response = requests.request("GET", url, headers=headers)
+response = requests.request("GET",  url,  headers=headers)
 print(response.text)
 
 ```
@@ -514,7 +514,7 @@ print(response.text)
 require 'uri'
 require 'net/http'
 url = URI("http://52.77.255.121:3001/auth/logout")
-http = Net::HTTP.new(url.host, url.port)
+http = Net::HTTP.new(url.host,  url.port)
 request = Net::HTTP::Get.new(url)
 request["cache-control"] = 'no-cache'
 request["postman-token"] = '6f402703-bbd6-d373-8a49-0801960eefed'
@@ -526,14 +526,14 @@ puts response.read_body
 var data = null;
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
+xhr.addEventListener("readystatechange",  function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
-xhr.open("GET", "http://52.77.255.121:3001/auth/logout");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "f02b6550-cfc3-0e3c-231d-666baba407eb");
+xhr.open("GET",  "http://52.77.255.121:3001/auth/logout");
+xhr.setRequestHeader("cache-control",  "no-cache");
+xhr.setRequestHeader("postman-token",  "f02b6550-cfc3-0e3c-231d-666baba407eb");
 xhr.send(data);
 
 
@@ -566,14 +566,14 @@ curl -X GET \
 <table>
 <tr><th>Status Code</th><th>Description</th></tr>
 <tr><td>200</td><td>Everything went well</td></tr>
-<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
 
 # Brand
 This section contains documentation for all the apis that handle brand data on the Greasy Monkey platform.
-<aside class="notice">Note:A brand here is a company which produces automobile vehicles,spareparts,maintainance products etc.
+<aside class="notice">Note:A brand here is a company which produces automobile vehicles, spareparts, maintainance products etc.
 </aside>
 ##Add Brand
 
@@ -582,13 +582,13 @@ This section contains documentation for all the apis that handle brand data on t
 ```python
 import requests
 url = "http://52.77.255.121:3004/admin/brand/create/"
-payload = "{\r\n    \"brand_name\": \"Maruti Suzuki\",\r\n    \"models\": [\r\n        {\r\n            \"name\": \"Swift\",\r\n            \"variants\": [\r\n                \"lxi\",\r\n                \"ldi\",\r\n                \"vxi\"\r\n            ],\r\n            \"years\": [\r\n                2018,\r\n                2019,\r\n                2020\r\n            ]\r\n        }\r\n    ]\r\n}"
+payload = "{\r\n    \"brand_name\": \"Maruti Suzuki\", \r\n    \"models\": [\r\n        {\r\n            \"name\": \"Swift\", \r\n            \"variants\": [\r\n                \"lxi\", \r\n                \"ldi\", \r\n                \"vxi\"\r\n            ], \r\n            \"years\": [\r\n                2018, \r\n                2019, \r\n                2020\r\n            ]\r\n        }\r\n    ]\r\n}"
 headers = {
-    'content-type': "application/json",
-    'cache-control': "no-cache",
+    'content-type': "application/json", 
+    'cache-control': "no-cache", 
     'postman-token': "8d0c84e3-7278-d6b6-e9be-70ffb2044246"
     }
-response = requests.request("POST", url, data=payload, headers=headers)
+response = requests.request("POST",  url,  data=payload,  headers=headers)
 print(response.text)
 
 ```
@@ -596,12 +596,12 @@ print(response.text)
 require 'uri'
 require 'net/http'
 url = URI("http://52.77.255.121:3004/admin/brand/create/")
-http = Net::HTTP.new(url.host, url.port)
+http = Net::HTTP.new(url.host,  url.port)
 request = Net::HTTP::Post.new(url)
 request["content-type"] = 'application/json'
 request["cache-control"] = 'no-cache'
 request["postman-token"] = '014eaebc-d6d0-19b4-0a16-277c4eedff51'
-request.body = "{\r\n    \"brand_name\": \"Maruti Suzuki\",\r\n    \"models\": [\r\n        {\r\n            \"name\": \"Swift\",\r\n            \"variants\": [\r\n                \"lxi\",\r\n                \"ldi\",\r\n                \"vxi\"\r\n            ],\r\n            \"years\": [\r\n                2018,\r\n                2019,\r\n                2020\r\n            ]\r\n        }\r\n    ]\r\n}"
+request.body = "{\r\n    \"brand_name\": \"Maruti Suzuki\", \r\n    \"models\": [\r\n        {\r\n            \"name\": \"Swift\", \r\n            \"variants\": [\r\n                \"lxi\", \r\n                \"ldi\", \r\n                \"vxi\"\r\n            ], \r\n            \"years\": [\r\n                2018, \r\n                2019, \r\n                2020\r\n            ]\r\n        }\r\n    ]\r\n}"
 response = http.request(request)
 puts response.read_body
 
@@ -609,18 +609,18 @@ puts response.read_body
 ```
 ```javascript
 var data = JSON.stringify({
-  "brand_name": "Maruti Suzuki",
+  "brand_name": "Maruti Suzuki", 
   "models": [
     {
-      "name": "Swift",
+      "name": "Swift", 
       "variants": [
-        "lxi",
-        "ldi",
+        "lxi", 
+        "ldi", 
         "vxi"
-      ],
+      ], 
       "years": [
-        2018,
-        2019,
+        2018, 
+        2019, 
         2020
       ]
     }
@@ -628,15 +628,15 @@ var data = JSON.stringify({
 });
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
+xhr.addEventListener("readystatechange",  function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
-xhr.open("POST", "http://52.77.255.121:3004/admin/brand/create/");
-xhr.setRequestHeader("content-type", "application/json");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "9ab8982d-a5b0-b5fc-35c6-6b60c40cc790");
+xhr.open("POST",  "http://52.77.255.121:3004/admin/brand/create/");
+xhr.setRequestHeader("content-type",  "application/json");
+xhr.setRequestHeader("cache-control",  "no-cache");
+xhr.setRequestHeader("postman-token",  "9ab8982d-a5b0-b5fc-35c6-6b60c40cc790");
 xhr.send(data);
 
 ```
@@ -647,18 +647,18 @@ curl -X POST \
   -H 'content-type: application/json' \
   -H 'postman-token: e9289e75-2674-3b82-5f0e-52a976de974d' \
   -d '{
-    "brand_name": "Maruti Suzuki",
+    "brand_name": "Maruti Suzuki", 
     "models": [
         {
-            "name": "Swift",
+            "name": "Swift", 
             "variants": [
-                "lxi",
-                "ldi",
+                "lxi", 
+                "ldi", 
                 "vxi"
-            ],
+            ], 
             "years": [
-                2018,
-                2019,
+                2018, 
+                2019, 
                 2020
             ]
         }
@@ -670,26 +670,26 @@ curl -X POST \
 
 ```json
 {
-    "_id": "5e858b46c0277b3163e40a00",
-    "brand_name": "Maruti Suzuki",
+    "_id": "5e858b46c0277b3163e40a00", 
+    "brand_name": "Maruti Suzuki", 
     "models": [
         {
             "variants": [
-                "lxi",
-                "ldi",
+                "lxi", 
+                "ldi", 
                 "vxi"
-            ],
+            ], 
             "years": [
-                "2018",
-                "2019",
+                "2018", 
+                "2019", 
                 "2020"
-            ],
-            "_id": "5e858b46c0277b3163e40a01",
+            ], 
+            "_id": "5e858b46c0277b3163e40a01", 
             "name": "Swift"
         }
-    ],
-    "createdAt": "2020-04-02T06:50:46.547Z",
-    "updatedAt": "2020-04-02T06:50:46.547Z",
+    ], 
+    "createdAt": "2020-04-02T06:50:46.547Z", 
+    "updatedAt": "2020-04-02T06:50:46.547Z", 
     "__v": 0
 }
 ```
@@ -710,13 +710,13 @@ curl -X POST \
 <table>
 <tr><th>Parameter</th><th>Description</th><th>Type</th></tr>
 <tr><td>brand_name</td><td>This parameter is used to forward the name of the brand you are adding.</td><td>required</td></tr>
-<tr><td>models</td><td>This parameter is a list of  objects with name ,year and variant list.</td><td>required</td></tr>
+<tr><td>models</td><td>This parameter is a list of  objects with name , year and variant list.</td><td>required</td></tr>
 </table>
 <h3>Response Types</h3>
 <table>
 <tr><th>Status Code</th><th>Description</th></tr>
 <tr><td>200</td><td>Everything went well</td></tr>
-<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
@@ -732,10 +732,10 @@ The brands added here can be viewed by customers in add car section.
 import requests
 url = "http://52.77.255.121:3004/admin/brand/all/read"
 headers = {
-    'cache-control': "no-cache",
+    'cache-control': "no-cache", 
     'postman-token': "41c0358d-b867-a096-4fab-46cfa27bf95c"
     }
-response = requests.request("POST", url, headers=headers)
+response = requests.request("POST",  url,  headers=headers)
 print(response.text)
 
 ```
@@ -743,7 +743,7 @@ print(response.text)
 require 'uri'
 require 'net/http'
 url = URI("http://52.77.255.121:3004/admin/brand/all/read")
-http = Net::HTTP.new(url.host, url.port)
+http = Net::HTTP.new(url.host,  url.port)
 request = Net::HTTP::Post.new(url)
 request["cache-control"] = 'no-cache'
 request["postman-token"] = 'b9279938-8cc5-e9dc-6786-7693b09d4c28'
@@ -755,14 +755,14 @@ puts response.read_body
 var data = null;
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
+xhr.addEventListener("readystatechange",  function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
-xhr.open("POST", "http://52.77.255.121:3004/admin/brand/all/read");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "133dc108-5ea1-d417-e61a-05de0443c3de");
+xhr.open("POST",  "http://52.77.255.121:3004/admin/brand/all/read");
+xhr.setRequestHeader("cache-control",  "no-cache");
+xhr.setRequestHeader("postman-token",  "133dc108-5ea1-d417-e61a-05de0443c3de");
 xhr.send(data);
 
 ```
@@ -778,26 +778,26 @@ curl -X POST \
 ```json
 [
     {
-        "_id": "5e858b46c0277b3163e40a00",
-        "brand_name": "Maruti Suzuki",
+        "_id": "5e858b46c0277b3163e40a00", 
+        "brand_name": "Maruti Suzuki", 
         "models": [
             {
                 "variants": [
-                    "lxi",
-                    "ldi",
+                    "lxi", 
+                    "ldi", 
                     "vxi"
-                ],
+                ], 
                 "years": [
-                    "2018",
-                    "2019",
+                    "2018", 
+                    "2019", 
                     "2020"
-                ],
-                "_id": "5e858b46c0277b3163e40a01",
+                ], 
+                "_id": "5e858b46c0277b3163e40a01", 
                 "name": "Swift"
             }
-        ],
-        "createdAt": "2020-04-02T06:50:46.547Z",
-        "updatedAt": "2020-04-02T06:50:46.547Z",
+        ], 
+        "createdAt": "2020-04-02T06:50:46.547Z", 
+        "updatedAt": "2020-04-02T06:50:46.547Z", 
         "__v": 0
     }
 ]
@@ -821,7 +821,7 @@ curl -X POST \
 <table>
 <tr><th>Status Code</th><th>Description</th></tr>
 <tr><td>200</td><td>Everything went well</td></tr>
-<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
@@ -834,10 +834,10 @@ curl -X POST \
 import requests
 url = "http://52.77.255.121:3004/admin/brand/read/5e858b46c0277b3163e40a00"
 headers = {
-    'cache-control': "no-cache",
+    'cache-control': "no-cache", 
     'postman-token': "10d30b31-ec06-ea76-f890-11c37d27a981"
     }
-response = requests.request("GET", url, headers=headers)
+response = requests.request("GET",  url,  headers=headers)
 print(response.text)
 
 ```
@@ -845,7 +845,7 @@ print(response.text)
 require 'uri'
 require 'net/http'
 url = URI("http://52.77.255.121:3004/admin/brand/read/5e858b46c0277b3163e40a00")
-http = Net::HTTP.new(url.host, url.port)
+http = Net::HTTP.new(url.host,  url.port)
 request = Net::HTTP::Get.new(url)
 request["cache-control"] = 'no-cache'
 request["postman-token"] = '0dcb7c54-a6c9-8fd7-9975-04bd71908382'
@@ -857,14 +857,14 @@ puts response.read_body
 var data = null;
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
+xhr.addEventListener("readystatechange",  function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
-xhr.open("GET", "http://52.77.255.121:3004/admin/brand/read/5e858b46c0277b3163e40a00");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "4beede58-bab1-c77a-2f58-81530da67c28");
+xhr.open("GET",  "http://52.77.255.121:3004/admin/brand/read/5e858b46c0277b3163e40a00");
+xhr.setRequestHeader("cache-control",  "no-cache");
+xhr.setRequestHeader("postman-token",  "4beede58-bab1-c77a-2f58-81530da67c28");
 xhr.send(data);
 
 ```
@@ -879,26 +879,26 @@ curl -X GET \
 
 ```json
 {
-    "_id": "5e858b46c0277b3163e40a00",
-    "brand_name": "Maruti Suzuki",
+    "_id": "5e858b46c0277b3163e40a00", 
+    "brand_name": "Maruti Suzuki", 
     "models": [
         {
             "variants": [
-                "lxi",
-                "ldi",
+                "lxi", 
+                "ldi", 
                 "vxi"
-            ],
+            ], 
             "years": [
-                "2018",
-                "2019",
+                "2018", 
+                "2019", 
                 "2020"
-            ],
-            "_id": "5e858b46c0277b3163e40a01",
+            ], 
+            "_id": "5e858b46c0277b3163e40a01", 
             "name": "Swift"
         }
-    ],
-    "createdAt": "2020-04-02T06:50:46.547Z",
-    "updatedAt": "2020-04-02T06:50:46.547Z",
+    ], 
+    "createdAt": "2020-04-02T06:50:46.547Z", 
+    "updatedAt": "2020-04-02T06:50:46.547Z", 
     "__v": 0
 }
 
@@ -927,7 +927,7 @@ curl -X GET \
 <table>
 <tr><th>Status Code</th><th>Description</th></tr>
 <tr><td>200</td><td>Everything went well</td></tr>
-<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
@@ -939,13 +939,13 @@ curl -X GET \
 ```python
 import requests
 url = "http://52.77.255.121:3004/admin/update/brand/5e858b46c0277b3163e40a00"
-payload = "{\r\n    \"brand_name\": \"Maruti Suzuki\",\r\n    \"models\": [\r\n        {\r\n            \"name\": \"Swift\",\r\n            \"variants\": [\r\n                \"lxi\",\r\n                \"ldi\",\r\n                \"vxi\",\r\n                \"vdi\"\r\n            ],\r\n            \"years\": [\r\n            \t2017,\r\n                2018,\r\n                2019,\r\n                2020\r\n            ]\r\n        }\r\n    ]\r\n}"
+payload = "{\r\n    \"brand_name\": \"Maruti Suzuki\", \r\n    \"models\": [\r\n        {\r\n            \"name\": \"Swift\", \r\n            \"variants\": [\r\n                \"lxi\", \r\n                \"ldi\", \r\n                \"vxi\", \r\n                \"vdi\"\r\n            ], \r\n            \"years\": [\r\n            \t2017, \r\n                2018, \r\n                2019, \r\n                2020\r\n            ]\r\n        }\r\n    ]\r\n}"
 headers = {
-    'content-type': "application/json",
-    'cache-control': "no-cache",
+    'content-type': "application/json", 
+    'cache-control': "no-cache", 
     'postman-token': "9587b413-bbdd-e0eb-1b44-fc26330032d0"
     }
-response = requests.request("PUT", url, data=payload, headers=headers)
+response = requests.request("PUT",  url,  data=payload,  headers=headers)
 print(response.text)
 
 ```
@@ -953,12 +953,12 @@ print(response.text)
 require 'uri'
 require 'net/http'
 url = URI("http://52.77.255.121:3004/admin/update/brand/5e858b46c0277b3163e40a00")
-http = Net::HTTP.new(url.host, url.port)
+http = Net::HTTP.new(url.host,  url.port)
 request = Net::HTTP::Put.new(url)
 request["content-type"] = 'application/json'
 request["cache-control"] = 'no-cache'
 request["postman-token"] = 'ce54023c-dee2-ddfc-6a81-49f399114173'
-request.body = "{\r\n    \"brand_name\": \"Maruti Suzuki\",\r\n    \"models\": [\r\n        {\r\n            \"name\": \"Swift\",\r\n            \"variants\": [\r\n                \"lxi\",\r\n                \"ldi\",\r\n                \"vxi\",\r\n                \"vdi\"\r\n            ],\r\n            \"years\": [\r\n            \t2017,\r\n                2018,\r\n                2019,\r\n                2020\r\n            ]\r\n        }\r\n    ]\r\n}"
+request.body = "{\r\n    \"brand_name\": \"Maruti Suzuki\", \r\n    \"models\": [\r\n        {\r\n            \"name\": \"Swift\", \r\n            \"variants\": [\r\n                \"lxi\", \r\n                \"ldi\", \r\n                \"vxi\", \r\n                \"vdi\"\r\n            ], \r\n            \"years\": [\r\n            \t2017, \r\n                2018, \r\n                2019, \r\n                2020\r\n            ]\r\n        }\r\n    ]\r\n}"
 response = http.request(request)
 puts response.read_body
 
@@ -966,20 +966,20 @@ puts response.read_body
 ```
 ```javascript
 var data = JSON.stringify({
-  "brand_name": "Maruti Suzuki",
+  "brand_name": "Maruti Suzuki", 
   "models": [
     {
-      "name": "Swift",
+      "name": "Swift", 
       "variants": [
-        "lxi",
-        "ldi",
-        "vxi",
+        "lxi", 
+        "ldi", 
+        "vxi", 
         "vdi"
-      ],
+      ], 
       "years": [
-        2017,
-        2018,
-        2019,
+        2017, 
+        2018, 
+        2019, 
         2020
       ]
     }
@@ -987,15 +987,15 @@ var data = JSON.stringify({
 });
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
+xhr.addEventListener("readystatechange",  function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
-xhr.open("PUT", "http://52.77.255.121:3004/admin/update/brand/5e858b46c0277b3163e40a00");
-xhr.setRequestHeader("content-type", "application/json");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "b82844a9-396c-876b-3132-2521e747da0f");
+xhr.open("PUT",  "http://52.77.255.121:3004/admin/update/brand/5e858b46c0277b3163e40a00");
+xhr.setRequestHeader("content-type",  "application/json");
+xhr.setRequestHeader("cache-control",  "no-cache");
+xhr.setRequestHeader("postman-token",  "b82844a9-396c-876b-3132-2521e747da0f");
 xhr.send(data);
 
 
@@ -1007,20 +1007,20 @@ curl -X PUT \
   -H 'content-type: application/json' \
   -H 'postman-token: a84abb4b-146c-61d9-26ba-0bfde775751e' \
   -d '{
-    "brand_name": "Maruti Suzuki",
+    "brand_name": "Maruti Suzuki", 
     "models": [
         {
-            "name": "Swift",
+            "name": "Swift", 
             "variants": [
-                "lxi",
-                "ldi",
-                "vxi",
+                "lxi", 
+                "ldi", 
+                "vxi", 
                 "vdi"
-            ],
+            ], 
             "years": [
-            	2017,
-                2018,
-                2019,
+            	2017, 
+                2018, 
+                2019, 
                 2020
             ]
         }
@@ -1032,28 +1032,28 @@ curl -X PUT \
 
 ```json
 {
-    "_id": "5e858b46c0277b3163e40a00",
-    "brand_name": "Maruti Suzuki",
+    "_id": "5e858b46c0277b3163e40a00", 
+    "brand_name": "Maruti Suzuki", 
     "models": [
         {
             "variants": [
-                "lxi",
-                "ldi",
-                "vxi",
+                "lxi", 
+                "ldi", 
+                "vxi", 
                 "vdi"
-            ],
+            ], 
             "years": [
-                "2017",
-                "2018",
-                "2019",
+                "2017", 
+                "2018", 
+                "2019", 
                 "2020"
-            ],
-            "_id": "5e8591e7c0277b3163e40a02",
+            ], 
+            "_id": "5e8591e7c0277b3163e40a02", 
             "name": "Swift"
         }
-    ],
-    "createdAt": "2020-04-02T06:50:46.547Z",
-    "updatedAt": "2020-04-02T07:19:03.152Z",
+    ], 
+    "createdAt": "2020-04-02T06:50:46.547Z", 
+    "updatedAt": "2020-04-02T07:19:03.152Z", 
     "__v": 0
 }
 
@@ -1094,7 +1094,7 @@ Note:Use the same key names as mentioned in the add brand API
 <table>
 <tr><th>Status Code</th><th>Description</th></tr>
 <tr><td>200</td><td>Everything went well</td></tr>
-<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
@@ -1108,10 +1108,10 @@ Note:Use the same key names as mentioned in the add brand API
 import requests
 url = "http://52.77.255.121:3004/admin/brand/delete/5e858b46c0277b3163e40a00"
 headers = {
-    'cache-control': "no-cache",
+    'cache-control': "no-cache", 
     'postman-token': "64653f05-0a78-16cf-d63a-6c162181952a"
     }
-response = requests.request("DELETE", url, headers=headers)
+response = requests.request("DELETE",  url,  headers=headers)
 print(response.text)
 
 
@@ -1120,7 +1120,7 @@ print(response.text)
 require 'uri'
 require 'net/http'
 url = URI("http://52.77.255.121:3004/admin/brand/delete/5e858b46c0277b3163e40a00")
-http = Net::HTTP.new(url.host, url.port)
+http = Net::HTTP.new(url.host,  url.port)
 request = Net::HTTP::Delete.new(url)
 request["cache-control"] = 'no-cache'
 request["postman-token"] = '506104a2-4780-8b1b-aac4-b150cf68be38'
@@ -1132,14 +1132,14 @@ puts response.read_body
 var data = null;
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
+xhr.addEventListener("readystatechange",  function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
-xhr.open("DELETE", "http://52.77.255.121:3004/admin/brand/delete/5e858b46c0277b3163e40a00");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "16e044ec-5405-707b-5215-fd004bacd0f5");
+xhr.open("DELETE",  "http://52.77.255.121:3004/admin/brand/delete/5e858b46c0277b3163e40a00");
+xhr.setRequestHeader("cache-control",  "no-cache");
+xhr.setRequestHeader("postman-token",  "16e044ec-5405-707b-5215-fd004bacd0f5");
 xhr.send(data);
 
 ```
@@ -1154,28 +1154,28 @@ curl -X DELETE \
 
 ```json
 {
-    "_id": "5e858b46c0277b3163e40a00",
-    "brand_name": "Maruti Suzuki",
+    "_id": "5e858b46c0277b3163e40a00", 
+    "brand_name": "Maruti Suzuki", 
     "models": [
         {
             "variants": [
-                "lxi",
-                "ldi",
-                "vxi",
+                "lxi", 
+                "ldi", 
+                "vxi", 
                 "vdi"
-            ],
+            ], 
             "years": [
-                "2017",
-                "2018",
-                "2019",
+                "2017", 
+                "2018", 
+                "2019", 
                 "2020"
-            ],
-            "_id": "5e8591e7c0277b3163e40a02",
+            ], 
+            "_id": "5e8591e7c0277b3163e40a02", 
             "name": "Swift"
         }
-    ],
-    "createdAt": "2020-04-02T06:50:46.547Z",
-    "updatedAt": "2020-04-02T07:19:03.152Z",
+    ], 
+    "createdAt": "2020-04-02T06:50:46.547Z", 
+    "updatedAt": "2020-04-02T07:19:03.152Z", 
     "__v": 0
 }
 
@@ -1208,7 +1208,7 @@ You must replace \<BrandID> with the ID of the brand you want to remove.
 <table>
 <tr><th>Status Code</th><th>Description</th></tr>
 <tr><td>200</td><td>Everything went well</td></tr>
-<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
@@ -1224,13 +1224,13 @@ This section contains documentation for all the apis that handle Car data on the
 ```python
 import requests
 url = "http://52.77.255.121:3003/customer/car/create/"
-payload = "{\r\n    \"brand\": \"Maruti Suzuki\",\r\n    \"model_name\": \"Swift\",\r\n    \"model_variant\": \"ldi\",\r\n    \"model_year\": \"2019\"\r\n}"
+payload = "{\r\n    \"brand\": \"Maruti Suzuki\", \r\n    \"model_name\": \"Swift\", \r\n    \"model_variant\": \"ldi\", \r\n    \"model_year\": \"2019\"\r\n}"
 headers = {
-    'content-type': "application/json",
-    'cache-control': "no-cache",
+    'content-type': "application/json", 
+    'cache-control': "no-cache", 
     'postman-token': "342007ec-ae0c-827f-6168-a2bac918ed6d"
     }
-response = requests.request("POST", url, data=payload, headers=headers)
+response = requests.request("POST",  url,  data=payload,  headers=headers)
 print(response.text)
 
 ```
@@ -1238,34 +1238,34 @@ print(response.text)
 require 'uri'
 require 'net/http'
 url = URI("http://52.77.255.121:3003/customer/car/create/")
-http = Net::HTTP.new(url.host, url.port)
+http = Net::HTTP.new(url.host,  url.port)
 request = Net::HTTP::Post.new(url)
 request["content-type"] = 'application/json'
 request["cache-control"] = 'no-cache'
 request["postman-token"] = 'f8cbace9-c0fc-49cc-f2ae-1f8b07f3f5fc'
-request.body = "{\r\n    \"brand\": \"Maruti Suzuki\",\r\n    \"model_name\": \"Swift\",\r\n    \"model_variant\": \"ldi\",\r\n    \"model_year\": \"2019\"\r\n}"
+request.body = "{\r\n    \"brand\": \"Maruti Suzuki\", \r\n    \"model_name\": \"Swift\", \r\n    \"model_variant\": \"ldi\", \r\n    \"model_year\": \"2019\"\r\n}"
 response = http.request(request)
 puts response.read_body
 
 ```
 ```javascript
 var data = JSON.stringify({
-  "brand": "Maruti Suzuki",
-  "model_name": "Swift",
-  "model_variant": "ldi",
+  "brand": "Maruti Suzuki", 
+  "model_name": "Swift", 
+  "model_variant": "ldi", 
   "model_year": "2019"
 });
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
+xhr.addEventListener("readystatechange",  function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
-xhr.open("POST", "http://52.77.255.121:3003/customer/car/create/");
-xhr.setRequestHeader("content-type", "application/json");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "61c56d19-ecc0-dba7-c8d9-38d5e4a7e423");
+xhr.open("POST",  "http://52.77.255.121:3003/customer/car/create/");
+xhr.setRequestHeader("content-type",  "application/json");
+xhr.setRequestHeader("cache-control",  "no-cache");
+xhr.setRequestHeader("postman-token",  "61c56d19-ecc0-dba7-c8d9-38d5e4a7e423");
 xhr.send(data);
 
 ```
@@ -1276,9 +1276,9 @@ curl -X POST \
   -H 'content-type: application/json' \
   -H 'postman-token: a7cca1a2-8f6c-0dec-798a-04502181eec3' \
   -d '{
-    "brand": "Maruti Suzuki",
-    "model_name": "Swift",
-    "model_variant": "ldi",
+    "brand": "Maruti Suzuki", 
+    "model_name": "Swift", 
+    "model_variant": "ldi", 
     "model_year": "2019"
 }'
 
@@ -1288,20 +1288,20 @@ curl -X POST \
 ```json
 {
     "overview": {
-        "engine_oil": true,
-        "tier": true,
-        "suspension": true,
-        "brakes": true,
-        "electrical_checkup": true,
+        "engine_oil": true, 
+        "tier": true, 
+        "suspension": true, 
+        "brakes": true, 
+        "electrical_checkup": true, 
         "air_conditioner": true
-    },
-    "_id": "5e859a3e377c0c3168f1b4b0",
-    "brand": "Maruti Suzuki",
-    "model_name": "Swift",
-    "model_variant": "ldi",
-    "model_year": "2019",
-    "createdAt": "2020-04-02T07:54:38.331Z",
-    "updatedAt": "2020-04-02T07:54:38.331Z",
+    }, 
+    "_id": "5e859a3e377c0c3168f1b4b0", 
+    "brand": "Maruti Suzuki", 
+    "model_name": "Swift", 
+    "model_variant": "ldi", 
+    "model_year": "2019", 
+    "createdAt": "2020-04-02T07:54:38.331Z", 
+    "updatedAt": "2020-04-02T07:54:38.331Z", 
     "__v": 0
 }
 
@@ -1342,13 +1342,13 @@ curl -X POST \
 <table>
 <tr><th>Status Code</th><th>Description</th></tr>
 <tr><td>200</td><td>Everything went well</td></tr>
-<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
 
 ### Customer View
-Customers can add cars from the form shown below , where they need to fill out details such as:
+Customers can add cars from the form shown below ,  where they need to fill out details such as:
 <ol>
 <li>Vehicle brand</li>
 <li>Vehicle model</li>
@@ -1367,10 +1367,10 @@ Customers can add cars from the form shown below , where they need to fill out d
 import requests
 url = "http://52.77.255.121:3003/customer/car/all/get"
 headers = {
-    'cache-control': "no-cache",
+    'cache-control': "no-cache", 
     'postman-token': "cb1d8808-7e40-9b2e-fcdd-db0991d3dae0"
     }
-response = requests.request("POST", url, headers=headers)
+response = requests.request("POST",  url,  headers=headers)
 print(response.text)
 
 ```
@@ -1378,7 +1378,7 @@ print(response.text)
 require 'uri'
 require 'net/http'
 url = URI("http://52.77.255.121:3003/customer/car/all/get")
-http = Net::HTTP.new(url.host, url.port)
+http = Net::HTTP.new(url.host,  url.port)
 request = Net::HTTP::Post.new(url)
 request["cache-control"] = 'no-cache'
 request["postman-token"] = 'ace9beb3-891b-23a2-ea51-824cfe1fb86f'
@@ -1390,14 +1390,14 @@ puts response.read_body
 var data = null;
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
+xhr.addEventListener("readystatechange",  function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
-xhr.open("POST", "http://52.77.255.121:3003/customer/car/all/get");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "c3ecfa6e-d2e5-657b-eeaa-49572d8ad0ff");
+xhr.open("POST",  "http://52.77.255.121:3003/customer/car/all/get");
+xhr.setRequestHeader("cache-control",  "no-cache");
+xhr.setRequestHeader("postman-token",  "c3ecfa6e-d2e5-657b-eeaa-49572d8ad0ff");
 xhr.send(data);
 
 ```
@@ -1414,38 +1414,38 @@ curl -X POST \
 [
     {
         "overview": {
-            "engine_oil": true,
-            "tier": true,
-            "suspension": true,
-            "brakes": true,
-            "electrical_checkup": true,
+            "engine_oil": true, 
+            "tier": true, 
+            "suspension": true, 
+            "brakes": true, 
+            "electrical_checkup": true, 
             "air_conditioner": true
-        },
-        "_id": "5e859a3e377c0c3168f1b4b0",
-        "brand": "Maruti Suzuki",
-        "model_name": "Swift",
-        "model_variant": "ldi",
-        "model_year": "2019",
-        "createdAt": "2020-04-02T07:54:38.331Z",
-        "updatedAt": "2020-04-02T07:54:38.331Z",
+        }, 
+        "_id": "5e859a3e377c0c3168f1b4b0", 
+        "brand": "Maruti Suzuki", 
+        "model_name": "Swift", 
+        "model_variant": "ldi", 
+        "model_year": "2019", 
+        "createdAt": "2020-04-02T07:54:38.331Z", 
+        "updatedAt": "2020-04-02T07:54:38.331Z", 
         "__v": 0
-    },
+    }, 
     {
         "overview": {
-            "engine_oil": true,
-            "tier": true,
-            "suspension": true,
-            "brakes": true,
-            "electrical_checkup": true,
+            "engine_oil": true, 
+            "tier": true, 
+            "suspension": true, 
+            "brakes": true, 
+            "electrical_checkup": true, 
             "air_conditioner": true
-        },
-        "_id": "5e859a3e377c0c3168f1b4b1",
-        "brand": "Maruti Suzuki",
-        "model_name": "Swift Dzire",
-        "model_variant": "ldi",
-        "model_year": "2019",
-        "createdAt": "2020-04-02T07:54:38.331Z",
-        "updatedAt": "2020-04-02T07:54:38.331Z",
+        }, 
+        "_id": "5e859a3e377c0c3168f1b4b1", 
+        "brand": "Maruti Suzuki", 
+        "model_name": "Swift Dzire", 
+        "model_variant": "ldi", 
+        "model_year": "2019", 
+        "createdAt": "2020-04-02T07:54:38.331Z", 
+        "updatedAt": "2020-04-02T07:54:38.331Z", 
         "__v": 0
     }
 ]
@@ -1469,7 +1469,7 @@ curl -X POST \
 <table>
 <tr><th>Status Code</th><th>Description</th></tr>
 <tr><td>200</td><td>Everything went well</td></tr>
-<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
@@ -1488,10 +1488,10 @@ Customers can view all their cars in a single page shown below:
 import requests
 url = "http://52.77.255.121:3003/customer/car/read/5e859a3e377c0c3168f1b4b0"
 headers = {
-    'cache-control': "no-cache",
+    'cache-control': "no-cache", 
     'postman-token': "29239a7b-99e4-2a73-f8a8-5faf6f0e1002"
     }
-response = requests.request("GET", url, headers=headers)
+response = requests.request("GET",  url,  headers=headers)
 print(response.text)
 
 ```
@@ -1499,7 +1499,7 @@ print(response.text)
 require 'uri'
 require 'net/http'
 url = URI("http://52.77.255.121:3003/customer/car/read/5e859a3e377c0c3168f1b4b0")
-http = Net::HTTP.new(url.host, url.port)
+http = Net::HTTP.new(url.host,  url.port)
 request = Net::HTTP::Get.new(url)
 request["cache-control"] = 'no-cache'
 request["postman-token"] = '8bb225d0-0e32-f1a3-14c7-7b4a45247162'
@@ -1511,14 +1511,14 @@ puts response.read_body
 var data = null;
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
+xhr.addEventListener("readystatechange",  function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
-xhr.open("GET", "http://52.77.255.121:3003/customer/car/read/5e859a3e377c0c3168f1b4b0");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "4db331c1-d540-c8c3-d681-e4a5540e9e79");
+xhr.open("GET",  "http://52.77.255.121:3003/customer/car/read/5e859a3e377c0c3168f1b4b0");
+xhr.setRequestHeader("cache-control",  "no-cache");
+xhr.setRequestHeader("postman-token",  "4db331c1-d540-c8c3-d681-e4a5540e9e79");
 xhr.send(data);
 
 ```
@@ -1534,26 +1534,26 @@ curl -X GET \
 ```json
 {
     "overview": {
-        "engine_oil": true,
-        "tier": true,
-        "suspension": true,
-        "brakes": true,
-        "electrical_checkup": true,
+        "engine_oil": true, 
+        "tier": true, 
+        "suspension": true, 
+        "brakes": true, 
+        "electrical_checkup": true, 
         "air_conditioner": true
-    },
-    "_id": "5e859a3e377c0c3168f1b4b0",
-    "brand": "Maruti Suzuki",
-    "model_name": "Swift",
-    "model_variant": "ldi",
-    "model_year": "2019",
-    "createdAt": "2020-04-02T07:54:38.331Z",
-    "updatedAt": "2020-04-02T07:54:38.331Z",
+    }, 
+    "_id": "5e859a3e377c0c3168f1b4b0", 
+    "brand": "Maruti Suzuki", 
+    "model_name": "Swift", 
+    "model_variant": "ldi", 
+    "model_year": "2019", 
+    "createdAt": "2020-04-02T07:54:38.331Z", 
+    "updatedAt": "2020-04-02T07:54:38.331Z", 
     "__v": 0
 }
 
 ```
 
-<p>Your customer might need to view a single car,services performed on it as it helps them to analyze if the car has been cost effective for them .</p>
+<p>Your customer might need to view a single car, services performed on it as it helps them to analyze if the car has been cost effective for them .</p>
 <br>
 <p>`App:customer`</p>
 <h3>Http request</h5>
@@ -1577,7 +1577,7 @@ Dont forget to replace \<CarId> with the id of the car you would like to view.
 <table>
 <tr><th>Status Code</th><th>Description</th></tr>
 <tr><td>200</td><td>Everything went well</td></tr>
-<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
@@ -1590,7 +1590,7 @@ Customers can view a specific car from the page below:
 
 #Documents
 
-<p>Once your customers add their cars they have options to provide some other documents like pollution,fc etc to verify their authenticity</p>
+<p>Once your customers add their cars they have options to provide some other documents like pollution, fc etc to verify their authenticity</p>
 
 ##Add Documents
 
@@ -1602,11 +1602,11 @@ import requests
 url = "http://52.77.255.121:3003/customer/document/create/"
 payload = "------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"file\"; filename=\"endpoints.txt\"\r\nContent-Type: text/plain\r\n\r\n\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"document_name\"\r\n\r\nendpoints.txt\n\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"document_type\"\r\n\r\nPollution\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"car\"\r\n\r\n5e8e9cb9a27a005fe1764fe3\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW--"
 headers = {
-    'content-type': "multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW",
-    'cache-control': "no-cache",
+    'content-type': "multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW", 
+    'cache-control': "no-cache", 
     'postman-token': "8556b6b7-af0e-44ef-a056-15d8869d38cd"
     }
-response = requests.request("POST", url, data=payload, headers=headers)
+response = requests.request("POST",  url,  data=payload,  headers=headers)
 print(response.text)
 
 ```
@@ -1614,7 +1614,7 @@ print(response.text)
 require 'uri'
 require 'net/http'
 url = URI("http://52.77.255.121:3003/customer/document/create/")
-http = Net::HTTP.new(url.host, url.port)
+http = Net::HTTP.new(url.host,  url.port)
 request = Net::HTTP::Post.new(url)
 request["content-type"] = 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'
 request["cache-control"] = 'no-cache'
@@ -1626,21 +1626,21 @@ puts response.read_body
 ```
 ```javascript
 var data = new FormData();
-data.append("file", "endpoints.txt");
-data.append("document_name", "endpoints.txt\n");
-data.append("document_type", "Pollution");
-data.append("car", "5e8e9cb9a27a005fe1764fe3");
+data.append("file",  "endpoints.txt");
+data.append("document_name",  "endpoints.txt\n");
+data.append("document_type",  "Pollution");
+data.append("car",  "5e8e9cb9a27a005fe1764fe3");
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
+xhr.addEventListener("readystatechange",  function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
 
-xhr.open("POST", "http://52.77.255.121:3003/customer/document/create/");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "19697a7a-6052-9a5c-87fc-f97733fe8185");
+xhr.open("POST",  "http://52.77.255.121:3003/customer/document/create/");
+xhr.setRequestHeader("cache-control",  "no-cache");
+xhr.setRequestHeader("postman-token",  "19697a7a-6052-9a5c-87fc-f97733fe8185");
 xhr.send(data);
 
 ```
@@ -1661,59 +1661,59 @@ curl -X POST \
 
 ```json
 {
-    "_id": "5e8e9cd4a27a005fe1764fe4",
-    "document_name": "endpoints.txt\n",
-    "document_type": "Pollution",
+    "_id": "5e8e9cd4a27a005fe1764fe4", 
+    "document_name": "endpoints.txt\n", 
+    "document_type": "Pollution", 
     "car": {
         "overview": {
-            "engine_oil": true,
-            "tier": true,
-            "suspension": true,
-            "brakes": true,
-            "electrical_checkup": true,
+            "engine_oil": true, 
+            "tier": true, 
+            "suspension": true, 
+            "brakes": true, 
+            "electrical_checkup": true, 
             "air_conditioner": true
-        },
-        "_id": "5e8e9cb9a27a005fe1764fe3",
-        "brand": "Maruti Suzuki",
-        "model_name": "Swift",
-        "model_variant": "ldi",
-        "model_year": "2019",
+        }, 
+        "_id": "5e8e9cb9a27a005fe1764fe3", 
+        "brand": "Maruti Suzuki", 
+        "model_name": "Swift", 
+        "model_variant": "ldi", 
+        "model_year": "2019", 
         "customer": {
-            "_id": "5e84aee31fc621316c541ac1",
-            "user_type": "customer",
+            "_id": "5e84aee31fc621316c541ac1", 
+            "user_type": "customer", 
             "email": {
                 "verficationStatus": {
                     "isVerified": false
-                },
+                }, 
                 "address": "emailid@email.com"
-            },
+            }, 
             "personal_details": {
-                "_id": "5e84aee8c0277b3163e409fb",
-                "mobile_nos": [],
+                "_id": "5e84aee8c0277b3163e409fb", 
+                "mobile_nos": [], 
                 "emails": [
                     {
                         "verficationStatus": {
                             "isVerified": false
-                        },
-                        "_id": "5e84aee31fc621316c541ac2",
+                        }, 
+                        "_id": "5e84aee31fc621316c541ac2", 
                         "address": "emailid@email.com"
                     }
                 ]
-            },
-            "username": "emailid@email.com",
-            "createdAt": "2020-04-01T15:10:27.404Z",
-            "updatedAt": "2020-04-01T15:10:27.404Z",
-            "__v": 0,
+            }, 
+            "username": "emailid@email.com", 
+            "createdAt": "2020-04-01T15:10:27.404Z", 
+            "updatedAt": "2020-04-01T15:10:27.404Z", 
+            "__v": 0, 
             "bank_accounts": []
-        },
-        "createdAt": "2020-04-09T03:55:37.200Z",
-        "updatedAt": "2020-04-09T03:55:37.200Z",
+        }, 
+        "createdAt": "2020-04-09T03:55:37.200Z", 
+        "updatedAt": "2020-04-09T03:55:37.200Z", 
         "__v": 0
-    },
-    "customer": "5e84aee31fc621316c541ac1",
-    "document_path": "http://52.77.255.121:3003/Files/cust-5e84aee31fc621316c541ac1/Documents/Pollution/car-5e8e9cb9a27a005fe1764fe3/endpoints.txt\n.txt",
-    "createdAt": "2020-04-09T03:56:04.848Z",
-    "updatedAt": "2020-04-09T03:56:04.848Z",
+    }, 
+    "customer": "5e84aee31fc621316c541ac1", 
+    "document_path": "http://52.77.255.121:3003/Files/cust-5e84aee31fc621316c541ac1/Documents/Pollution/car-5e8e9cb9a27a005fe1764fe3/endpoints.txt\n.txt", 
+    "createdAt": "2020-04-09T03:56:04.848Z", 
+    "updatedAt": "2020-04-09T03:56:04.848Z", 
     "__v": 0
 }
 
@@ -1737,7 +1737,7 @@ curl -X POST \
 <table>
 <tr><th>Status Code</th><th>Description</th></tr>
 <tr><td>200</td><td>Everything went well</td></tr>
-<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
@@ -1756,10 +1756,10 @@ Customers can add documents from:
 import requests
 url = "http://52.77.255.121:3003/customer/document/all/get"
 headers = {
-    'cache-control': "no-cache",
+    'cache-control': "no-cache", 
     'postman-token': "caf53ddf-cde7-33e7-4e66-e4f6e9ad2888"
     }
-response = requests.request("POST", url, headers=headers)
+response = requests.request("POST",  url,  headers=headers)
 print(response.text)
 
 ```
@@ -1767,7 +1767,7 @@ print(response.text)
 require 'uri'
 require 'net/http'
 url = URI("http://52.77.255.121:3003/customer/document/all/get")
-http = Net::HTTP.new(url.host, url.port)
+http = Net::HTTP.new(url.host,  url.port)
 request = Net::HTTP::Post.new(url)
 request["cache-control"] = 'no-cache'
 request["postman-token"] = '2f3dab57-91a8-4b19-20b2-44c3723ec112'
@@ -1779,14 +1779,14 @@ puts response.read_body
 var data = null;
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
+xhr.addEventListener("readystatechange",  function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
-xhr.open("POST", "http://52.77.255.121:3003/customer/document/all/get");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "28eabae1-4e73-4274-1723-7d912f5ce559");
+xhr.open("POST",  "http://52.77.255.121:3003/customer/document/all/get");
+xhr.setRequestHeader("cache-control",  "no-cache");
+xhr.setRequestHeader("postman-token",  "28eabae1-4e73-4274-1723-7d912f5ce559");
 xhr.send(data);
 
 ```
@@ -1795,59 +1795,59 @@ xhr.send(data);
 ```json
 [
     {
-        "_id": "5e8e9cd4a27a005fe1764fe4",
-        "document_name": "endpoints.txt\n",
-        "document_type": "Pollution",
+        "_id": "5e8e9cd4a27a005fe1764fe4", 
+        "document_name": "endpoints.txt\n", 
+        "document_type": "Pollution", 
         "car": {
             "overview": {
-                "engine_oil": true,
-                "tier": true,
-                "suspension": true,
-                "brakes": true,
-                "electrical_checkup": true,
+                "engine_oil": true, 
+                "tier": true, 
+                "suspension": true, 
+                "brakes": true, 
+                "electrical_checkup": true, 
                 "air_conditioner": true
-            },
-            "_id": "5e8e9cb9a27a005fe1764fe3",
-            "brand": "Maruti Suzuki",
-            "model_name": "Swift",
-            "model_variant": "ldi",
-            "model_year": "2019",
+            }, 
+            "_id": "5e8e9cb9a27a005fe1764fe3", 
+            "brand": "Maruti Suzuki", 
+            "model_name": "Swift", 
+            "model_variant": "ldi", 
+            "model_year": "2019", 
             "customer": {
-                "_id": "5e84aee31fc621316c541ac1",
-                "user_type": "customer",
+                "_id": "5e84aee31fc621316c541ac1", 
+                "user_type": "customer", 
                 "email": {
                     "verficationStatus": {
                         "isVerified": false
-                    },
+                    }, 
                     "address": "emailid@email.com"
-                },
+                }, 
                 "personal_details": {
-                    "_id": "5e84aee8c0277b3163e409fb",
-                    "mobile_nos": [],
+                    "_id": "5e84aee8c0277b3163e409fb", 
+                    "mobile_nos": [], 
                     "emails": [
                         {
                             "verficationStatus": {
                                 "isVerified": false
-                            },
-                            "_id": "5e84aee31fc621316c541ac2",
+                            }, 
+                            "_id": "5e84aee31fc621316c541ac2", 
                             "address": "emailid@email.com"
                         }
                     ]
-                },
-                "username": "emailid@email.com",
-                "createdAt": "2020-04-01T15:10:27.404Z",
-                "updatedAt": "2020-04-01T15:10:27.404Z",
-                "__v": 0,
+                }, 
+                "username": "emailid@email.com", 
+                "createdAt": "2020-04-01T15:10:27.404Z", 
+                "updatedAt": "2020-04-01T15:10:27.404Z", 
+                "__v": 0, 
                 "bank_accounts": []
-            },
-            "createdAt": "2020-04-09T03:55:37.200Z",
-            "updatedAt": "2020-04-09T03:55:37.200Z",
+            }, 
+            "createdAt": "2020-04-09T03:55:37.200Z", 
+            "updatedAt": "2020-04-09T03:55:37.200Z", 
             "__v": 0
-        },
-        "customer": "5e84aee31fc621316c541ac1",
-        "document_path": "http://52.77.255.121:3003/Files/cust-5e84aee31fc621316c541ac1/Documents/Pollution/car-5e8e9cb9a27a005fe1764fe3/endpoints.txt\n.txt",
-        "createdAt": "2020-04-09T03:56:04.848Z",
-        "updatedAt": "2020-04-09T03:56:04.848Z",
+        }, 
+        "customer": "5e84aee31fc621316c541ac1", 
+        "document_path": "http://52.77.255.121:3003/Files/cust-5e84aee31fc621316c541ac1/Documents/Pollution/car-5e8e9cb9a27a005fe1764fe3/endpoints.txt\n.txt", 
+        "createdAt": "2020-04-09T03:56:04.848Z", 
+        "updatedAt": "2020-04-09T03:56:04.848Z", 
         "__v": 0
     }
 ]
@@ -1864,7 +1864,7 @@ xhr.send(data);
 <table>
 <tr><th>Status Code</th><th>Description</th></tr>
 <tr><td>200</td><td>Everything went well</td></tr>
-<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
@@ -1883,10 +1883,10 @@ Customers can view all documents from:
 import requests
 url = "http://52.77.255.121:3003/customer/document/read/5e8e9cd4a27a005fe1764fe4"
 headers = {
-    'cache-control': "no-cache",
+    'cache-control': "no-cache", 
     'postman-token': "537f1b5a-8880-1c5e-0b00-9bd3e9211bb2"
     }
-response = requests.request("GET", url, headers=headers)
+response = requests.request("GET",  url,  headers=headers)
 print(response.text)
 
 ```
@@ -1894,7 +1894,7 @@ print(response.text)
 require 'uri'
 require 'net/http'
 url = URI("http://52.77.255.121:3003/customer/document/read/5e8e9cd4a27a005fe1764fe4")
-http = Net::HTTP.new(url.host, url.port)
+http = Net::HTTP.new(url.host,  url.port)
 request = Net::HTTP::Get.new(url)
 request["cache-control"] = 'no-cache'
 request["postman-token"] = 'dc35fec6-b948-6008-8006-9ee33057196c'
@@ -1906,14 +1906,14 @@ puts response.read_body
 var data = null;
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
+xhr.addEventListener("readystatechange",  function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
-xhr.open("GET", "http://52.77.255.121:3003/customer/document/read/5e8e9cd4a27a005fe1764fe4");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "c476ed68-f5e8-3d5a-e47c-1bfe7bd81186");
+xhr.open("GET",  "http://52.77.255.121:3003/customer/document/read/5e8e9cd4a27a005fe1764fe4");
+xhr.setRequestHeader("cache-control",  "no-cache");
+xhr.setRequestHeader("postman-token",  "c476ed68-f5e8-3d5a-e47c-1bfe7bd81186");
 xhr.send(data);
 
 ```
@@ -1921,59 +1921,59 @@ xhr.send(data);
 
 ```json
 {
-    "_id": "5e8e9cd4a27a005fe1764fe4",
-    "document_name": "endpoints.txt\n",
-    "document_type": "Pollution",
+    "_id": "5e8e9cd4a27a005fe1764fe4", 
+    "document_name": "endpoints.txt\n", 
+    "document_type": "Pollution", 
     "car": {
         "overview": {
-            "engine_oil": true,
-            "tier": true,
-            "suspension": true,
-            "brakes": true,
-            "electrical_checkup": true,
+            "engine_oil": true, 
+            "tier": true, 
+            "suspension": true, 
+            "brakes": true, 
+            "electrical_checkup": true, 
             "air_conditioner": true
-        },
-        "_id": "5e8e9cb9a27a005fe1764fe3",
-        "brand": "Maruti Suzuki",
-        "model_name": "Swift",
-        "model_variant": "ldi",
-        "model_year": "2019",
+        }, 
+        "_id": "5e8e9cb9a27a005fe1764fe3", 
+        "brand": "Maruti Suzuki", 
+        "model_name": "Swift", 
+        "model_variant": "ldi", 
+        "model_year": "2019", 
         "customer": {
-            "_id": "5e84aee31fc621316c541ac1",
-            "user_type": "customer",
+            "_id": "5e84aee31fc621316c541ac1", 
+            "user_type": "customer", 
             "email": {
                 "verficationStatus": {
                     "isVerified": false
-                },
+                }, 
                 "address": "emailid@email.com"
-            },
+            }, 
             "personal_details": {
-                "_id": "5e84aee8c0277b3163e409fb",
-                "mobile_nos": [],
+                "_id": "5e84aee8c0277b3163e409fb", 
+                "mobile_nos": [], 
                 "emails": [
                     {
                         "verficationStatus": {
                             "isVerified": false
-                        },
-                        "_id": "5e84aee31fc621316c541ac2",
+                        }, 
+                        "_id": "5e84aee31fc621316c541ac2", 
                         "address": "emailid@email.com"
                     }
                 ]
-            },
-            "username": "emailid@email.com",
-            "createdAt": "2020-04-01T15:10:27.404Z",
-            "updatedAt": "2020-04-01T15:10:27.404Z",
-            "__v": 0,
+            }, 
+            "username": "emailid@email.com", 
+            "createdAt": "2020-04-01T15:10:27.404Z", 
+            "updatedAt": "2020-04-01T15:10:27.404Z", 
+            "__v": 0, 
             "bank_accounts": []
-        },
-        "createdAt": "2020-04-09T03:55:37.200Z",
-        "updatedAt": "2020-04-09T03:55:37.200Z",
+        }, 
+        "createdAt": "2020-04-09T03:55:37.200Z", 
+        "updatedAt": "2020-04-09T03:55:37.200Z", 
         "__v": 0
-    },
-    "customer": "5e84aee31fc621316c541ac1",
-    "document_path": "http://52.77.255.121:3003/Files/cust-5e84aee31fc621316c541ac1/Documents/Pollution/car-5e8e9cb9a27a005fe1764fe3/endpoints.txt\n.txt",
-    "createdAt": "2020-04-09T03:56:04.848Z",
-    "updatedAt": "2020-04-09T03:56:04.848Z",
+    }, 
+    "customer": "5e84aee31fc621316c541ac1", 
+    "document_path": "http://52.77.255.121:3003/Files/cust-5e84aee31fc621316c541ac1/Documents/Pollution/car-5e8e9cb9a27a005fe1764fe3/endpoints.txt\n.txt", 
+    "createdAt": "2020-04-09T03:56:04.848Z", 
+    "updatedAt": "2020-04-09T03:56:04.848Z", 
     "__v": 0
 }
 
@@ -1992,7 +1992,7 @@ Note:Don't forget to replace \<DocumentId> with the id of the doucment you want 
 <table>
 <tr><th>Status Code</th><th>Description</th></tr>
 <tr><td>200</td><td>Everything went well</td></tr>
-<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
@@ -2012,11 +2012,11 @@ import requests
 url = "http://52.77.255.121:3003/customer/document/update/5e8e9cd4a27a005fe1764fe4"
 payload = "{\n\"update\":{\t\"document_type\":\"fc\"}\n}"
 headers = {
-    "content-type": "application/json",
-    "cache-control": "no-cache",
+    "content-type": "application/json", 
+    "cache-control": "no-cache", 
     "postman-token": "d6411c76-20bc-fc87-7ef9-b865e863ae82"
     }
-response = requests.request("PUT", url, data=payload, headers=headers)
+response = requests.request("PUT",  url,  data=payload,  headers=headers)
 print(response.text)
 
 ```
@@ -2024,7 +2024,7 @@ print(response.text)
 require 'uri'
 require 'net/http'
 url = URI("http://52.77.255.121:3003/customer/document/update/5e8e9cd4a27a005fe1764fe4")
-http = Net::HTTP.new(url.host, url.port)
+http = Net::HTTP.new(url.host,  url.port)
 request = Net::HTTP::Put.new(url)
 request["content-type"] = "application/json"
 request["cache-control"] = "no-cache"
@@ -2042,15 +2042,15 @@ var data = JSON.stringify({
 });
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
+xhr.addEventListener("readystatechange",  function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
-xhr.open("PUT", "http://52.77.255.121:3003/customer/document/update/5e8e9cd4a27a005fe1764fe4");
-xhr.setRequestHeader("content-type", "application/json");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "4eeb2675-a153-6c1b-a821-ebd35a358082");
+xhr.open("PUT",  "http://52.77.255.121:3003/customer/document/update/5e8e9cd4a27a005fe1764fe4");
+xhr.setRequestHeader("content-type",  "application/json");
+xhr.setRequestHeader("cache-control",  "no-cache");
+xhr.setRequestHeader("postman-token",  "4eeb2675-a153-6c1b-a821-ebd35a358082");
 xhr.send(data);
 
 ```
@@ -2058,59 +2058,59 @@ xhr.send(data);
 
 ```json
 {
-    "_id": "5e8e9cd4a27a005fe1764fe4",
-    "document_name": "endpoints.txt\n",
-    "document_type": "fc",
+    "_id": "5e8e9cd4a27a005fe1764fe4", 
+    "document_name": "endpoints.txt\n", 
+    "document_type": "fc", 
     "car": {
         "overview": {
-            "engine_oil": true,
-            "tier": true,
-            "suspension": true,
-            "brakes": true,
-            "electrical_checkup": true,
+            "engine_oil": true, 
+            "tier": true, 
+            "suspension": true, 
+            "brakes": true, 
+            "electrical_checkup": true, 
             "air_conditioner": true
-        },
-        "_id": "5e8e9cb9a27a005fe1764fe3",
-        "brand": "Maruti Suzuki",
-        "model_name": "Swift",
-        "model_variant": "ldi",
-        "model_year": "2019",
+        }, 
+        "_id": "5e8e9cb9a27a005fe1764fe3", 
+        "brand": "Maruti Suzuki", 
+        "model_name": "Swift", 
+        "model_variant": "ldi", 
+        "model_year": "2019", 
         "customer": {
-            "_id": "5e84aee31fc621316c541ac1",
-            "user_type": "customer",
+            "_id": "5e84aee31fc621316c541ac1", 
+            "user_type": "customer", 
             "email": {
                 "verficationStatus": {
                     "isVerified": false
-                },
+                }, 
                 "address": "emailid@email.com"
-            },
+            }, 
             "personal_details": {
-                "_id": "5e84aee8c0277b3163e409fb",
-                "mobile_nos": [],
+                "_id": "5e84aee8c0277b3163e409fb", 
+                "mobile_nos": [], 
                 "emails": [
                     {
                         "verficationStatus": {
                             "isVerified": false
-                        },
-                        "_id": "5e84aee31fc621316c541ac2",
+                        }, 
+                        "_id": "5e84aee31fc621316c541ac2", 
                         "address": "emailid@email.com"
                     }
                 ]
-            },
-            "username": "emailid@email.com",
-            "createdAt": "2020-04-01T15:10:27.404Z",
-            "updatedAt": "2020-04-01T15:10:27.404Z",
-            "__v": 0,
+            }, 
+            "username": "emailid@email.com", 
+            "createdAt": "2020-04-01T15:10:27.404Z", 
+            "updatedAt": "2020-04-01T15:10:27.404Z", 
+            "__v": 0, 
             "bank_accounts": []
-        },
-        "createdAt": "2020-04-09T03:55:37.200Z",
-        "updatedAt": "2020-04-09T03:55:37.200Z",
+        }, 
+        "createdAt": "2020-04-09T03:55:37.200Z", 
+        "updatedAt": "2020-04-09T03:55:37.200Z", 
         "__v": 0
-    },
-    "customer": "5e84aee31fc621316c541ac1",
-    "document_path": "http://52.77.255.121:3003/Files/cust-5e84aee31fc621316c541ac1/Documents/Pollution/car-5e8e9cb9a27a005fe1764fe3/endpoints.txt\n.txt",
-    "createdAt": "2020-04-09T03:56:04.848Z",
-    "updatedAt": "2020-04-09T04:40:04.153Z",
+    }, 
+    "customer": "5e84aee31fc621316c541ac1", 
+    "document_path": "http://52.77.255.121:3003/Files/cust-5e84aee31fc621316c541ac1/Documents/Pollution/car-5e8e9cb9a27a005fe1764fe3/endpoints.txt\n.txt", 
+    "createdAt": "2020-04-09T03:56:04.848Z", 
+    "updatedAt": "2020-04-09T04:40:04.153Z", 
     "__v": 0
 }
 
@@ -2137,7 +2137,7 @@ Note:(i)Use the same key names as used in create.<br>
 <table>
 <tr><th>Status Code</th><th>Description</th></tr>
 <tr><td>200</td><td>Everything went well</td></tr>
-<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
@@ -2151,11 +2151,11 @@ Note:(i)Use the same key names as used in create.<br>
 import requests
 url = "http://52.77.255.121:3003/customer/document/delete/5e8e9cd4a27a005fe1764fe4"
 headers = {
-    "content-type": "application/json",
-    "cache-control": "no-cache",
+    "content-type": "application/json", 
+    "cache-control": "no-cache", 
     "postman-token": "db735733-9007-f177-4ac8-89b989a526fa"
     }
-response = requests.request("DELETE", url, headers=headers)
+response = requests.request("DELETE",  url,  headers=headers)
 print(response.text)
 
 ```
@@ -2163,7 +2163,7 @@ print(response.text)
 require 'uri'
 require 'net/http'
 url = URI("http://52.77.255.121:3003/customer/document/delete/5e8e9cd4a27a005fe1764fe4")
-http = Net::HTTP.new(url.host, url.port)
+http = Net::HTTP.new(url.host,  url.port)
 request = Net::HTTP::Delete.new(url)
 request["content-type"] = 'application/json'
 request["cache-control"] = 'no-cache'
@@ -2176,15 +2176,15 @@ puts response.read_body
 var data = null;
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
+xhr.addEventListener("readystatechange",  function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
-xhr.open("DELETE", "http://52.77.255.121:3003/customer/document/delete/5e8e9cd4a27a005fe1764fe4");
-xhr.setRequestHeader("content-type", "application/json");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "48205868-26df-0afe-ad6c-bd76a7c4a978");
+xhr.open("DELETE",  "http://52.77.255.121:3003/customer/document/delete/5e8e9cd4a27a005fe1764fe4");
+xhr.setRequestHeader("content-type",  "application/json");
+xhr.setRequestHeader("cache-control",  "no-cache");
+xhr.setRequestHeader("postman-token",  "48205868-26df-0afe-ad6c-bd76a7c4a978");
 xhr.send(data);
 
 ```
@@ -2192,59 +2192,59 @@ xhr.send(data);
 
 ```json
 {
-    "_id": "5e8e9cd4a27a005fe1764fe4",
-    "document_name": "endpoints.txt\n",
-    "document_type": "fc",
+    "_id": "5e8e9cd4a27a005fe1764fe4", 
+    "document_name": "endpoints.txt\n", 
+    "document_type": "fc", 
     "car": {
         "overview": {
-            "engine_oil": true,
-            "tier": true,
-            "suspension": true,
-            "brakes": true,
-            "electrical_checkup": true,
+            "engine_oil": true, 
+            "tier": true, 
+            "suspension": true, 
+            "brakes": true, 
+            "electrical_checkup": true, 
             "air_conditioner": true
-        },
-        "_id": "5e8e9cb9a27a005fe1764fe3",
-        "brand": "Maruti Suzuki",
-        "model_name": "Swift",
-        "model_variant": "ldi",
-        "model_year": "2019",
+        }, 
+        "_id": "5e8e9cb9a27a005fe1764fe3", 
+        "brand": "Maruti Suzuki", 
+        "model_name": "Swift", 
+        "model_variant": "ldi", 
+        "model_year": "2019", 
         "customer": {
-            "_id": "5e84aee31fc621316c541ac1",
-            "user_type": "customer",
+            "_id": "5e84aee31fc621316c541ac1", 
+            "user_type": "customer", 
             "email": {
                 "verficationStatus": {
                     "isVerified": false
-                },
+                }, 
                 "address": "emailid@email.com"
-            },
+            }, 
             "personal_details": {
-                "_id": "5e84aee8c0277b3163e409fb",
-                "mobile_nos": [],
+                "_id": "5e84aee8c0277b3163e409fb", 
+                "mobile_nos": [], 
                 "emails": [
                     {
                         "verficationStatus": {
                             "isVerified": false
-                        },
-                        "_id": "5e84aee31fc621316c541ac2",
+                        }, 
+                        "_id": "5e84aee31fc621316c541ac2", 
                         "address": "emailid@email.com"
                     }
                 ]
-            },
-            "username": "emailid@email.com",
-            "createdAt": "2020-04-01T15:10:27.404Z",
-            "updatedAt": "2020-04-01T15:10:27.404Z",
-            "__v": 0,
+            }, 
+            "username": "emailid@email.com", 
+            "createdAt": "2020-04-01T15:10:27.404Z", 
+            "updatedAt": "2020-04-01T15:10:27.404Z", 
+            "__v": 0, 
             "bank_accounts": []
-        },
-        "createdAt": "2020-04-09T03:55:37.200Z",
-        "updatedAt": "2020-04-09T03:55:37.200Z",
+        }, 
+        "createdAt": "2020-04-09T03:55:37.200Z", 
+        "updatedAt": "2020-04-09T03:55:37.200Z", 
         "__v": 0
-    },
-    "customer": "5e84aee31fc621316c541ac1",
-    "document_path": "http://52.77.255.121:3003/Files/cust-5e84aee31fc621316c541ac1/Documents/Pollution/car-5e8e9cb9a27a005fe1764fe3/endpoints.txt\n.txt",
-    "createdAt": "2020-04-09T03:56:04.848Z",
-    "updatedAt": "2020-04-09T04:40:04.153Z",
+    }, 
+    "customer": "5e84aee31fc621316c541ac1", 
+    "document_path": "http://52.77.255.121:3003/Files/cust-5e84aee31fc621316c541ac1/Documents/Pollution/car-5e8e9cb9a27a005fe1764fe3/endpoints.txt\n.txt", 
+    "createdAt": "2020-04-09T03:56:04.848Z", 
+    "updatedAt": "2020-04-09T04:40:04.153Z", 
     "__v": 0
 }
 
@@ -2263,7 +2263,7 @@ Note:Don't forget to replace \<DocumentId> with the id of the doucment you want 
 <table>
 <tr><th>Status Code</th><th>Description</th></tr>
 <tr><td>200</td><td>Everything went well</td></tr>
-<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
@@ -2280,13 +2280,13 @@ This section contains documentation for all the apis that handle Product/Service
 ```python
 import requests
 url = "http://52.77.255.121:3004/admin/service/create/"
-payload = "{ \"typeOf\":\"PRODUCT\",\r\n\"image\": \"engineoil.png\",\r\n\"name\": \"Engine Oil\",\r\n\"description\": \"This is engine oil\",\r\n\"cost\": 100,\r\n\"stock\": 5,\r\n\"qty_unit\": \"Bottles\",\r\n\"inclusions\": [],\r\n\"add_on\": [],\r\n\"keywords\": [\"Oil\",\"Engine\",\"Smooth\"]\r\n}"
+payload = "{ \"typeOf\":\"PRODUCT\", \r\n\"image\": \"engineoil.png\", \r\n\"name\": \"Engine Oil\", \r\n\"description\": \"This is engine oil\", \r\n\"cost\": 100, \r\n\"stock\": 5, \r\n\"qty_unit\": \"Bottles\", \r\n\"inclusions\": [], \r\n\"add_on\": [], \r\n\"keywords\": [\"Oil\", \"Engine\", \"Smooth\"]\r\n}"
 headers = {
-    'content-type': "application/json",
-    'cache-control': "no-cache",
+    'content-type': "application/json", 
+    'cache-control': "no-cache", 
     'postman-token': "e6fb7bf0-6c78-b3c3-13a9-1de0a27e930a"
     }
-response = requests.request("POST", url, data=payload, headers=headers)
+response = requests.request("POST",  url,  data=payload,  headers=headers)
 print(response.text)
 
 ```
@@ -2294,45 +2294,45 @@ print(response.text)
 require 'uri'
 require 'net/http'
 url = URI("http://52.77.255.121:3004/admin/service/create/")
-http = Net::HTTP.new(url.host, url.port)
+http = Net::HTTP.new(url.host,  url.port)
 request = Net::HTTP::Post.new(url)
 request["content-type"] = 'application/json'
 request["cache-control"] = 'no-cache'
 request["postman-token"] = 'dc383eb2-136a-d29b-c7a0-b7b3cd214b6a'
-request.body = "{ \"typeOf\":\"PRODUCT\",\r\n\"image\": \"engineoil.png\",\r\n\"name\": \"Engine Oil\",\r\n\"description\": \"This is engine oil\",\r\n\"cost\": 100,\r\n\"stock\": 5,\r\n\"qty_unit\": \"Bottles\",\r\n\"inclusions\": [],\r\n\"add_on\": [],\r\n\"keywords\": [\"Oil\",\"Engine\",\"Smooth\"]\r\n}"
+request.body = "{ \"typeOf\":\"PRODUCT\", \r\n\"image\": \"engineoil.png\", \r\n\"name\": \"Engine Oil\", \r\n\"description\": \"This is engine oil\", \r\n\"cost\": 100, \r\n\"stock\": 5, \r\n\"qty_unit\": \"Bottles\", \r\n\"inclusions\": [], \r\n\"add_on\": [], \r\n\"keywords\": [\"Oil\", \"Engine\", \"Smooth\"]\r\n}"
 response = http.request(request)
 puts response.read_body
 
 ```
 ```javascript
 var data = JSON.stringify({
-  "typeOf": "PRODUCT",
-  "image": "engineoil.png",
-  "name": "Engine Oil",
-  "description": "This is engine oil",
-  "cost": 100,
-  "stock": 5,
-  "qty_unit": "Bottles",
-  "inclusions": [],
-  "add_on": [],
+  "typeOf": "PRODUCT", 
+  "image": "engineoil.png", 
+  "name": "Engine Oil", 
+  "description": "This is engine oil", 
+  "cost": 100, 
+  "stock": 5, 
+  "qty_unit": "Bottles", 
+  "inclusions": [], 
+  "add_on": [], 
   "keywords": [
-    "Oil",
-    "Engine",
+    "Oil", 
+    "Engine", 
     "Smooth"
   ]
 });
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
 
-xhr.addEventListener("readystatechange", function () {
+xhr.addEventListener("readystatechange",  function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
-xhr.open("POST", "http://52.77.255.121:3004/admin/service/create/");
-xhr.setRequestHeader("content-type", "application/json");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "b6a424ce-e7ac-2dd2-bdac-af039199c97a");
+xhr.open("POST",  "http://52.77.255.121:3004/admin/service/create/");
+xhr.setRequestHeader("content-type",  "application/json");
+xhr.setRequestHeader("cache-control",  "no-cache");
+xhr.setRequestHeader("postman-token",  "b6a424ce-e7ac-2dd2-bdac-af039199c97a");
 xhr.send(data);
 
 ```
@@ -2342,16 +2342,16 @@ curl -X POST \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
   -H 'postman-token: 6ac61c32-0dfa-1b41-b379-9d626567db9a' \
-  -d '{ "typeOf":"PRODUCT",
-"image": "engineoil.png",
-"name": "Engine Oil",
-"description": "This is engine oil",
-"cost": 100,
-"stock": 5,
-"qty_unit": "Bottles",
-"inclusions": [],
-"add_on": [],
-"keywords": ["Oil","Engine","Smooth"]
+  -d '{ "typeOf":"PRODUCT", 
+"image": "engineoil.png", 
+"name": "Engine Oil", 
+"description": "This is engine oil", 
+"cost": 100, 
+"stock": 5, 
+"qty_unit": "Bottles", 
+"inclusions": [], 
+"add_on": [], 
+"keywords": ["Oil", "Engine", "Smooth"]
 }'
 
 ```
@@ -2359,25 +2359,25 @@ curl -X POST \
 
 ```json
 {
-    "stock": 5,
-    "inclusions": [],
-    "add_on": [],
-    "direct_booking": false,
-    "recommended_service": false,
+    "stock": 5, 
+    "inclusions": [], 
+    "add_on": [], 
+    "direct_booking": false, 
+    "recommended_service": false, 
     "keywords": [
-        "Oil",
-        "Engine",
+        "Oil", 
+        "Engine", 
         "Smooth"
-    ],
-    "_id": "5e8584bac0277b3163e409fe",
-    "typeOf": "PRODUCT",
-    "image": "engineoil.png",
-    "name": "Engine Oil",
-    "description": "This is engine oil",
-    "cost": 100,
-    "qty_unit": "Bottles",
-    "createdAt": "2020-04-02T06:22:50.520Z",
-    "updatedAt": "2020-04-02T06:22:50.520Z",
+    ], 
+    "_id": "5e8584bac0277b3163e409fe", 
+    "typeOf": "PRODUCT", 
+    "image": "engineoil.png", 
+    "name": "Engine Oil", 
+    "description": "This is engine oil", 
+    "cost": 100, 
+    "qty_unit": "Bottles", 
+    "createdAt": "2020-04-02T06:22:50.520Z", 
+    "updatedAt": "2020-04-02T06:22:50.520Z", 
     "__v": 0
 }
 
@@ -2417,7 +2417,7 @@ curl -X POST \
 <table>
 <tr><th>Status Code</th><th>Description</th></tr>
 <tr><td>200</td><td>Everything went well</td></tr>
-<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
@@ -2436,10 +2436,10 @@ Administrators can add products from
 import requests
 url = "http://52.77.255.121:3004/admin/service/all/read/"
 headers = {
-    'cache-control': "no-cache",
+    'cache-control': "no-cache", 
     'postman-token': "48364019-a48b-5911-b234-b049fcce5d41"
     }
-response = requests.request("POST", url, headers=headers)
+response = requests.request("POST",  url,  headers=headers)
 print(response.text)
 
 ```
@@ -2447,7 +2447,7 @@ print(response.text)
 require 'uri'
 require 'net/http'
 url = URI("http://52.77.255.121:3004/admin/service/all/read/")
-http = Net::HTTP.new(url.host, url.port)
+http = Net::HTTP.new(url.host,  url.port)
 request = Net::HTTP::Post.new(url)
 request["cache-control"] = 'no-cache'
 request["postman-token"] = '374c9182-bc1c-cefc-5a54-fc66bd8accdf'
@@ -2459,14 +2459,14 @@ puts response.read_body
 var data = null;
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
+xhr.addEventListener("readystatechange",  function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
-xhr.open("POST", "http://52.77.255.121:3004/admin/service/all/read/");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "db3d0019-347e-d311-c209-94e62c894f87");
+xhr.open("POST",  "http://52.77.255.121:3004/admin/service/all/read/");
+xhr.setRequestHeader("cache-control",  "no-cache");
+xhr.setRequestHeader("postman-token",  "db3d0019-347e-d311-c209-94e62c894f87");
 xhr.send(data);
 
 ```
@@ -2481,51 +2481,51 @@ curl -X POST \
 ```json
 [
     {
-        "stock": 5,
-        "inclusions": [],
-        "add_on": [],
-        "direct_booking": false,
-        "recommended_service": false,
+        "stock": 5, 
+        "inclusions": [], 
+        "add_on": [], 
+        "direct_booking": false, 
+        "recommended_service": false, 
         "keywords": [
-            "Oil",
-            "Engine",
+            "Oil", 
+            "Engine", 
             "Smooth"
-        ],
-        "_id": "5e8584bac0277b3163e409fe",
-        "typeOf": "PRODUCT",
-        "image": "engineoil.png",
-        "name": "Engine Oil",
-        "description": "This is engine oil",
-        "cost": 100,
-        "qty_unit": "Bottles",
-        "createdAt": "2020-04-02T06:22:50.520Z",
-        "updatedAt": "2020-04-02T06:22:50.520Z",
+        ], 
+        "_id": "5e8584bac0277b3163e409fe", 
+        "typeOf": "PRODUCT", 
+        "image": "engineoil.png", 
+        "name": "Engine Oil", 
+        "description": "This is engine oil", 
+        "cost": 100, 
+        "qty_unit": "Bottles", 
+        "createdAt": "2020-04-02T06:22:50.520Z", 
+        "updatedAt": "2020-04-02T06:22:50.520Z", 
         "__v": 0
-    },
+    }, 
     {
-        "stock": 0,
+        "stock": 0, 
         "inclusions": [
             "5e8584bac0277b3163e409fe"
-        ],
+        ], 
         "add_on": [
             "5e8584bac0277b3163e409fe"
-        ],
-        "direct_booking": false,
-        "recommended_service": false,
+        ], 
+        "direct_booking": false, 
+        "recommended_service": false, 
         "keywords": [
-            "quick",
-            "service",
-            "fast",
+            "quick", 
+            "service", 
+            "fast", 
             "one-day"
-        ],
-        "_id": "5e8586c6c0277b3163e409ff",
-        "typeOf": "SERVICE",
-        "image": "Quicck_service.png",
-        "name": "Quick Service",
-        "description": "Service your car in one day with excellant quality asurance",
-        "cost": 2000,
-        "createdAt": "2020-04-02T06:31:34.360Z",
-        "updatedAt": "2020-04-02T06:31:34.360Z",
+        ], 
+        "_id": "5e8586c6c0277b3163e409ff", 
+        "typeOf": "SERVICE", 
+        "image": "Quicck_service.png", 
+        "name": "Quick Service", 
+        "description": "Service your car in one day with excellant quality asurance", 
+        "cost": 2000, 
+        "createdAt": "2020-04-02T06:31:34.360Z", 
+        "updatedAt": "2020-04-02T06:31:34.360Z", 
         "__v": 0
     }
 ]
@@ -2548,7 +2548,7 @@ curl -X POST \
 <table>
 <tr><th>Status Code</th><th>Description</th></tr>
 <tr><td>200</td><td>Everything went well</td></tr>
-<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
@@ -2576,10 +2576,10 @@ Customers can view all products when they go to the add on section of the servic
 import requests
 url = "http://52.77.255.121:3004/admin/service/read/5e8586c6c0277b3163e409ff"
 headers = {
-    'cache-control': "no-cache",
+    'cache-control': "no-cache", 
     'postman-token': "53f5dcce-f89f-c206-5a23-3963f50b279c"
     }
-response = requests.request("GET", url, headers=headers)
+response = requests.request("GET",  url,  headers=headers)
 print(response.text)
 
 ```
@@ -2587,7 +2587,7 @@ print(response.text)
 require 'uri'
 require 'net/http'
 url = URI("http://52.77.255.121:3004/admin/service/read/5e8586c6c0277b3163e409ff")
-http = Net::HTTP.new(url.host, url.port)
+http = Net::HTTP.new(url.host,  url.port)
 request = Net::HTTP::Get.new(url)
 request["cache-control"] = 'no-cache'
 request["postman-token"] = 'ae5486eb-4ab5-3ad1-4fb2-91f6299ff8bf'
@@ -2599,14 +2599,14 @@ puts response.read_body
 var data = null;
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
+xhr.addEventListener("readystatechange",  function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
-xhr.open("GET", "http://52.77.255.121:3004/admin/service/read/5e8586c6c0277b3163e409ff");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "9cee61d1-fb5c-530d-18a5-ac285fc3bbb6");
+xhr.open("GET",  "http://52.77.255.121:3004/admin/service/read/5e8586c6c0277b3163e409ff");
+xhr.setRequestHeader("cache-control",  "no-cache");
+xhr.setRequestHeader("postman-token",  "9cee61d1-fb5c-530d-18a5-ac285fc3bbb6");
 xhr.send(data);
 
 ```
@@ -2620,29 +2620,29 @@ curl -X GET \
 
 ```json
 {
-    "stock": 0,
+    "stock": 0, 
     "inclusions": [
         "5e8584bac0277b3163e409fe"
-    ],
+    ], 
     "add_on": [
         "5e8584bac0277b3163e409fe"
-    ],
-    "direct_booking": false,
-    "recommended_service": false,
+    ], 
+    "direct_booking": false, 
+    "recommended_service": false, 
     "keywords": [
-        "quick",
-        "service",
-        "fast",
+        "quick", 
+        "service", 
+        "fast", 
         "one-day"
-    ],
-    "_id": "5e8586c6c0277b3163e409ff",
-    "typeOf": "SERVICE",
-    "image": "Quicck_service.png",
-    "name": "Quick Service",
-    "description": "Service your car in one day with excellant quality asurance",
-    "cost": 2000,
-    "createdAt": "2020-04-02T06:31:34.360Z",
-    "updatedAt": "2020-04-02T06:31:34.360Z",
+    ], 
+    "_id": "5e8586c6c0277b3163e409ff", 
+    "typeOf": "SERVICE", 
+    "image": "Quicck_service.png", 
+    "name": "Quick Service", 
+    "description": "Service your car in one day with excellant quality asurance", 
+    "cost": 2000, 
+    "createdAt": "2020-04-02T06:31:34.360Z", 
+    "updatedAt": "2020-04-02T06:31:34.360Z", 
     "__v": 0
 } 
 
@@ -2667,7 +2667,7 @@ Dont forget to replace \<ServiceId> with the service id of the product/service.
 <table>
 <tr><th>Status Code</th><th>Description</th></tr>
 <tr><td>200</td><td>Everything went well</td></tr>
-<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
@@ -2688,11 +2688,11 @@ Customers can view a specific service/product from the page  shown below:
 import requests
 url = "http://52.77.255.121:3004/admin/service/delete/5e8584bac0277b3163e409fe"
 headers = {
-    'content-type': "application/json",
-    'cache-control': "no-cache",
+    'content-type': "application/json", 
+    'cache-control': "no-cache", 
     'postman-token': "28740626-c5ef-53d2-3be9-4defd43b4668"
     }
-response = requests.request("DELETE", url, headers=headers)
+response = requests.request("DELETE",  url,  headers=headers)
 print(response.text)
 
 ```
@@ -2700,7 +2700,7 @@ print(response.text)
 require 'uri'
 require 'net/http'
 url = URI("http://52.77.255.121:3004/admin/service/delete/5e8584bac0277b3163e409fe")
-http = Net::HTTP.new(url.host, url.port)
+http = Net::HTTP.new(url.host,  url.port)
 request = Net::HTTP::Delete.new(url)
 request["content-type"] = 'application/json'
 request["cache-control"] = 'no-cache'
@@ -2713,15 +2713,15 @@ puts response.read_body
 var data = null;
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
+xhr.addEventListener("readystatechange",  function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
-xhr.open("DELETE", "http://52.77.255.121:3004/admin/service/delete/5e8584bac0277b3163e409fe");
-xhr.setRequestHeader("content-type", "application/json");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "3d243704-6048-9094-8dea-953572175151");
+xhr.open("DELETE",  "http://52.77.255.121:3004/admin/service/delete/5e8584bac0277b3163e409fe");
+xhr.setRequestHeader("content-type",  "application/json");
+xhr.setRequestHeader("cache-control",  "no-cache");
+xhr.setRequestHeader("postman-token",  "3d243704-6048-9094-8dea-953572175151");
 xhr.send(data);
 
 ```
@@ -2737,31 +2737,31 @@ curl -X DELETE \
 
 ```json
 {
-    "stock": 5,
-    "inclusions": [],
-    "add_on": [],
-    "direct_booking": false,
-    "recommended_service": false,
+    "stock": 5, 
+    "inclusions": [], 
+    "add_on": [], 
+    "direct_booking": false, 
+    "recommended_service": false, 
     "keywords": [
-        "Oil",
-        "Engine",
+        "Oil", 
+        "Engine", 
         "Smooth"
-    ],
-    "_id": "5e8584bac0277b3163e409fe",
-    "typeOf": "PRODUCT",
-    "image": "engineoil.png",
-    "name": "Engine Oil",
-    "description": "This is engine oil",
-    "cost": 100,
-    "qty_unit": "Bottles",
-    "createdAt": "2020-04-02T06:22:50.520Z",
-    "updatedAt": "2020-04-02T06:22:50.520Z",
+    ], 
+    "_id": "5e8584bac0277b3163e409fe", 
+    "typeOf": "PRODUCT", 
+    "image": "engineoil.png", 
+    "name": "Engine Oil", 
+    "description": "This is engine oil", 
+    "cost": 100, 
+    "qty_unit": "Bottles", 
+    "createdAt": "2020-04-02T06:22:50.520Z", 
+    "updatedAt": "2020-04-02T06:22:50.520Z", 
     "__v": 0
 }
 
 ```
 
-Some services might be combined down the line or might be removed due to changing technology , in that case you need to be able to delete a few services.
+Some services might be combined down the line or might be removed due to changing technology ,  in that case you need to be able to delete a few services.
 <br>
 <p>`App:admin`</p>
 <h3>Http request</h5>
@@ -2785,7 +2785,7 @@ Dont forget to replace \<ServiceId> with the service id of the product/service.
 <table>
 <tr><th>Status Code</th><th>Description</th></tr>
 <tr><td>200</td><td>Everything went well</td></tr>
-<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
@@ -2824,13 +2824,13 @@ If a cash payment is made it is authenticated using an OTP given by the customer
 ```python
 import requests
 url = "http://52.77.255.121:3003/customer/service_request/create"
-payload = "{\r\n  \"car\": \"5e859a3e377c0c3168f1b4b0\",\r\n  \"service\": \"5e8586c6c0277b3163e409ff\",\r\n  \"date\": \"2020-02-29T10:14:11.830Z\",\r\n  \"location\": \"testAddress\"\r\n}"
+payload = "{\r\n  \"car\": \"5e859a3e377c0c3168f1b4b0\", \r\n  \"service\": \"5e8586c6c0277b3163e409ff\", \r\n  \"date\": \"2020-02-29T10:14:11.830Z\", \r\n  \"location\": \"testAddress\"\r\n}"
 headers = {
-    'content-type': "application/json",
-    'cache-control': "no-cache",
+    'content-type': "application/json", 
+    'cache-control': "no-cache", 
     'postman-token': "274f0e01-4bdc-00e4-04b5-566cfc7dade2"
     }
-response = requests.request("POST", url, data=payload, headers=headers)
+response = requests.request("POST",  url,  data=payload,  headers=headers)
 print(response.text)
 
 ```
@@ -2838,34 +2838,34 @@ print(response.text)
 require 'uri'
 require 'net/http'
 url = URI("http://52.77.255.121:3003/customer/service_request/create")
-http = Net::HTTP.new(url.host, url.port)
+http = Net::HTTP.new(url.host,  url.port)
 request = Net::HTTP::Post.new(url)
 request["content-type"] = 'application/json'
 request["cache-control"] = 'no-cache'
 request["postman-token"] = '322db753-89c2-8a03-fea1-6f0758c7f2ed'
-request.body = "{\r\n  \"car\": \"5e859a3e377c0c3168f1b4b0\",\r\n  \"service\": \"5e8586c6c0277b3163e409ff\",\r\n  \"date\": \"2020-02-29T10:14:11.830Z\",\r\n  \"location\": \"testAddress\"\r\n}"
+request.body = "{\r\n  \"car\": \"5e859a3e377c0c3168f1b4b0\", \r\n  \"service\": \"5e8586c6c0277b3163e409ff\", \r\n  \"date\": \"2020-02-29T10:14:11.830Z\", \r\n  \"location\": \"testAddress\"\r\n}"
 response = http.request(request)
 puts response.read_body
 
 ```
 ```javascript
 var data = JSON.stringify({
-  "car": "5e859a3e377c0c3168f1b4b0",
-  "service": "5e8586c6c0277b3163e409ff",
-  "date": "2020-02-29T10:14:11.830Z",
+  "car": "5e859a3e377c0c3168f1b4b0", 
+  "service": "5e8586c6c0277b3163e409ff", 
+  "date": "2020-02-29T10:14:11.830Z", 
   "location": "testAddress"
 });
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
+xhr.addEventListener("readystatechange",  function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
-xhr.open("POST", "http://52.77.255.121:3003/customer/service_request/create");
-xhr.setRequestHeader("content-type", "application/json");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "5f1e44e7-81c7-30d5-65c5-2f07f8db10be");
+xhr.open("POST",  "http://52.77.255.121:3003/customer/service_request/create");
+xhr.setRequestHeader("content-type",  "application/json");
+xhr.setRequestHeader("cache-control",  "no-cache");
+xhr.setRequestHeader("postman-token",  "5f1e44e7-81c7-30d5-65c5-2f07f8db10be");
 xhr.send(data);
 
 ```
@@ -2876,9 +2876,9 @@ curl -X POST \
   -H 'content-type: application/json' \
   -H 'postman-token: 87661af2-2512-bd1f-a7b2-de5e84381071' \
   -d '{
-  "car": "5e859a3e377c0c3168f1b4b0",
-  "service": "5e8586c6c0277b3163e409ff",
-  "date": "2020-02-29T10:14:11.830Z",
+  "car": "5e859a3e377c0c3168f1b4b0", 
+  "service": "5e8586c6c0277b3163e409ff", 
+  "date": "2020-02-29T10:14:11.830Z", 
   "location": "testAddress"
 }'
 
@@ -2889,58 +2889,58 @@ curl -X POST \
 {
     "payment": {
         "done": false
-    },
-    "status": "BOOKED",
-    "_id": "5e85ac3fb981e543d6fa5729",
+    }, 
+    "status": "BOOKED", 
+    "_id": "5e85ac3fb981e543d6fa5729", 
     "car": {
         "overview": {
-            "engine_oil": true,
-            "tier": true,
-            "suspension": true,
-            "brakes": true,
-            "electrical_checkup": true,
+            "engine_oil": true, 
+            "tier": true, 
+            "suspension": true, 
+            "brakes": true, 
+            "electrical_checkup": true, 
             "air_conditioner": true
-        },
-        "_id": "5e859a3e377c0c3168f1b4b0",
-        "brand": "Maruti Suzuki",
-        "model_name": "Swift",
-        "model_variant": "ldi",
-        "model_year": "2019",
-        "createdAt": "2020-04-02T07:54:38.331Z",
-        "updatedAt": "2020-04-02T07:54:38.331Z",
+        }, 
+        "_id": "5e859a3e377c0c3168f1b4b0", 
+        "brand": "Maruti Suzuki", 
+        "model_name": "Swift", 
+        "model_variant": "ldi", 
+        "model_year": "2019", 
+        "createdAt": "2020-04-02T07:54:38.331Z", 
+        "updatedAt": "2020-04-02T07:54:38.331Z", 
         "__v": 0
-    },
+    }, 
     "service": {
-        "stock": 0,
+        "stock": 0, 
         "inclusions": [
             "5e8584bac0277b3163e409fe"
-        ],
+        ], 
         "add_on": [
             "5e8584bac0277b3163e409fe"
-        ],
-        "direct_booking": false,
-        "recommended_service": false,
+        ], 
+        "direct_booking": false, 
+        "recommended_service": false, 
         "keywords": [
-            "quick",
-            "service",
-            "fast",
+            "quick", 
+            "service", 
+            "fast", 
             "one-day"
-        ],
-        "_id": "5e8586c6c0277b3163e409ff",
-        "typeOf": "SERVICE",
-        "image": "Quicck_service.png",
-        "name": "Quick Service",
-        "description": "Service your car in one day with excellant quality asurance",
-        "cost": 2000,
-        "createdAt": "2020-04-02T06:31:34.360Z",
-        "updatedAt": "2020-04-02T06:31:34.360Z",
+        ], 
+        "_id": "5e8586c6c0277b3163e409ff", 
+        "typeOf": "SERVICE", 
+        "image": "Quicck_service.png", 
+        "name": "Quick Service", 
+        "description": "Service your car in one day with excellant quality asurance", 
+        "cost": 2000, 
+        "createdAt": "2020-04-02T06:31:34.360Z", 
+        "updatedAt": "2020-04-02T06:31:34.360Z", 
         "__v": 0
-    },
-    "date": "2020-02-29T10:14:11.830Z",
-    "location": "testAddress",
-    "add_ons": [],
-    "createdAt": "2020-04-02T09:11:27.967Z",
-    "updatedAt": "2020-04-02T09:11:27.967Z",
+    }, 
+    "date": "2020-02-29T10:14:11.830Z", 
+    "location": "testAddress", 
+    "add_ons": [], 
+    "createdAt": "2020-04-02T09:11:27.967Z", 
+    "updatedAt": "2020-04-02T09:11:27.967Z", 
     "__v": 0
 }
 
@@ -2970,7 +2970,7 @@ curl -X POST \
 <table>
 <tr><th>Status Code</th><th>Description</th></tr>
 <tr><td>200</td><td>Everything went well</td></tr>
-<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
@@ -2990,10 +2990,10 @@ Once the customer chooses a service they are given an option to choose addons th
 import requests
 url = "http://52.77.255.121:3003/customer/service_request/all/get"
 headers = {
-    'cache-control': "no-cache",
+    'cache-control': "no-cache", 
     'postman-token': "30dc523c-a10e-5360-7f4b-39ffafca0b7f"
     }
-response = requests.request("POST", url, headers=headers)
+response = requests.request("POST",  url,  headers=headers)
 print(response.text)
 
 ```
@@ -3001,7 +3001,7 @@ print(response.text)
 require 'uri'
 require 'net/http'
 url = URI("http://52.77.255.121:3003/customer/service_request/all/get")
-http = Net::HTTP.new(url.host, url.port)
+http = Net::HTTP.new(url.host,  url.port)
 request = Net::HTTP::Post.new(url)
 request["cache-control"] = 'no-cache'
 request["postman-token"] = 'd88f27c7-6460-d9a8-4d9c-2527f31aff7f'
@@ -3013,14 +3013,14 @@ puts response.read_body
 var data = null;
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
+xhr.addEventListener("readystatechange",  function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
-xhr.open("POST", "http://52.77.255.121:3003/customer/service_request/all/get");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "046fa740-447d-1869-9f21-a528cca252b1");
+xhr.open("POST",  "http://52.77.255.121:3003/customer/service_request/all/get");
+xhr.setRequestHeader("cache-control",  "no-cache");
+xhr.setRequestHeader("postman-token",  "046fa740-447d-1869-9f21-a528cca252b1");
 xhr.send(data);
 
 ```
@@ -3038,58 +3038,58 @@ curl -X POST \
     {
         "payment": {
             "done": false
-        },
-        "status": "BOOKED",
-        "_id": "5e85ac3fb981e543d6fa5729",
+        }, 
+        "status": "BOOKED", 
+        "_id": "5e85ac3fb981e543d6fa5729", 
         "car": {
             "overview": {
-                "engine_oil": true,
-                "tier": true,
-                "suspension": true,
-                "brakes": true,
-                "electrical_checkup": true,
+                "engine_oil": true, 
+                "tier": true, 
+                "suspension": true, 
+                "brakes": true, 
+                "electrical_checkup": true, 
                 "air_conditioner": true
-            },
-            "_id": "5e859a3e377c0c3168f1b4b0",
-            "brand": "Maruti Suzuki",
-            "model_name": "Swift",
-            "model_variant": "ldi",
-            "model_year": "2019",
-            "createdAt": "2020-04-02T07:54:38.331Z",
-            "updatedAt": "2020-04-02T07:54:38.331Z",
+            }, 
+            "_id": "5e859a3e377c0c3168f1b4b0", 
+            "brand": "Maruti Suzuki", 
+            "model_name": "Swift", 
+            "model_variant": "ldi", 
+            "model_year": "2019", 
+            "createdAt": "2020-04-02T07:54:38.331Z", 
+            "updatedAt": "2020-04-02T07:54:38.331Z", 
             "__v": 0
-        },
+        }, 
         "service": {
-            "stock": 0,
+            "stock": 0, 
             "inclusions": [
                 "5e8584bac0277b3163e409fe"
-            ],
+            ], 
             "add_on": [
                 "5e8584bac0277b3163e409fe"
-            ],
-            "direct_booking": false,
-            "recommended_service": false,
+            ], 
+            "direct_booking": false, 
+            "recommended_service": false, 
             "keywords": [
-                "quick",
-                "service",
-                "fast",
+                "quick", 
+                "service", 
+                "fast", 
                 "one-day"
-            ],
-            "_id": "5e8586c6c0277b3163e409ff",
-            "typeOf": "SERVICE",
-            "image": "Quicck_service.png",
-            "name": "Quick Service",
-            "description": "Service your car in one day with excellant quality asurance",
-            "cost": 2000,
-            "createdAt": "2020-04-02T06:31:34.360Z",
-            "updatedAt": "2020-04-02T06:31:34.360Z",
+            ], 
+            "_id": "5e8586c6c0277b3163e409ff", 
+            "typeOf": "SERVICE", 
+            "image": "Quicck_service.png", 
+            "name": "Quick Service", 
+            "description": "Service your car in one day with excellant quality asurance", 
+            "cost": 2000, 
+            "createdAt": "2020-04-02T06:31:34.360Z", 
+            "updatedAt": "2020-04-02T06:31:34.360Z", 
             "__v": 0
-        },
-        "date": "2020-02-29T10:14:11.830Z",
-        "location": "testAddress",
-        "add_ons": [],
-        "createdAt": "2020-04-02T09:11:27.967Z",
-        "updatedAt": "2020-04-02T09:11:27.967Z",
+        }, 
+        "date": "2020-02-29T10:14:11.830Z", 
+        "location": "testAddress", 
+        "add_ons": [], 
+        "createdAt": "2020-04-02T09:11:27.967Z", 
+        "updatedAt": "2020-04-02T09:11:27.967Z", 
         "__v": 0
     }
 ]
@@ -3113,7 +3113,7 @@ curl -X POST \
 <table>
 <tr><th>Status Code</th><th>Description</th></tr>
 <tr><td>200</td><td>Everything went well</td></tr>
-<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
@@ -3138,10 +3138,10 @@ Once the admin assigns a service to a mechanic a job card is created under that 
 import requests
 url = "http://52.77.255.121:3003/customer/service_request/read/5e85ac3fb981e543d6fa5729"
 headers = {
-    'cache-control': "no-cache",
+    'cache-control': "no-cache", 
     'postman-token': "549de7d7-b38c-05c6-8d1a-7e0656e2d6fb"
     }
-response = requests.request("GET", url, headers=headers)
+response = requests.request("GET",  url,  headers=headers)
 print(response.text)
 
 ```
@@ -3149,7 +3149,7 @@ print(response.text)
 require 'uri'
 require 'net/http'
 url = URI("http://52.77.255.121:3003/customer/service_request/read/5e85ac3fb981e543d6fa5729")
-http = Net::HTTP.new(url.host, url.port)
+http = Net::HTTP.new(url.host,  url.port)
 request = Net::HTTP::Get.new(url)
 request["cache-control"] = 'no-cache'
 request["postman-token"] = 'd9b35814-7e36-7228-90c7-043460c7aef2'
@@ -3161,14 +3161,14 @@ puts response.read_body
 var data = null;
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
+xhr.addEventListener("readystatechange",  function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
-xhr.open("GET", "http://52.77.255.121:3003/customer/service_request/read/5e85ac3fb981e543d6fa5729");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "48aaa899-c932-9f7c-a047-55da3d003557");
+xhr.open("GET",  "http://52.77.255.121:3003/customer/service_request/read/5e85ac3fb981e543d6fa5729");
+xhr.setRequestHeader("cache-control",  "no-cache");
+xhr.setRequestHeader("postman-token",  "48aaa899-c932-9f7c-a047-55da3d003557");
 xhr.send(data);
 
 ```
@@ -3185,58 +3185,58 @@ curl -X GET \
 {
     "payment": {
         "done": false
-    },
-    "status": "BOOKED",
-    "_id": "5e85ac3fb981e543d6fa5729",
+    }, 
+    "status": "BOOKED", 
+    "_id": "5e85ac3fb981e543d6fa5729", 
     "car": {
         "overview": {
-            "engine_oil": true,
-            "tier": true,
-            "suspension": true,
-            "brakes": true,
-            "electrical_checkup": true,
+            "engine_oil": true, 
+            "tier": true, 
+            "suspension": true, 
+            "brakes": true, 
+            "electrical_checkup": true, 
             "air_conditioner": true
-        },
-        "_id": "5e859a3e377c0c3168f1b4b0",
-        "brand": "Maruti Suzuki",
-        "model_name": "Swift",
-        "model_variant": "ldi",
-        "model_year": "2019",
-        "createdAt": "2020-04-02T07:54:38.331Z",
-        "updatedAt": "2020-04-02T07:54:38.331Z",
+        }, 
+        "_id": "5e859a3e377c0c3168f1b4b0", 
+        "brand": "Maruti Suzuki", 
+        "model_name": "Swift", 
+        "model_variant": "ldi", 
+        "model_year": "2019", 
+        "createdAt": "2020-04-02T07:54:38.331Z", 
+        "updatedAt": "2020-04-02T07:54:38.331Z", 
         "__v": 0
-    },
+    }, 
     "service": {
-        "stock": 0,
+        "stock": 0, 
         "inclusions": [
             "5e8584bac0277b3163e409fe"
-        ],
+        ], 
         "add_on": [
             "5e8584bac0277b3163e409fe"
-        ],
-        "direct_booking": false,
-        "recommended_service": false,
+        ], 
+        "direct_booking": false, 
+        "recommended_service": false, 
         "keywords": [
-            "quick",
-            "service",
-            "fast",
+            "quick", 
+            "service", 
+            "fast", 
             "one-day"
-        ],
-        "_id": "5e8586c6c0277b3163e409ff",
-        "typeOf": "SERVICE",
-        "image": "Quicck_service.png",
-        "name": "Quick Service",
-        "description": "Service your car in one day with excellant quality asurance",
-        "cost": 2000,
-        "createdAt": "2020-04-02T06:31:34.360Z",
-        "updatedAt": "2020-04-02T06:31:34.360Z",
+        ], 
+        "_id": "5e8586c6c0277b3163e409ff", 
+        "typeOf": "SERVICE", 
+        "image": "Quicck_service.png", 
+        "name": "Quick Service", 
+        "description": "Service your car in one day with excellant quality asurance", 
+        "cost": 2000, 
+        "createdAt": "2020-04-02T06:31:34.360Z", 
+        "updatedAt": "2020-04-02T06:31:34.360Z", 
         "__v": 0
-    },
-    "date": "2020-02-29T10:14:11.830Z",
-    "location": "testAddress",
-    "add_ons": [],
-    "createdAt": "2020-04-02T09:11:27.967Z",
-    "updatedAt": "2020-04-02T09:11:27.967Z",
+    }, 
+    "date": "2020-02-29T10:14:11.830Z", 
+    "location": "testAddress", 
+    "add_ons": [], 
+    "createdAt": "2020-04-02T09:11:27.967Z", 
+    "updatedAt": "2020-04-02T09:11:27.967Z", 
     "__v": 0
 }
 
@@ -3266,7 +3266,7 @@ Dont forget to replace \<RequestID> with the id of the service request you want 
 <table>
 <tr><th>Status Code</th><th>Description</th></tr>
 <tr><td>200</td><td>Everything went well</td></tr>
-<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
@@ -3301,13 +3301,13 @@ Camps are temporary locations where companies set up their equipment for service
 ```python
 import requests
 url = "http://52.77.255.121:3004/admin/camp/create"
-payload = "{\r\n    \"location\": \"#3,13th main road,shivaji nagar,delhi 20\",\r\n    \"status\": \"OPEN\",\r\n    \"date\":\"2020-04-02\",\r\n\t\"start_time\":\"2020-04-02\",\r\n\t\"end_time\":\"2020-04-02\"\r\n}"
+payload = "{\r\n    \"location\": \"#3, 13th main road, shivaji nagar, delhi 20\", \r\n    \"status\": \"OPEN\", \r\n    \"date\":\"2020-04-02\", \r\n\t\"start_time\":\"2020-04-02\", \r\n\t\"end_time\":\"2020-04-02\"\r\n}"
 headers = {
-    'content-type': "application/json",
-    'cache-control': "no-cache",
+    'content-type': "application/json", 
+    'cache-control': "no-cache", 
     'postman-token': "3398c148-556f-a2da-70d6-02673c91f767"
     }
-response = requests.request("POST", url, data=payload, headers=headers)
+response = requests.request("POST",  url,  data=payload,  headers=headers)
 print(response.text)
 
 ```
@@ -3315,35 +3315,35 @@ print(response.text)
 require 'uri'
 require 'net/http'
 url = URI("http://52.77.255.121:3004/admin/camp/create")
-http = Net::HTTP.new(url.host, url.port)
+http = Net::HTTP.new(url.host,  url.port)
 request = Net::HTTP::Post.new(url)
 request["content-type"] = 'application/json'
 request["cache-control"] = 'no-cache'
 request["postman-token"] = '6a0ff31a-cefa-599f-e684-813559cd67ba'
-request.body = "{\r\n    \"location\": \"#3,13th main road,shivaji nagar,delhi 20\",\r\n    \"status\": \"OPEN\",\r\n    \"date\":\"2020-04-02\",\r\n\t\"start_time\":\"2020-04-02\",\r\n\t\"end_time\":\"2020-04-02\"\r\n}"
+request.body = "{\r\n    \"location\": \"#3, 13th main road, shivaji nagar, delhi 20\", \r\n    \"status\": \"OPEN\", \r\n    \"date\":\"2020-04-02\", \r\n\t\"start_time\":\"2020-04-02\", \r\n\t\"end_time\":\"2020-04-02\"\r\n}"
 response = http.request(request)
 puts response.read_body
 
 ```
 ```javascript
 var data = JSON.stringify({
-  "location": "#3,13th main road,shivaji nagar,delhi 20",
-  "status": "OPEN",
-  "date": "2020-04-02",
-  "start_time": "2020-04-02",
+  "location": "#3, 13th main road, shivaji nagar, delhi 20", 
+  "status": "OPEN", 
+  "date": "2020-04-02", 
+  "start_time": "2020-04-02", 
   "end_time": "2020-04-02"
 });
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
+xhr.addEventListener("readystatechange",  function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
-xhr.open("POST", "http://52.77.255.121:3004/admin/camp/create");
-xhr.setRequestHeader("content-type", "application/json");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "22265417-a8f5-2b3a-da73-1460fb1192d3");
+xhr.open("POST",  "http://52.77.255.121:3004/admin/camp/create");
+xhr.setRequestHeader("content-type",  "application/json");
+xhr.setRequestHeader("cache-control",  "no-cache");
+xhr.setRequestHeader("postman-token",  "22265417-a8f5-2b3a-da73-1460fb1192d3");
 xhr.send(data);
 
 ```
@@ -3354,10 +3354,10 @@ curl -X POST \
   -H 'content-type: application/json' \
   -H 'postman-token: 906ccc67-9076-84e0-82d9-a95fd8d2da46' \
   -d '{
-    "location": "#3,13th main road,shivaji nagar,delhi 20",
-    "status": "OPEN",
-    "date":"2020-04-02",
-	"start_time":"2020-04-02",
+    "location": "#3, 13th main road, shivaji nagar, delhi 20", 
+    "status": "OPEN", 
+    "date":"2020-04-02", 
+	"start_time":"2020-04-02", 
 	"end_time":"2020-04-02"
 }'
 
@@ -3366,18 +3366,18 @@ curl -X POST \
 
 ```json
 {
-    "total_revenue": 0,
-    "existing_customer_interactions": 0,
-    "new_customer_added": 0,
-    "_id": "5e85b50fdaf2b743d096632c",
-    "location": "#3,13th main road,shivaji nagar,delhi 20",
-    "status": "OPEN",
-    "date": "2020-04-02T00:00:00.000Z",
-    "start_time": "2020-04-02T00:00:00.000Z",
-    "end_time": "2020-04-02T00:00:00.000Z",
-    "registered_customers": [],
-    "createdAt": "2020-04-02T09:49:03.275Z",
-    "updatedAt": "2020-04-02T09:49:03.275Z",
+    "total_revenue": 0, 
+    "existing_customer_interactions": 0, 
+    "new_customer_added": 0, 
+    "_id": "5e85b50fdaf2b743d096632c", 
+    "location": "#3, 13th main road, shivaji nagar, delhi 20", 
+    "status": "OPEN", 
+    "date": "2020-04-02T00:00:00.000Z", 
+    "start_time": "2020-04-02T00:00:00.000Z", 
+    "end_time": "2020-04-02T00:00:00.000Z", 
+    "registered_customers": [], 
+    "createdAt": "2020-04-02T09:49:03.275Z", 
+    "updatedAt": "2020-04-02T09:49:03.275Z", 
     "__v": 0
 }
 
@@ -3399,7 +3399,7 @@ curl -X POST \
 <table>
 <tr><th>Parameter</th><th>Description</th><th>Type</th></tr>
 <tr><td>Location</td><td>This parameter is used to forward the location of the camp</td><td>required</td></tr>
-<tr><td>status</td><td>This parameter is used to forward if the camp has started, or not</td><td>required</td></tr>
+<tr><td>status</td><td>This parameter is used to forward if the camp has started,  or not</td><td>required</td></tr>
 <tr><td>date</td><td>This parameter is used to forward the date of the camp</td><td>required</td></tr>
 <tr><td>start_time</td><td>This parameter is used to forward the start date and time of the camp</td><td>required</td></tr>
 <tr><td>end_time</td><td>This parameter is used to forward the end date and time of the camp</td><td>required</td></tr>
@@ -3408,7 +3408,7 @@ curl -X POST \
 <table>
 <tr><th>Status Code</th><th>Description</th></tr>
 <tr><td>200</td><td>Everything went well</td></tr>
-<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
@@ -3424,11 +3424,11 @@ The admin can add/register for camps in the following page
 import requests
 url = "http://52.77.255.121:3004/admin/camp/all/read"
 headers = {
-    'content-type': "application/json",
-    'cache-control': "no-cache",
+    'content-type': "application/json", 
+    'cache-control': "no-cache", 
     'postman-token': "90ddccf7-d9cc-e89f-4a31-2f2c35a57c68"
     }
-response = requests.request("POST", url, headers=headers)
+response = requests.request("POST",  url,  headers=headers)
 print(response.text)
 
 ```
@@ -3436,7 +3436,7 @@ print(response.text)
 require 'uri'
 require 'net/http'
 url = URI("http://52.77.255.121:3004/admin/camp/all/read")
-http = Net::HTTP.new(url.host, url.port)
+http = Net::HTTP.new(url.host,  url.port)
 request = Net::HTTP::Post.new(url)
 request["content-type"] = 'application/json'
 request["cache-control"] = 'no-cache'
@@ -3449,15 +3449,15 @@ puts response.read_body
 var data = null;
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
+xhr.addEventListener("readystatechange",  function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
-xhr.open("POST", "http://52.77.255.121:3004/admin/camp/all/read");
-xhr.setRequestHeader("content-type", "application/json");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "b0130254-d396-5e43-3f53-9de7d83775ad");
+xhr.open("POST",  "http://52.77.255.121:3004/admin/camp/all/read");
+xhr.setRequestHeader("content-type",  "application/json");
+xhr.setRequestHeader("cache-control",  "no-cache");
+xhr.setRequestHeader("postman-token",  "b0130254-d396-5e43-3f53-9de7d83775ad");
 xhr.send(data);
 
 ```
@@ -3474,18 +3474,18 @@ curl -X POST \
 ```json
 [
     {
-        "total_revenue": 0,
-        "existing_customer_interactions": 0,
-        "new_customer_added": 0,
-        "_id": "5e85b50fdaf2b743d096632c",
-        "location": "#3,13th main road,shivaji nagar,delhi 20",
-        "status": "OPEN",
-        "date": "2020-04-02T00:00:00.000Z",
-        "start_time": "2020-04-02T00:00:00.000Z",
-        "end_time": "2020-04-02T00:00:00.000Z",
-        "registered_customers": [],
-        "createdAt": "2020-04-02T09:49:03.275Z",
-        "updatedAt": "2020-04-02T09:49:03.275Z",
+        "total_revenue": 0, 
+        "existing_customer_interactions": 0, 
+        "new_customer_added": 0, 
+        "_id": "5e85b50fdaf2b743d096632c", 
+        "location": "#3, 13th main road, shivaji nagar, delhi 20", 
+        "status": "OPEN", 
+        "date": "2020-04-02T00:00:00.000Z", 
+        "start_time": "2020-04-02T00:00:00.000Z", 
+        "end_time": "2020-04-02T00:00:00.000Z", 
+        "registered_customers": [], 
+        "createdAt": "2020-04-02T09:49:03.275Z", 
+        "updatedAt": "2020-04-02T09:49:03.275Z", 
         "__v": 0
     }
 ]
@@ -3508,7 +3508,7 @@ curl -X POST \
 <table>
 <tr><th>Status Code</th><th>Description</th></tr>
 <tr><td>200</td><td>Everything went well</td></tr>
-<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
@@ -3533,10 +3533,10 @@ The customers can view all camps from.
 import requests
 url = "http://52.77.255.121:3004/admin/camp/read/5e85b50fdaf2b743d096632c"
 headers = {
-    'cache-control': "no-cache",
+    'cache-control': "no-cache", 
     'postman-token': "9470eb05-13dc-03ec-c884-dc92e0e5040c"
     }
-response = requests.request("GET", url, headers=headers)
+response = requests.request("GET",  url,  headers=headers)
 print(response.text)
 
 ```
@@ -3544,7 +3544,7 @@ print(response.text)
 require 'uri'
 require 'net/http'
 url = URI("http://52.77.255.121:3004/admin/camp/read/5e85b50fdaf2b743d096632c")
-http = Net::HTTP.new(url.host, url.port)
+http = Net::HTTP.new(url.host,  url.port)
 request = Net::HTTP::Get.new(url)
 request["cache-control"] = 'no-cache'
 request["postman-token"] = '37ccacf6-ba4e-29c0-868e-b697a01333da'
@@ -3556,14 +3556,14 @@ puts response.read_body
 var data = null;
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
+xhr.addEventListener("readystatechange",  function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
-xhr.open("GET", "http://52.77.255.121:3004/admin/camp/read/5e85b50fdaf2b743d096632c");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "fe0383c6-f1a8-8b2b-d81d-96151505bba0");
+xhr.open("GET",  "http://52.77.255.121:3004/admin/camp/read/5e85b50fdaf2b743d096632c");
+xhr.setRequestHeader("cache-control",  "no-cache");
+xhr.setRequestHeader("postman-token",  "fe0383c6-f1a8-8b2b-d81d-96151505bba0");
 xhr.send(data);
 
 ```
@@ -3578,18 +3578,18 @@ curl -X GET \
 
 ```json
 {
-    "total_revenue": 0,
-    "existing_customer_interactions": 0,
-    "new_customer_added": 0,
-    "_id": "5e85b50fdaf2b743d096632c",
-    "location": "#3,13th main road,shivaji nagar,delhi 20",
-    "status": "OPEN",
-    "date": "2020-04-02T00:00:00.000Z",
-    "start_time": "2020-04-02T00:00:00.000Z",
-    "end_time": "2020-04-02T00:00:00.000Z",
-    "registered_customers": [],
-    "createdAt": "2020-04-02T09:49:03.275Z",
-    "updatedAt": "2020-04-02T09:49:03.275Z",
+    "total_revenue": 0, 
+    "existing_customer_interactions": 0, 
+    "new_customer_added": 0, 
+    "_id": "5e85b50fdaf2b743d096632c", 
+    "location": "#3, 13th main road, shivaji nagar, delhi 20", 
+    "status": "OPEN", 
+    "date": "2020-04-02T00:00:00.000Z", 
+    "start_time": "2020-04-02T00:00:00.000Z", 
+    "end_time": "2020-04-02T00:00:00.000Z", 
+    "registered_customers": [], 
+    "createdAt": "2020-04-02T09:49:03.275Z", 
+    "updatedAt": "2020-04-02T09:49:03.275Z", 
     "__v": 0
 } 
 
@@ -3619,7 +3619,7 @@ Dont forget to replace \<CampId> with the id of the specific camp you want to vi
 <table>
 <tr><th>Status Code</th><th>Description</th></tr>
 <tr><td>200</td><td>Everything went well</td></tr>
-<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
@@ -3631,13 +3631,13 @@ Dont forget to replace \<CampId> with the id of the specific camp you want to vi
 ```python
 import requests
 url = "http://52.77.255.121:3004/admin/update/camp/5e85b50fdaf2b743d096632c"
-payload = "{\r\n    \"update\":{\"location\": \"address-latest\",\r\n\"status\": \"Close\",\r\n\"date\": \"2020-04-01T14:39:02.196Z\",\r\n\"start_time\": \"2020-04-01T14:39:02.196Z\",\r\n\"End_time\":\"2020-04-01T14:39:02.196Z\"\r\n}\r\n}"
+payload = "{\r\n    \"update\":{\"location\": \"address-latest\", \r\n\"status\": \"Close\", \r\n\"date\": \"2020-04-01T14:39:02.196Z\", \r\n\"start_time\": \"2020-04-01T14:39:02.196Z\", \r\n\"End_time\":\"2020-04-01T14:39:02.196Z\"\r\n}\r\n}"
 headers = {
-    'content-type': "application/json",
-    'cache-control': "no-cache",
+    'content-type': "application/json", 
+    'cache-control': "no-cache", 
     'postman-token': "7c85c83e-dd9b-50a3-f547-c4a5a1daf917"
     }
-response = requests.request("PUT", url, data=payload, headers=headers)
+response = requests.request("PUT",  url,  data=payload,  headers=headers)
 print(response.text)
 
 ```
@@ -3645,12 +3645,12 @@ print(response.text)
 require 'uri'
 require 'net/http'
 url = URI("http://52.77.255.121:3004/admin/update/camp/5e85b50fdaf2b743d096632c")
-http = Net::HTTP.new(url.host, url.port)
+http = Net::HTTP.new(url.host,  url.port)
 request = Net::HTTP::Put.new(url)
 request["content-type"] = 'application/json'
 request["cache-control"] = 'no-cache'
 request["postman-token"] = 'f64c1265-d399-dbe4-2746-002e5f36a55d'
-request.body = "{\r\n    \"update\":{\"location\": \"address-latest\",\r\n\"status\": \"Close\",\r\n\"date\": \"2020-04-01T14:39:02.196Z\",\r\n\"start_time\": \"2020-04-01T14:39:02.196Z\",\r\n\"End_time\":\"2020-04-01T14:39:02.196Z\"\r\n}\r\n}"
+request.body = "{\r\n    \"update\":{\"location\": \"address-latest\", \r\n\"status\": \"Close\", \r\n\"date\": \"2020-04-01T14:39:02.196Z\", \r\n\"start_time\": \"2020-04-01T14:39:02.196Z\", \r\n\"End_time\":\"2020-04-01T14:39:02.196Z\"\r\n}\r\n}"
 response = http.request(request)
 puts response.read_body
 
@@ -3659,24 +3659,24 @@ puts response.read_body
 ```javascript
 var data = JSON.stringify({
   "update": {
-    "location": "address-latest",
-    "status": "Close",
-    "date": "2020-04-01T14:39:02.196Z",
-    "start_time": "2020-04-01T14:39:02.196Z",
+    "location": "address-latest", 
+    "status": "Close", 
+    "date": "2020-04-01T14:39:02.196Z", 
+    "start_time": "2020-04-01T14:39:02.196Z", 
     "End_time": "2020-04-01T14:39:02.196Z"
   }
 });
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
+xhr.addEventListener("readystatechange",  function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
-xhr.open("PUT", "http://52.77.255.121:3004/admin/update/camp/5e85b50fdaf2b743d096632c");
-xhr.setRequestHeader("content-type", "application/json");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "12602c8e-f0b6-fc86-b78f-6b786b5e558c");
+xhr.open("PUT",  "http://52.77.255.121:3004/admin/update/camp/5e85b50fdaf2b743d096632c");
+xhr.setRequestHeader("content-type",  "application/json");
+xhr.setRequestHeader("cache-control",  "no-cache");
+xhr.setRequestHeader("postman-token",  "12602c8e-f0b6-fc86-b78f-6b786b5e558c");
 xhr.send(data);
 
 
@@ -3688,10 +3688,10 @@ curl -X PUT \
   -H 'content-type: application/json' \
   -H 'postman-token: 0e596dc7-2ed0-17a1-d830-f7309d2827e6' \
   -d '{
-    "update":{"location": "address-latest",
-"status": "Close",
-"date": "2020-04-01T14:39:02.196Z",
-"start_time": "2020-04-01T14:39:02.196Z",
+    "update":{"location": "address-latest", 
+"status": "Close", 
+"date": "2020-04-01T14:39:02.196Z", 
+"start_time": "2020-04-01T14:39:02.196Z", 
 "End_time":"2020-04-01T14:39:02.196Z"
 }
 }'
@@ -3701,24 +3701,24 @@ curl -X PUT \
 
 ```json
 {
-    "total_revenue": 0,
-    "existing_customer_interactions": 0,
-    "new_customer_added": 0,
-    "_id": "5e85b50fdaf2b743d096632c",
-    "location": "address-latest",
-    "status": "Close",
-    "date": "2020-04-01T14:39:02.196Z",
-    "start_time": "2020-04-01T14:39:02.196Z",
-    "end_time": "2020-04-02T00:00:00.000Z",
-    "registered_customers": [],
-    "createdAt": "2020-04-02T09:49:03.275Z",
-    "updatedAt": "2020-04-03T10:27:09.449Z",
+    "total_revenue": 0, 
+    "existing_customer_interactions": 0, 
+    "new_customer_added": 0, 
+    "_id": "5e85b50fdaf2b743d096632c", 
+    "location": "address-latest", 
+    "status": "Close", 
+    "date": "2020-04-01T14:39:02.196Z", 
+    "start_time": "2020-04-01T14:39:02.196Z", 
+    "end_time": "2020-04-02T00:00:00.000Z", 
+    "registered_customers": [], 
+    "createdAt": "2020-04-02T09:49:03.275Z", 
+    "updatedAt": "2020-04-03T10:27:09.449Z", 
     "__v": 0
 }
 
 ```
 
-<p>Humans are prone to making mistakes, if you make mistakes we got you covered</p>
+<p>Humans are prone to making mistakes,  if you make mistakes we got you covered</p>
 <br>
 <p>`App:admin`</p>
 <h3>Http request</h5>
@@ -3750,7 +3750,7 @@ Note:Please use same key names as in add camp
 <table>
 <tr><th>Status Code</th><th>Description</th></tr>
 <tr><td>200</td><td>Everything went well</td></tr>
-<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
@@ -3764,11 +3764,11 @@ Note:Please use same key names as in add camp
 import requests
 url = "http://52.77.255.121:3004/admin/camp/delete/5e85b50fdaf2b743d096632c"
 headers = {
-    'content-type': "application/json",
-    'cache-control': "no-cache",
+    'content-type': "application/json", 
+    'cache-control': "no-cache", 
     'postman-token': "3a35f01e-579e-0f5b-f168-4a452b32dcd6"
     }
-response = requests.request("DELETE", url, headers=headers)
+response = requests.request("DELETE",  url,  headers=headers)
 print(response.text)
 
 ```
@@ -3776,7 +3776,7 @@ print(response.text)
 require 'uri'
 require 'net/http'
 url = URI("http://52.77.255.121:3004/admin/camp/delete/5e85b50fdaf2b743d096632c")
-http = Net::HTTP.new(url.host, url.port)
+http = Net::HTTP.new(url.host,  url.port)
 request = Net::HTTP::Delete.new(url)
 request["content-type"] = 'application/json'
 request["cache-control"] = 'no-cache'
@@ -3789,15 +3789,15 @@ puts response.read_body
 var data = null;
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-xhr.addEventListener("readystatechange", function () {
+xhr.addEventListener("readystatechange",  function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
-xhr.open("DELETE", "http://52.77.255.121:3004/admin/camp/delete/5e85b50fdaf2b743d096632c");
-xhr.setRequestHeader("content-type", "application/json");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "34503d4b-c41c-1251-9421-b17105d7af08");
+xhr.open("DELETE",  "http://52.77.255.121:3004/admin/camp/delete/5e85b50fdaf2b743d096632c");
+xhr.setRequestHeader("content-type",  "application/json");
+xhr.setRequestHeader("cache-control",  "no-cache");
+xhr.setRequestHeader("postman-token",  "34503d4b-c41c-1251-9421-b17105d7af08");
 xhr.send(data);
 
 ```
@@ -3813,18 +3813,18 @@ curl -X DELETE \
 
 ```json
 {
-    "total_revenue": 0,
-    "existing_customer_interactions": 0,
-    "new_customer_added": 0,
-    "_id": "5e85b50fdaf2b743d096632c",
-    "location": "address-latest",
-    "status": "Close",
-    "date": "2020-04-01T14:39:02.196Z",
-    "start_time": "2020-04-01T14:39:02.196Z",
-    "end_time": "2020-04-02T00:00:00.000Z",
-    "registered_customers": [],
-    "createdAt": "2020-04-02T09:49:03.275Z",
-    "updatedAt": "2020-04-03T10:27:09.449Z",
+    "total_revenue": 0, 
+    "existing_customer_interactions": 0, 
+    "new_customer_added": 0, 
+    "_id": "5e85b50fdaf2b743d096632c", 
+    "location": "address-latest", 
+    "status": "Close", 
+    "date": "2020-04-01T14:39:02.196Z", 
+    "start_time": "2020-04-01T14:39:02.196Z", 
+    "end_time": "2020-04-02T00:00:00.000Z", 
+    "registered_customers": [], 
+    "createdAt": "2020-04-02T09:49:03.275Z", 
+    "updatedAt": "2020-04-03T10:27:09.449Z", 
     "__v": 0
 }
 
@@ -3854,7 +3854,7 @@ You must replace \<CampID> with the ID of the camp you want to update.
 <table>
 <tr><th>Status Code</th><th>Description</th></tr>
 <tr><td>200</td><td>Everything went well</td></tr>
-<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
