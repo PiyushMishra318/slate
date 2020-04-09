@@ -2107,6 +2107,131 @@ Note:(i)Use the same key names as used in create.<br>
 
 ##Delete a Document
 
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3003/customer/document/delete/5e8e9cd4a27a005fe1764fe4"
+headers = {
+    "content-type": "application/json",
+    "cache-control": "no-cache",
+    "postman-token": "db735733-9007-f177-4ac8-89b989a526fa"
+    }
+response = requests.request("DELETE", url, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3003/customer/document/delete/5e8e9cd4a27a005fe1764fe4")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Delete.new(url)
+request["content-type"] = 'application/json'
+request["cache-control"] = 'no-cache'
+request["postman-token"] = '754c900b-4b24-1af0-76eb-1dfa9b8359cc'
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+var data = null;
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("DELETE", "http://52.77.255.121:3003/customer/document/delete/5e8e9cd4a27a005fe1764fe4");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "48205868-26df-0afe-ad6c-bd76a7c4a978");
+xhr.send(data);
+
+```
+>Below is a sample response
+
+```json
+{
+    "_id": "5e8e9cd4a27a005fe1764fe4",
+    "document_name": "endpoints.txt\n",
+    "document_type": "fc",
+    "car": {
+        "overview": {
+            "engine_oil": true,
+            "tier": true,
+            "suspension": true,
+            "brakes": true,
+            "electrical_checkup": true,
+            "air_conditioner": true
+        },
+        "_id": "5e8e9cb9a27a005fe1764fe3",
+        "brand": "Maruti Suzuki",
+        "model_name": "Swift",
+        "model_variant": "ldi",
+        "model_year": "2019",
+        "customer": {
+            "_id": "5e84aee31fc621316c541ac1",
+            "user_type": "customer",
+            "email": {
+                "verficationStatus": {
+                    "isVerified": false
+                },
+                "address": "emailid@email.com"
+            },
+            "personal_details": {
+                "_id": "5e84aee8c0277b3163e409fb",
+                "mobile_nos": [],
+                "emails": [
+                    {
+                        "verficationStatus": {
+                            "isVerified": false
+                        },
+                        "_id": "5e84aee31fc621316c541ac2",
+                        "address": "emailid@email.com"
+                    }
+                ]
+            },
+            "username": "emailid@email.com",
+            "createdAt": "2020-04-01T15:10:27.404Z",
+            "updatedAt": "2020-04-01T15:10:27.404Z",
+            "__v": 0,
+            "bank_accounts": []
+        },
+        "createdAt": "2020-04-09T03:55:37.200Z",
+        "updatedAt": "2020-04-09T03:55:37.200Z",
+        "__v": 0
+    },
+    "customer": "5e84aee31fc621316c541ac1",
+    "document_path": "http://52.77.255.121:3003/Files/cust-5e84aee31fc621316c541ac1/Documents/Pollution/car-5e8e9cb9a27a005fe1764fe3/endpoints.txt\n.txt",
+    "createdAt": "2020-04-09T03:56:04.848Z",
+    "updatedAt": "2020-04-09T04:40:04.153Z",
+    "__v": 0
+}
+
+
+```
+
+<p>Customers might want to delete documents uploaded by mistake or remove documents for old vehicles this section will help us in the same.</p>
+<br>
+<p>`App:customer`</p>
+<h3>Http request</h5>
+<p>`DELETE : http://52.77.255.121:3003/customer/document/delete/<DocumentId>`</p>
+<aside class="notice">
+Note:Don't forget to replace \<DocumentId> with the id of the doucment you want to update
+</aside> 
+<h3>Response Types</h3>
+<table>
+<tr><th>Status Code</th><th>Description</th></tr>
+<tr><td>200</td><td>Everything went well</td></tr>
+<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
+<tr><td>500</td><td>Internal Server Error</td></tr>
+</table>
+
+
+
 # Services/Products
 
 This section contains documentation for all the apis that handle Product/Service information on the Greasy Monkey platform.
