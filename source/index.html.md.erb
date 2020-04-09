@@ -1711,6 +1711,132 @@ Customers can add documents from:
 
 ##View all Documents
 
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3003/customer/document/all/get"
+headers = {
+    'cache-control': "no-cache",
+    'postman-token': "caf53ddf-cde7-33e7-4e66-e4f6e9ad2888"
+    }
+response = requests.request("POST", url, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3003/customer/document/all/get")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Post.new(url)
+request["cache-control"] = 'no-cache'
+request["postman-token"] = '2f3dab57-91a8-4b19-20b2-44c3723ec112'
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+var data = null;
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("POST", "http://52.77.255.121:3003/customer/document/all/get");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "28eabae1-4e73-4274-1723-7d912f5ce559");
+xhr.send(data);
+
+```
+>Below is a sample response
+
+```json
+[
+    {
+        "_id": "5e8e9cd4a27a005fe1764fe4",
+        "document_name": "endpoints.txt\n",
+        "document_type": "Pollution",
+        "car": {
+            "overview": {
+                "engine_oil": true,
+                "tier": true,
+                "suspension": true,
+                "brakes": true,
+                "electrical_checkup": true,
+                "air_conditioner": true
+            },
+            "_id": "5e8e9cb9a27a005fe1764fe3",
+            "brand": "Maruti Suzuki",
+            "model_name": "Swift",
+            "model_variant": "ldi",
+            "model_year": "2019",
+            "customer": {
+                "_id": "5e84aee31fc621316c541ac1",
+                "user_type": "customer",
+                "email": {
+                    "verficationStatus": {
+                        "isVerified": false
+                    },
+                    "address": "emailid@email.com"
+                },
+                "personal_details": {
+                    "_id": "5e84aee8c0277b3163e409fb",
+                    "mobile_nos": [],
+                    "emails": [
+                        {
+                            "verficationStatus": {
+                                "isVerified": false
+                            },
+                            "_id": "5e84aee31fc621316c541ac2",
+                            "address": "emailid@email.com"
+                        }
+                    ]
+                },
+                "username": "emailid@email.com",
+                "createdAt": "2020-04-01T15:10:27.404Z",
+                "updatedAt": "2020-04-01T15:10:27.404Z",
+                "__v": 0,
+                "bank_accounts": []
+            },
+            "createdAt": "2020-04-09T03:55:37.200Z",
+            "updatedAt": "2020-04-09T03:55:37.200Z",
+            "__v": 0
+        },
+        "customer": "5e84aee31fc621316c541ac1",
+        "document_path": "http://52.77.255.121:3003/Files/cust-5e84aee31fc621316c541ac1/Documents/Pollution/car-5e8e9cb9a27a005fe1764fe3/endpoints.txt\n.txt",
+        "createdAt": "2020-04-09T03:56:04.848Z",
+        "updatedAt": "2020-04-09T03:56:04.848Z",
+        "__v": 0
+    }
+]
+
+```
+
+<p>Having one dashboard to view all uploaded documents gives customers an easy and qucik access to what they have uploaded and lets them remove obsolete files.</p>
+<br>
+<p>`App:customer`</p>
+<h3>Http request</h5>
+<p>`POST : http://52.77.255.121:3003/customer/document/all/get`</p>
+
+<h3>Response Types</h3>
+<table>
+<tr><th>Status Code</th><th>Description</th></tr>
+<tr><td>200</td><td>Everything went well</td></tr>
+<tr><td>404</td><td>We might be on a service break,please try later</td></tr>
+<tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
+<tr><td>500</td><td>Internal Server Error</td></tr>
+</table>
+
+### Customer View
+Customers can view all documents from:
+
+<%= image_tag "images/images/documents/view_all.png" %>
+
+
 ##View a specific Document
 
 ##Update a Document
