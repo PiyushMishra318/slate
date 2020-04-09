@@ -73,10 +73,10 @@ The backend of this platform is structured into many small applications. There a
 It is a dedicated app for authentication purposes and scenarios. The auth app is responsible to integrate with all other apps and manage sessions for user,authenticating the users requests,handling sensitve information.
 </p></li>
 <li><h3>Communication</h3><p>
-Customer service determines customer retention.This app helps all users to communicate with appropriate access levels to other users data.
+This app is responsible for connecting customers and garages with sms and emails.This app uses smtp for mails and an api to send sms.It also has support for multilanguages , so whatever language user selects messages and emails are forwarded in that language.
 </p></li>
 <li><h3>Payment</h3><p>
-Making payment process hassle free for customers makes a huge impact on the user experience.This app takes care of secure payment processing along with financial handling. 
+This app acts as a link between our platform and the external payment gateways.For now we have support for stripe payment gateway.
 </p></li>
 <li><h3>Affiliate</h3><p>
 Ever application in todays day and age has a refer and earn feature, which encourages people to refer your services.This app is used to handle all referal functions and data.
