@@ -34,7 +34,6 @@ They are the administrative staff  working at garages who perform various roles 
 They are the ground staff mechanics,drivers working at garages who interact with customers directly.
 
 #Tech Stack
-
 ## Programming Languages & Frameworks:
 ### Front end
 <p>These are the languages used to develop user facing applications or programs.What the user sees is fully controlled and fetched by these.</p>
@@ -58,9 +57,22 @@ They are the ground staff mechanics,drivers working at garages who interact with
 <p>Express JS is a modern Node.js framework(a program/tool that structures the server side code into many small applications).It provides one of the most simple yet powerful ways to create a web server. Its minimalist approach, unopinionated, focused on the core features of a server, is key to its success.
 </li>
 </ul>
+##Applications
+The backend of this platform is structured into many small applications. There are 6 main applications:
+<ul>
+<li><h3>auth</h3><p>This app is used for authorization purposes</p></li>
+<li><h3>communication</h3><p>This app is used for communication between various types of users</p></li>
+<li><h3>payment</h3><p>This app is used for all payment related work </p></li>
+<li><h3>referral</h3><p>This app is used for referrals on the platform</p></li>
+<li><h3>admin</h3><p>This app is used for administrative tasks such as adding garages,adding products etc..</p></h3>
+<li><h3>customer</h3><p>This app is used for all customer actions like adding car,requesting services</p></li> 
 
+##Cloud Architecture
 
+<p>The platform is structured to be scalable, it can be hosted on aws,azure and google cloud platform</p>
+###AWS 
 
+AWS short for amazon web services is a child company of amazon and focusses on giving users the best experience and minimal down time of services. They have various scalable solutions to deploy Node.js applications.
 
 # Authorization 
 <%= image_tag "images/images/customer_flow.png" %>
