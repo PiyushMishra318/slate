@@ -4712,3 +4712,132 @@ curl -X POST \
 	"username":"user1"
 }
 ```
+
+##Example 2
+>The Below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3004/admin/user/all/read"
+payload = "{\n\t\"email.address\":\"emailid@email.com\"\n}"
+headers = {
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'postman-token': "e76f99b6-4ee5-72f5-9b20-879eb89d0b05"
+    }
+response = requests.request("POST", url, data=payload, headers=headers)
+print(response.text)
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3004/admin/user/all/read")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Post.new(url)
+request["content-type"] = 'application/json'
+request["cache-control"] = 'no-cache'
+request["postman-token"] = '4b1a3550-bab2-ef23-3b3c-548d2bf28659'
+request.body = "{\n\t\"email.address\":\"emailid@email.com\"\n}"
+response = http.request(request)
+puts response.read_body
+```
+```javascript
+var data = JSON.stringify({
+  "email.address": "emailid@email.com"
+});
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("POST", "http://52.77.255.121:3004/admin/user/all/read");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "f6f3c683-a015-348d-67f2-9243b6f077c5");
+xhr.send(data);
+```
+```shell
+curl -X POST \
+  http://52.77.255.121:3004/admin/user/all/read \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 965e97ec-63eb-f0df-595f-fa1a6bda70d9' \
+  -d '{
+	"email.address":"emailid@email.com"
+}'
+```
+>Below is a sample response
+
+```json
+[
+    {
+        "automatic_withdraw": 15,
+        "due_limit": 7,
+        "_id": "5e84a78618ad3431e0f0fe98",
+        "email": {
+            "verficationStatus": {
+                "isVerified": false
+            },
+            "address": "emailid@email.com"
+        },
+        "username": "user1",
+        "mobile": "1234567890",
+        "user_type": "customer",
+        "personal_details": {
+            "_id": "5e84a786bfd0c32be46fa2b1",
+            "mobile_nos": [],
+            "emails": []
+        },
+        "createdAt": "2020-04-01T14:39:02.196Z",
+        "updatedAt": "2020-04-01T14:39:02.196Z",
+        "__v": 0,
+        "bank_accounts": []
+    },
+    {
+        "automatic_withdraw": 15,
+        "due_limit": 7,
+        "_id": "5e84aee31fc621316c541ac1",
+        "user_type": "customer",
+        "email": {
+            "verficationStatus": {
+                "isVerified": false
+            },
+            "address": "emailid@email.com"
+        },
+        "personal_details": {
+            "_id": "5e84aee8c0277b3163e409fb",
+            "mobile_nos": [],
+            "emails": [
+                {
+                    "verficationStatus": {
+                        "isVerified": false
+                    },
+                    "_id": "5e84aee31fc621316c541ac2",
+                    "address": "emailid@email.com"
+                }
+            ]
+        },
+        "username": "emailid@email.com",
+        "createdAt": "2020-04-01T15:10:27.404Z",
+        "updatedAt": "2020-04-01T15:10:27.404Z",
+        "__v": 0,
+        "bank_accounts": []
+    }
+]
+```
+
+<p>This example shows you how to filter for the <strong>nested field</strong> email address and searching for  the value <strong>emailid@email.com</strong>.</p>
+<h3>Http request</h3>
+<br>
+<p>`POST :  http://52.77.255.121:3004/admin/user/all/read`</p>
+
+<h3>Sample Request Body</h3>
+<div class="center-column"></div>
+
+```json
+{
+	"email.address":"emailid@email.com"
+}
+```
