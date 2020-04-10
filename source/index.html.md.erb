@@ -4514,10 +4514,92 @@ Note:Please use the key names for filtering as specified in the various add or c
 <tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
 <tr><td>500</td><td>Internal Server Error</td></tr>
 </table>
-##Sample Requests
+##Example 1
 
-<h3>Example 1 </h3>
+```python
+import requests
+url = "http://52.77.255.121:3004/admin/garage/all/read"
+payload = "{\n\t\"filter\":{\"search\":\"tony\"\n\t}\n}"
+headers = {
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'postman-token': "f489d08e-e57e-ce41-a121-2c723d372606"
+    }
+response = requests.request("POST", url, data=payload, headers=headers)
+print(response.text)
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3004/admin/garage/all/read")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Post.new(url)
+request["content-type"] = 'application/json'
+request["cache-control"] = 'no-cache'
+request["postman-token"] = '4b64039a-b4c9-3008-de65-941360c45b05'
+request.body = "{\n\t\"filter\":{\"search\":\"tony\"\n\t}\n}"
+response = http.request(request)
+puts response.read_body
+```
+```javascript
+var data = JSON.stringify({
+  "filter": {
+    "search": "tony"
+  }
+});
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("POST", "http://52.77.255.121:3004/admin/garage/all/read");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "d2645d3c-f4f8-aa82-cd6c-14d9e6c5b225");
+xhr.send(data);
+```
+```shell
+curl -X POST \
+  http://52.77.255.121:3004/admin/garage/all/read \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 1df09db3-03f4-2760-4251-280b47e81c66' \
+  -d '{
+	"filter":{"search":"tony"
+	}
+}'
+```
+>Below is a sample response
 
+```json
+[
+    {
+        "staff_head": {
+            "name": "Murthy",
+            "mobile": "9024687911",
+            "email": "murthy@tonyautoworks.com"
+        },
+        "address": {
+            "city": "Bengaluru",
+            "postal_code": 300030,
+            "location": "viman nagar",
+            "lat": "13.232",
+            "lon": "10.232"
+        },
+        "ongoing_service": 0,
+        "_id": "5e902b22732f1409f44f697f",
+        "garage_name": "Tonys auto works",
+        "createdAt": "2020-04-10T08:15:30.029Z",
+        "updatedAt": "2020-04-10T08:15:30.029Z",
+        "__v": 0
+    }
+]
+
+```
+
+<p>This example is for search</p>
 <h3>Http request</h3>
 <br>
 <p>`POST :  http://52.77.255.121:3004/admin/garage/all/read`</p>
