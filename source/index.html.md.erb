@@ -2497,6 +2497,8 @@ curl -X POST \
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3003/customer/document/create/`</p>
 
+
+
 <h3>FORM Data parameters</h3>
 <table>
 <tr><th>Parameter</th><th>Description</th><th>Type</th></tr>
@@ -2896,6 +2898,17 @@ xhr.send(data);
 <aside class="notice">
 Note:Don't forget to replace \<DocumentId> with the id of the doucment you want to update
 </aside> 
+
+<h3>Sample Request Body</h3>
+<div class="center-column"></div>
+
+```json
+{
+"update":{"document_type":"fc"}
+}
+
+```
+
 <h3>Data Parameters</h3>
 <table>
 <tr><th>Parameter</th><th>Descrption</th><th>Type</th></tr>
