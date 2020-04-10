@@ -860,29 +860,29 @@ curl -X POST \
 The admin can view all the garages from the page below:
 <%= image_tag "images/images/garages/view_all.png"%>
 
-##View individual Brand information
+##View individual Garage information
 
 >The below code sample shows you how to use this api
 
 ```python
 import requests
-url = "http://52.77.255.121:3004/admin/brand/read/5e858b46c0277b3163e40a00"
+url = "http://52.77.255.121:3004/admin/garage/read/5e902b07732f1409f44f697e"
 headers = {
-    'cache-control': "no-cache", 
-    'postman-token': "10d30b31-ec06-ea76-f890-11c37d27a981"
+    'cache-control': "no-cache",
+    'postman-token': "df336d1d-67ba-13c0-d958-783d0621c18f"
     }
-response = requests.request("GET",  url,  headers=headers)
+response = requests.request("GET", url, headers=headers)
 print(response.text)
 
 ```
 ```ruby
 require 'uri'
 require 'net/http'
-url = URI("http://52.77.255.121:3004/admin/brand/read/5e858b46c0277b3163e40a00")
-http = Net::HTTP.new(url.host,  url.port)
+url = URI("http://52.77.255.121:3004/admin/garage/read/5e902b07732f1409f44f697e")
+http = Net::HTTP.new(url.host, url.port)
 request = Net::HTTP::Get.new(url)
 request["cache-control"] = 'no-cache'
-request["postman-token"] = '0dcb7c54-a6c9-8fd7-9975-04bd71908382'
+request["postman-token"] = 'e667759e-d4d2-acaa-f36d-30b93ad97431'
 response = http.request(request)
 puts response.read_body
 
@@ -891,59 +891,55 @@ puts response.read_body
 var data = null;
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-xhr.addEventListener("readystatechange",  function () {
+xhr.addEventListener("readystatechange", function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
-xhr.open("GET",  "http://52.77.255.121:3004/admin/brand/read/5e858b46c0277b3163e40a00");
-xhr.setRequestHeader("cache-control",  "no-cache");
-xhr.setRequestHeader("postman-token",  "4beede58-bab1-c77a-2f58-81530da67c28");
+xhr.open("GET", "http://52.77.255.121:3004/admin/garage/read/5e902b07732f1409f44f697e");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "486236ca-14bf-12e8-439d-8ef444d57af3");
 xhr.send(data);
 
 ```
 ```shell
 curl -X GET \
-  http://52.77.255.121:3004/admin/brand/read/5e858b46c0277b3163e40a00 \
+  http://52.77.255.121:3004/admin/garage/read/5e902b07732f1409f44f697e \
   -H 'cache-control: no-cache' \
-  -H 'postman-token: 2fffa260-5a47-8899-dea6-ef140f5f0e4b'
+  -H 'postman-token: 200ad05a-c980-ae63-a803-18a411d8ea78'
 
 ```
 >Below is a sample response
 
 ```json
 {
-    "_id": "5e858b46c0277b3163e40a00", 
-    "brand_name": "Maruti Suzuki", 
-    "models": [
-        {
-            "variants": [
-                "lxi", 
-                "ldi", 
-                "vxi"
-            ], 
-            "years": [
-                "2018", 
-                "2019", 
-                "2020"
-            ], 
-            "_id": "5e858b46c0277b3163e40a01", 
-            "name": "Swift"
-        }
-    ], 
-    "createdAt": "2020-04-02T06:50:46.547Z", 
-    "updatedAt": "2020-04-02T06:50:46.547Z", 
+    "staff_head": {
+        "name": "Murthy",
+        "mobile": "9024687911",
+        "email": "murthy@tonyautoworks.com"
+    },
+    "address": {
+        "city": "Bengaluru",
+        "postal_code": 300030,
+        "location": "viman nagar",
+        "lat": "13.232",
+        "lon": "10.232"
+    },
+    "ongoing_service": 0,
+    "_id": "5e902b07732f1409f44f697e",
+    "garage_name": "Tonys auto works",
+    "createdAt": "2020-04-10T08:15:03.678Z",
+    "updatedAt": "2020-04-10T08:15:03.678Z",
     "__v": 0
 }
 
-
 ```
 
-<p>Giving your users detailed information about brands builds a trust which is necessary for long lasting relations.</p>
+<p>Giving your users detailed information about where exactly the garage is ,providing them a point of contact to check if a particular service can be done immediately gives them more ease of access.</p>
 <br>
 <p>`App:admin`</p>
 <h3>Http request</h5>
-<p>`GET : http://52.77.255.121:3004/admin/brand/read/<BrandID>`</p>
+<p>`GET : http://52.77.255.121:3004/admin/garage/read/<GarageID>`</p>
 
 
 <h3>Request headers</h3>
@@ -955,7 +951,7 @@ curl -X GET \
 <h3>Query Parameters</h3>
 <table>
 <tr><th>Parameter</th><th>Description</th><th>Type</th></tr>
-<tr><td>BrandId</td><td>This forwards the brand ID of the brand you want to view</td><td>required</td></tr>
+<tr><td>GarageId</td><td>This forwards the  ID of the garage you want to view</td><td>required</td></tr>
 </table>
 <h3>Response Types</h3>
 <table>
