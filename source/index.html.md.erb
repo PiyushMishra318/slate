@@ -1048,7 +1048,7 @@ curl -X PUT \
 
 ```
 
-<p>Provinding latest and up to date information builds trust so make sure to update garage data with this.</p>
+<p>Providing latest and up to date information builds trust so make sure to update garage data with this.</p>
 <br>
 <p>`App:admin`</p>
 <h3>Http request</h5>
@@ -1094,24 +1094,25 @@ Note:Use the same key names as mentioned in the add garage API
 
 ```python
 import requests
-url = "http://52.77.255.121:3004/admin/brand/delete/5e858b46c0277b3163e40a00"
+url = "http://52.77.255.121:3004/admin/garage/delete/5e902b07732f1409f44f697e"
 headers = {
-    'cache-control': "no-cache", 
-    'postman-token': "64653f05-0a78-16cf-d63a-6c162181952a"
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'postman-token': "11118486-9e72-e86a-cba4-324f8f6de2a6"
     }
-response = requests.request("DELETE",  url,  headers=headers)
+response = requests.request("DELETE", url, headers=headers)
 print(response.text)
-
 
 ```
 ```ruby
 require 'uri'
 require 'net/http'
-url = URI("http://52.77.255.121:3004/admin/brand/delete/5e858b46c0277b3163e40a00")
-http = Net::HTTP.new(url.host,  url.port)
+url = URI("http://52.77.255.121:3004/admin/garage/delete/5e902b07732f1409f44f697e")
+http = Net::HTTP.new(url.host, url.port)
 request = Net::HTTP::Delete.new(url)
+request["content-type"] = 'application/json'
 request["cache-control"] = 'no-cache'
-request["postman-token"] = '506104a2-4780-8b1b-aac4-b150cf68be38'
+request["postman-token"] = 'e1df50fb-f4fe-f01b-44eb-292a351cb94b'
 response = http.request(request)
 puts response.read_body
 
@@ -1120,64 +1121,60 @@ puts response.read_body
 var data = null;
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
-xhr.addEventListener("readystatechange",  function () {
+xhr.addEventListener("readystatechange", function () {
   if (this.readyState === 4) {
     console.log(this.responseText);
   }
 });
-xhr.open("DELETE",  "http://52.77.255.121:3004/admin/brand/delete/5e858b46c0277b3163e40a00");
-xhr.setRequestHeader("cache-control",  "no-cache");
-xhr.setRequestHeader("postman-token",  "16e044ec-5405-707b-5215-fd004bacd0f5");
+xhr.open("DELETE", "http://52.77.255.121:3004/admin/garage/delete/5e902b07732f1409f44f697e");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "f8e3e480-478b-e29f-2bba-2377fff3233d");
 xhr.send(data);
 
 ```
 ```shell
 curl -X DELETE \
-  http://52.77.255.121:3004/admin/brand/delete/5e858b46c0277b3163e40a00 \
+  http://52.77.255.121:3004/admin/garage/delete/5e902b07732f1409f44f697e \
   -H 'cache-control: no-cache' \
-  -H 'postman-token: 2683f5de-6cda-1f2c-fc01-2340cd98044d'
+  -H 'content-type: application/json' \
+  -H 'postman-token: a260fec9-7494-a292-2646-2baca3f61428'
 
 ```
 >Below is a sample response
 
 ```json
 {
-    "_id": "5e858b46c0277b3163e40a00", 
-    "brand_name": "Maruti Suzuki", 
-    "models": [
-        {
-            "variants": [
-                "lxi", 
-                "ldi", 
-                "vxi", 
-                "vdi"
-            ], 
-            "years": [
-                "2017", 
-                "2018", 
-                "2019", 
-                "2020"
-            ], 
-            "_id": "5e8591e7c0277b3163e40a02", 
-            "name": "Swift"
-        }
-    ], 
-    "createdAt": "2020-04-02T06:50:46.547Z", 
-    "updatedAt": "2020-04-02T07:19:03.152Z", 
+    "staff_head": {
+        "name": "Murthy",
+        "mobile": "9024687911",
+        "email": "murthy@tonyautoworks.com"
+    },
+    "address": {
+        "city": "Bengaluru",
+        "postal_code": 300030,
+        "location": "viman nagar",
+        "lat": "13.232",
+        "lon": "10.232"
+    },
+    "ongoing_service":1 0,
+    "_id": "5e902b07732f1409f44f697e",
+    "garage_name": "Tonys auto works",
+    "createdAt": "2020-04-10T08:15:03.678Z",
+    "updatedAt": "2020-04-10T08:15:03.678Z",
     "__v": 0
 }
 
-
 ```
 
-<p>You might want to remove a few old brands that are out of the market and this will help you do that exactly.</p>
+<p>You might want to remove a few old branches that have been shut down due to some reasons.</p>
 <br>
 <p>`App:admin`</p>
 <h3>Http request</h5>
-<p>`PUT :  http://52.77.255.121:3004/admin/brand/delete/<BrandID>`</p>
+<p>`DELETE :  http://52.77.255.121:3004/admin/garage/delete/<GarageID>`</p>
 <br>
 <aside class="notice">
-You must replace \<BrandID> with the ID of the brand you want to remove.
+You must replace \<GarageID> with the ID of the garage you want to remove.
 </aside>
 
 <h3>Request headers</h3>
@@ -1189,7 +1186,7 @@ You must replace \<BrandID> with the ID of the brand you want to remove.
 <h3>Query Parameters</h3>
 <table>
 <tr><th>Parameter</th><th>Description</th><th>Type</th></tr>
-<tr><td>BrandId</td><td>This forwards the brand ID of the brand you want to delete</td><td>required</td></tr>
+<tr><td>GarageId</td><td>This forwards the ID of the garage you want to delete</td><td>required</td></tr>
 </table>
 <br>
 <h3>Response Types</h3>
