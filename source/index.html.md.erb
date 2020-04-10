@@ -361,17 +361,7 @@ curl -X POST \
 <br>
 <p>`Service App:CootAuth`</p>
 <br>
-<h3>Http request</h5><h3>Sample Request Body</h3>
-
-<div class="center-column"></div>
-
-```json
-{"type":"email",
-"email":"emailid@email.com",
-"password":"password"
-}
-
-```
+<h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3001/auth/login/coot/start`</p>
 
 <h3>Request headers</h3>
@@ -381,7 +371,16 @@ curl -X POST \
 <tr><td>Access-Control-Allow-Credentials</td><td>true</td></tr>
 </table>
 
+<h3>Sample Request Body</h3>
+<div class="center-column"></div>
 
+```json
+{"type":"email",
+"email":"emailid@email.com",
+"password":"password"
+}
+
+```
 
 <h3>Data parameters</h3>
 <table>
