@@ -67,7 +67,21 @@ The software is constructed using the MERN stack.
 
 </ul>
 ##Applications
-The backend of this platform is structured into many small applications. There are 6 main applications:
+The frontend of this platform is structures into two small applications:
+<ul>
+<li>
+<h3>Admin</h3>
+<p>
+This is a dedicated application that handles all administrative actions on the frontend like adding garages,brands,accepting or rejecting service requests of the clients.
+</p>
+</li>
+<h3>Customer</h3>
+<p>
+This is a dedicated application that handles all customer related actions on the frontend like making service requests,checking status of service requests ,viewing all camps and making payments.
+</p>
+</li>
+</ul>
+The backend of this platform is structured into six small applications:
 <ul>
 <li><h3>Auth</h3><p>
 It is a dedicated app for authentication purposes and scenarios. The auth app is responsible to integrate with all other apps and manage sessions for user,authenticating the users requests,handling sensitve information.
@@ -108,6 +122,71 @@ Ever application in todays day and age has a refer and earn feature, which encou
 <br>
 <aside class="notice">
 Note:With a combination of horizontal and vertical scaling, we get a  resilient architecture thus enabling faster fault recovery in case some server is down.
+</aside>
+##Platform Setup
+###Machine Requirements
+<p>Since there are totally 8 apps to be run (6 backend apps and 2 apps for frontend) the following are the minimum system requirements:
+<ul>
+<li>Minimum of 4 Gb RAM</li>
+<li>4 GB of SSD disk space</li>
+</ul>
+</p>
+###Prerequisites
+<p>
+The following prerequisites are required:
+<ul>
+<li>Node-LTS verison</li>
+<li>Mongo DB</li>
+</ul>
+</p>
+###Installing The Apps
+<p>
+To install the apps follow the steps given below for each app:
+<ol>
+<li>Enter the apps root directory</li>
+<li>RUN npm install</li>
+</ol>
+</p>
+###Starting the Apps
+<p>
+To start the apps we recommend to use forever or pm2 as these ensure that your applications don't face downtime.
+</p>
+###What is forever?
+<p>Forever is a node.js package that is used to keep the server alive even when the server crash/stops. When the node server is stopped because of some error, exception, etc, forever automatically restarts it.</p>
+###What is pm2?
+<p>PM2 is a production process manager for Node.js applications with a built-in load balancer. It allows you to keep applications alive forever, to reload them without downtime and to facilitate common system admin tasks.</p>
+### Starting the Applications
+<p>To start the applications just run `pm2 start all ` or `forever start app.js`</p>
+###Application Configuration
+<p>
+<ul>
+<li>
+All applications must share the same database cluster as It is important for all parts to be in sync, without which the applications will fail to function in the expected manner.
+</li>
+<li>
+All applications must be hosted on the same domain name(not necessarily the same server instance).
+</li>
+</ul>
+</p>
+###Why it is important for all applications to be hosted on the same domain name?
+<p>
+<ol>
+<li>
+These applications use cookies based authentication.
+</li>
+<li>
+An HTTP cookie is a small piece of data sent from a website and stored on the user's computer by the user's web browser while the user is browsing. Cookies were designed to be a reliable mechanism for websites to remember stateful information or to record the user's browsing activity.
+</li>
+<li>
+Cookie authentication uses HTTP cookies to authenticate client requests and maintain session information. ... The client sends a login request to the server. On the successful login, the server response includes the Set-Cookie header that contains the cookie name, value, expiry time and some other info.
+</li>
+<li>
+These applications need to use the same domain name as the cookies set for one domain cannot be used for another domain .However you are free to use different subdomains for each application as cookies can be shared amongst subdomains.
+</li>
+</ol>
+</p>
+<aside class="success">
+Note:Once you have followed the above steps correctly you will have set up your platform and are all set for using it.
 </aside>
 
 # Authorization 
