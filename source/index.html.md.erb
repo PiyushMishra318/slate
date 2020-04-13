@@ -5050,6 +5050,123 @@ curl -X GET \
 </table>
 
 
+##Update service timeline
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3004/admin/service_timeline/update/5e940759971bed3b142eda5b"
+payload = "{\n\t\"service_details\":{\"message\":\"Please complete service with full priority\"}\n}"
+headers = {
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'postman-token': "e8759c77-511f-68dd-2486-99ccc774fe97"
+    }
+response = requests.request("PUT", url, data=payload, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3004/admin/service_timeline/update/5e940759971bed3b142eda5b")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Put.new(url)
+request["content-type"] = 'application/json'
+request["cache-control"] = 'no-cache'
+request["postman-token"] = 'f1c51f2e-fd1b-a4c2-71b7-c967aee67d21'
+request.body = "{\n\t\"service_details\":{\"message\":\"Please complete service with full priority\"}\n}"
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+var data = JSON.stringify({
+  "service_details": {
+    "message": "Please complete service with full priority"
+  }
+});
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("PUT", "http://52.77.255.121:3004/admin/service_timeline/update/5e940759971bed3b142eda5b");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "40f834e9-373f-cb43-c9d2-1b185d214d25");
+xhr.send(data);
+
+```
+```shell
+curl -X PUT \
+  http://52.77.255.121:3004/admin/service_timeline/update/5e940759971bed3b142eda5b \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 1c984c8f-dfc2-57db-da67-dd69f4c739ea' \
+  -d '{
+	"service_details":{"message":"Please complete service with full priority"}
+}'
+
+```
+>Below is a sample response
+
+```json
+{
+  "_id": "5e940759971bed3b142eda5b",
+  "service_request_id": "5e85ac3fb981e543d6fa5729",
+  "createdAt": "2020-04-13T06:31:53.389Z",
+  "updatedAt": "2020-04-13T07:27:38.267Z",
+  "__v": 0,
+  "service_details": {
+      "message": "Please complete service with full priority"
+  }
+}
+
+```
+
+<p>Service timelines information updates are the most important to keep everyone in the loop with the progress.</p>
+<br>
+<p>`App:admin`</p>
+<h3>Http request</h5>
+<p>`PUT :  http://52.77.255.121:3004/admin/service_timeline/update/<TimelineID>`</p>
+
+<h3>Request headers</h3>
+<table>
+<tr><th>Key</th><th>Value</th>
+<tr><td>Content-Type</td><td>application/json</td></tr>
+<tr><td>Access-Control-Allow-Credentials</td><td>true</td></tr>
+</table>
+
+
+<h3>Sample Request Body</h3>
+<div class="center-column"></div>
+
+```json
+{
+	"service_details":{"message":"Please complete service with full priority"}
+}
+
+```
+
+<h3>Data Parameters</h3>
+<table>
+<tr><th>Parameter</th><th>Description</th><th>Type</th></tr>
+<tr><td>Key</td><td>Pass key value pairs that you want to update.</td><td>required</td></tr>
+</table>
+<h3>Response Types</h3>
+<table>
+<tr><th>Status Code</th><th>Description</th></tr>
+<tr><td>200</td><td>Everything went well</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
+<tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
+<tr><td>500</td><td>Internal Server Error</td></tr>
+</table>
+
+
 
 # Camp
 This section contains documentation for all the apis that handle camp data on the Greasy Monkey platform.
