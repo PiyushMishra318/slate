@@ -4468,6 +4468,154 @@ Once the mechanic accepts the service they can view the service details from.
 <br>
 Once the service is complete if the payment is pending the payment can be done in cash/online using the payment service cootpayment.
 
+
+## Update service request
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3003/customer/service_request/update/5e93f421da6fe43b192763b9"
+payload = "{\n\t\"location\":\"Mumbai\"\n}"
+headers = {
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'postman-token': "150034c7-fb0b-549e-6163-bf8ac00139c2"
+    }
+response = requests.request("PUT", url, data=payload, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3003/customer/service_request/update/5e93f421da6fe43b192763b9")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Put.new(url)
+request["content-type"] = 'application/json'
+request["cache-control"] = 'no-cache'
+request["postman-token"] = 'e9fe1e6f-8794-0a53-f1c6-fdc9910c6dee'
+request.body = "{\n\t\"location\":\"Mumbai\"\n}"
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+var data = JSON.stringify({
+  "location": "Mumbai"
+});
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("PUT", "http://52.77.255.121:3003/customer/service_request/update/5e93f421da6fe43b192763b9");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "b91b26dd-9eec-55d1-3fef-2e82c33f275b");
+xhr.send(data);
+
+```
+```shell
+curl -X PUT \
+  http://52.77.255.121:3003/customer/service_request/update/5e93f421da6fe43b192763b9 \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 20ae3094-8ed8-b795-8ab2-2d9d6a933252' \
+  -d '{
+	"location":"Mumbai"
+}'
+
+```
+>Below is a sample response
+
+```json
+{
+    "payment": {
+        "done": false
+    },
+    "job_cards": {
+        "service_addons": []
+    },
+    "status": "BOOKED",
+    "_id": "5e93f421da6fe43b192763b9",
+    "car": null,
+    "service": {
+        "stock": 0,
+        "inclusions": [],
+        "add_on": [],
+        "direct_booking": false,
+        "recommended_service": false,
+        "fuel_type": [],
+        "car_type": [],
+        "keywords": [
+            "quick",
+            "service",
+            "fast",
+            "one-day"
+        ],
+        "_id": "5e93f3bc971bed3b142eda59",
+        "typeOf": "SERVICE",
+        "image": "Quicck_service.png",
+        "name": "Quick Service",
+        "description": "Service your car in one day with excellant quality asurance",
+        "cost": 2000,
+        "createdAt": "2020-04-13T05:08:12.965Z",
+        "updatedAt": "2020-04-13T05:08:12.965Z",
+        "__v": 0
+    },
+    "date": "2020-05-29T10:14:11.830Z",
+    "location": "Mumbai",
+    "add_ons": [],
+    "createdAt": "2020-04-13T05:09:53.635Z",
+    "updatedAt": "2020-04-13T05:11:02.401Z",
+    "__v": 0
+}
+
+
+```
+
+<p>Allowing your customers to make changes to their requests helps them to change their preferances based on new knowledge they might have obtained thus satisfying them.</p>
+<br>
+<p>`App:customer`</p>
+<h3>Http request</h5>
+<p>`PUT : http://52.77.255.121:3003/customer/service_request/update/<RequestID>`</p>
+
+<h3>Request headers</h3>
+<table>
+<tr><th>Key</th><th>Value</th>
+<tr><td>Content-Type</td><td>application/json</td></tr>
+<tr><td>Access-Control-Allow-Credentials</td><td>true</td></tr>
+</table>
+
+<h3>Sample Request Body</h3>
+<div class="center-column"></div>
+
+```json
+{
+	"location":"Mumbai"
+}
+```
+
+
+<h3>Data Parameters</h3>
+<table>
+<tr><th>Parameter</th><th>Descrption</th><th>Type</th></tr>
+<tr><td>Key</td><td>Use the key value pairs you would like to update</td><td>required</td></tr>
+</table>
+<h3>Response Types</h3>
+<table>
+<tr><th>Status Code</th><th>Description</th></tr>
+<tr><td>200</td><td>Everything went well</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
+<tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
+<tr><td>500</td><td>Internal Server Error</td></tr>
+</table>
+
+
+
 # Camp
 This section contains documentation for all the apis that handle camp data on the Greasy Monkey platform.
 <aside class="notice">
