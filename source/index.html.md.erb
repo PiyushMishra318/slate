@@ -6183,23 +6183,23 @@ curl -X POST \
 
 ```python
 import requests
-url = "http://52.77.255.121:3004/admin/notifications/5e955d2677125466a4fffd3f"
+url = "http://52.77.255.121:3004/admin/notifications/list"
 headers = {
     'cache-control': "no-cache",
-    'postman-token': "276fd65d-056b-9708-9ec4-83c107ee0a6e"
+    'postman-token': "b893aa30-6bb4-f33a-f231-c772eb25d83f"
     }
-response = requests.request("GET", url, headers=headers)
+response = requests.request("POST", url, headers=headers)
 print(response.text)
 
 ```
 ```ruby
 require 'uri'
 require 'net/http'
-url = URI("http://52.77.255.121:3004/admin/notifications/5e955d2677125466a4fffd3f")
+url = URI("http://52.77.255.121:3004/admin/notifications/list")
 http = Net::HTTP.new(url.host, url.port)
-request = Net::HTTP::Get.new(url)
+request = Net::HTTP::Post.new(url)
 request["cache-control"] = 'no-cache'
-request["postman-token"] = '352fd04e-5fc9-b056-3aec-7b58dd2e40df'
+request["postman-token"] = '21bdfa2e-0c1c-1341-a77b-3e14d2b9ad1c'
 response = http.request(request)
 puts response.read_body
 
@@ -6213,17 +6213,17 @@ xhr.addEventListener("readystatechange", function () {
     console.log(this.responseText);
   }
 });
-xhr.open("GET", "http://52.77.255.121:3004/admin/notifications/5e955d2677125466a4fffd3f");
+xhr.open("POST", "http://52.77.255.121:3004/admin/notifications/list");
 xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "86f7b0d3-633d-de5a-ad85-c6920a3bfbcf");
+xhr.setRequestHeader("postman-token", "bc7d0b36-15cc-7c16-70d9-fd9ce86401f9");
 xhr.send(data);
 
 ```
 ```shell
-curl -X GET \
-  http://52.77.255.121:3004/admin/notifications/5e955d2677125466a4fffd3f \
+curl -X POST \
+  http://52.77.255.121:3004/admin/notifications/list \
   -H 'cache-control: no-cache' \
-  -H 'postman-token: 5a5be308-601b-3ecc-6059-4cbe50d69967'
+  -H 'postman-token: db02367e-7f1a-63a4-f2fe-59a8adf67ad2'
 
 ```
 >Below is a sample response
@@ -6270,7 +6270,7 @@ curl -X GET \
 <br>
 <p>`App:admin`</p>
 <h3>Http request</h5>
-<p>`GET : http://52.77.255.121:3004/admin/notifications/list`</p>
+<p>`POST : http://52.77.255.121:3004/admin/notifications/list`</p>
 
 <h3>Request headers</h3>
 <table>
