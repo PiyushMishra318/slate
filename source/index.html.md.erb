@@ -8080,6 +8080,129 @@ curl -X POST \
 </table>
 
 
+##Cash deposits
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3004/admin/staff/cash/deposits"
+headers = {
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'postman-token': "03deb417-59a6-8af8-42bd-b4594333513e"
+    }
+response = requests.request("POST", url, headers=headers)
+print(response.text)
+```
+
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3004/admin/staff/cash/deposits")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Post.new(url)
+request["content-type"] = 'application/json'
+request["cache-control"] = 'no-cache'
+request["postman-token"] = '2ab94b88-a96c-35ff-a5b4-beb540edcb34'
+response = http.request(request)
+puts response.read_body
+```
+```javascript
+var data = null;
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("POST", "http://52.77.255.121:3004/admin/staff/cash/deposits");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "51d9013b-5005-81dc-52d1-0501f72c7fc6");
+xhr.send(data);
+```
+```shell
+curl -X POST \
+  http://52.77.255.121:3004/admin/staff/cash/deposits \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 5987803b-982c-36f1-ae05-d1633e89fd72'
+```
+>Below is a sample response
+
+```json
+[
+    {
+        "status": "PENDING",
+        "reviewed": false,
+        "_id": "5e96b00035c5fb14d1c8c012",
+        "mechanic": {
+            "wallets": {
+                "company": "5e968d3b7f67b266fa93725c",
+                "personal": "5e968d3b7f67b266fa93725d",
+                "cash": 1800,
+                "cash_date": "2020-04-22T04:45:37.538Z",
+                "cash_start_date": "2020-04-15T04:45:37.538Z",
+                "incentive": 200,
+                "incentive_date": "2020-04-30T04:45:37.593Z",
+                "incentive_start_date": "2020-04-15T04:45:37.593Z"
+            },
+            "automatic_withdraw": 15,
+            "due_limit": 7,
+            "_id": "5e954c7b805e4766cad70717",
+            "user_type": "ground-staff",
+            "email": {
+                "verficationStatus": {
+                    "isVerified": false
+                }
+            },
+            "personal_details": {
+                "_id": "5e968d3b25bca706d3151f25",
+                "mobile_nos": [],
+                "emails": []
+            },
+            "username": "raju charan",
+            "mobile": "124456487",
+            "createdAt": "2020-04-14T05:39:07.559Z",
+            "updatedAt": "2020-04-15T05:57:14.734Z",
+            "__v": 0,
+            "address": [],
+            "bank_accounts": []
+        },
+        "deposit_receipt": "http://52.77.255.121:3004/Files/receipt/9244675b-4082-4f2b-827e-ab6991a5be2a.txt",
+        "amount": 1800,
+        "createdAt": "2020-04-15T06:56:00.025Z",
+        "updatedAt": "2020-04-15T06:56:00.025Z",
+        "__v": 0
+    }
+]
+```
+
+<p>Your admins need to view all the cash deposits and approve them to remove the balance from the mechanics company wallet.To facilitate this we have an api that helps you view all cash deposits in one place.</p>
+<br>
+<p>`App:admin`</p>
+<h3>Http request</h5>
+<p>`POST : http://52.77.255.121:3004/admin/staff/cash/deposits`</p>
+
+<h3>Request headers</h3>
+<table>
+<tr><th>Key</th><th>Value</th>
+<tr><td>Content-Type</td><td>multipart-FormData</td></tr>
+<tr><td>Access-Control-Allow-Credentials</td><td>true</td></tr>
+</table>
+
+
+<h3>Response Types</h3>
+<table>
+<tr><th>Status Code</th><th>Description</th></tr>
+<tr><td>200</td><td>Everything went well</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
+<tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
+<tr><td>500</td><td>Internal Server Error</td></tr>
+</table>
+
 #Search and Filter
 ##Request Semantics
 <p>This section contains documentation on how to obtain filtered results for the <strong>read all</strong> routes listed in all apis above</p>
