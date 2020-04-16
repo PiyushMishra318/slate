@@ -8502,6 +8502,189 @@ curl -X POST \
 </table>
 
 
+## Approve/Reject incentive requests
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3004/admin/staff/incentive/action"
+payload = "{\n\t\"id\":\"5e97045b9f096c1ce23e0528\",\n\t\"update\":{\n\t\t\"status\":\"APPROVED\",\n\t\t\"reviewed\":\"true\",\n\t\t\"bank_account\":{\n\t\t\t\"bank_name\":\"city union bank\",\n\t\t\t\"ifsc_code\":\"CUB56421\",\n\t\t\t\"branch_name\":\"viman nagar\",\n\t\t\t\"account_no\":\"4586111931122\",\n\t\t\t\"beneficiary_name\":\"raju charan\"\t\t\t\n\t\t}\n\t}\n}"
+headers = {
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'postman-token': "a09def3b-8ebe-be02-265f-d855a0de37bd"
+    }
+response = requests.request("POST", url, data=payload, headers=headers)
+print(response.text)
+```
+
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3004/admin/staff/incentive/action")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Post.new(url)
+request["content-type"] = 'application/json'
+request["cache-control"] = 'no-cache'
+request["postman-token"] = 'dac58f29-4316-1a41-4a5d-1db9f7056d7f'
+request.body = "{\n\t\"id\":\"5e97045b9f096c1ce23e0528\",\n\t\"update\":{\n\t\t\"status\":\"APPROVED\",\n\t\t\"reviewed\":\"true\",\n\t\t\"bank_account\":{\n\t\t\t\"bank_name\":\"city union bank\",\n\t\t\t\"ifsc_code\":\"CUB56421\",\n\t\t\t\"branch_name\":\"viman nagar\",\n\t\t\t\"account_no\":\"4586111931122\",\n\t\t\t\"beneficiary_name\":\"raju charan\"\t\t\t\n\t\t}\n\t}\n}"
+response = http.request(request)
+puts response.read_body
+```
+```javascript
+var data = JSON.stringify({
+  "id": "5e97045b9f096c1ce23e0528",
+  "update": {
+    "status": "APPROVED",
+    "reviewed": "true",
+    "bank_account": {
+      "bank_name": "city union bank",
+      "ifsc_code": "CUB56421",
+      "branch_name": "viman nagar",
+      "account_no": "4586111931122",
+      "beneficiary_name": "raju charan"
+    }
+  }
+});
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("POST", "http://52.77.255.121:3004/admin/staff/incentive/action");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "a5c66944-7043-a097-9382-8f1f42088d80");
+xhr.send(data);
+```
+```shell
+curl -X POST \
+  http://52.77.255.121:3004/admin/staff/incentive/action \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 136d7ff9-0332-6ad3-9a78-772aed262ef2' \
+  -d '{
+	"id":"5e97045b9f096c1ce23e0528",
+	"update":{
+		"status":"APPROVED",
+		"reviewed":"true",
+		"bank_account":{
+			"bank_name":"city union bank",
+			"ifsc_code":"CUB56421",
+			"branch_name":"viman nagar",
+			"account_no":"4586111931122",
+			"beneficiary_name":"raju charan"			
+		}
+	}
+}'
+```
+>Below is a sample response
+
+```json
+{
+    "status": "APPROVED",
+    "reviewed": true,
+    "_id": "5e97045b9f096c1ce23e0528",
+    "mechanic": {
+        "wallets": {
+            "company": "5e968d3b7f67b266fa93725c",
+            "personal": "5e968d3b7f67b266fa93725d",
+            "cash": 15300,
+            "cash_date": "2020-04-22T04:45:37.538Z",
+            "cash_start_date": "2020-04-15T04:45:37.538Z",
+            "incentive": 0,
+            "incentive_date": "2020-04-30T04:45:37.593Z",
+            "incentive_start_date": "2020-04-15T04:45:37.593Z",
+            "cash_deposit": null,
+            "incentive_withdraw": "5e9704439f096c1ce23e0525"
+        },
+        "automatic_withdraw": 15,
+        "due_limit": 7,
+        "_id": "5e954c7b805e4766cad70717",
+        "user_type": "ground-staff",
+        "email": {
+            "verficationStatus": {
+                "isVerified": false
+            }
+        },
+        "personal_details": {
+            "_id": "5e968d3b25bca706d3151f25",
+            "mobile_nos": [],
+            "emails": []
+        },
+        "username": "raju charan",
+        "mobile": "124456487",
+        "createdAt": "2020-04-14T05:39:07.559Z",
+        "updatedAt": "2020-04-15T12:55:31.546Z",
+        "__v": 0,
+        "address": [],
+        "bank_accounts": []
+    },
+    "amount": 0,
+    "createdAt": "2020-04-15T12:55:55.721Z",
+    "updatedAt": "2020-04-16T04:43:31.268Z",
+    "__v": 0,
+    "bank_account": {
+        "bank_name": "city union bank",
+        "ifsc_code": "CUB56421",
+        "branch_name": "viman nagar",
+        "account_no": "4586111931122",
+        "beneficiary_name": "raju charan"
+    }
+}
+```
+
+<p>Your admins need to authenticate incentive requests and transfer the amount from your employees personal wallet to their bank accounts.</p>
+<br>
+<p>`App:admin`</p>
+<h3>Http request</h5>
+<p>`POST : http://52.77.255.121:3004/admin/staff/incentive/action`</p>
+
+<h3>Request headers</h3>
+<table>
+<tr><th>Key</th><th>Value</th>
+<tr><td>Content-Type</td><td>multipart-FormData</td></tr>
+<tr><td>Access-Control-Allow-Credentials</td><td>true</td></tr>
+</table>
+
+<div class="center-column"></div>
+
+```json
+{
+	"id":"5e9704439f096c1ce23e0525",
+	"update":{
+		"status":"APPROVED",
+		"reviewed":"true",
+		"bank_account":{
+			"bank_name":"city union bank",
+			"ifsc_code":"CUB56421",
+			"branch_name":"viman nagar",
+			"account_no":"4586111931122",
+			"beneficiary_name":"raju charan"			
+		}
+	}
+}
+```
+
+<h3>Data Parameters</h3>
+<table>
+<tr><th>Parameter</th><th>Description</th><th>Type</th></tr>
+<tr><td>id</td><td>This is used to forward the id of the incentive which is being approved/rejected.</td><td>required</td></tr>
+<tr><td>update</td><td>This is used to send the updated fields status(approved/rejected),reviewed,bank_account,if rejected a reject_message is also added.</td><td>required</td></tr>
+</table>
+
+<h3>Response Types</h3>
+<table>
+<tr><th>Status Code</th><th>Description</th></tr>
+<tr><td>200</td><td>Everything went well</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
+<tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
+<tr><td>500</td><td>Internal Server Error</td></tr>
+</table>
+
 #Search and Filter
 ##Request Semantics
 <p>This section contains documentation on how to obtain filtered results for the <strong>read all</strong> routes listed in all apis above</p>
