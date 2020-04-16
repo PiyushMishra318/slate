@@ -6768,6 +6768,26 @@ Note:Don't forget to replace \<NotificationID> with id of the notification you w
 ##Preface
 <%= image_tag "images/images/payintroflow.png" %>
 
+##Customer prepayement  flow
+<p>Customers can choose to prepay for a service or pay after a service.In case they prepay the following flow is followed</p>
+<%= image_tag "images/images/prepayment.png" %>
+
+<h3>Sample update body</h3>
+<div class="center-column"></div>
+
+```json
+{
+  "payement":{
+    "done":"true",
+    "payment_type":"card",
+    "invoice:"{
+      "id":"invoice--id",
+      "details":"link of the page with invoice details"
+    }
+  }
+}
+```
+
 ##Accept Payment
 
 >The below code sample shows you how to use this api
