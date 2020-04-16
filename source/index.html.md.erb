@@ -6769,7 +6769,7 @@ Note:Don't forget to replace \<NotificationID> with id of the notification you w
 <%= image_tag "images/images/payintroflow.png" %>
 
 ##Customer prepayement  flow
-<p>Customers can choose to prepay for a service or pay after a service.In case they prepay the following flow is followed</p>
+<p>Customers can choose to prepay for a service once it's status has been changed to ongoing/ when a mechanic starts working on the service.</p>
 <%= image_tag "images/images/prepayment.png" %>
 
 <h3>Sample update body</h3>
@@ -7372,6 +7372,10 @@ curl -X POST \
 <p>`App:admin`</p>
 <h3>Http request</h5>
 <p>`POST : http://52.77.255.121:3004/admin/staff/accept/payment`</p>
+
+<aside class="notice">
+  Note:This is used when customer does not prepay.
+</aside>
 
 <h3>Request headers</h3>
 <table>
