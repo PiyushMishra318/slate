@@ -782,6 +782,980 @@ Note:Don't forget to replace \<short_code_name> with the name of the short code 
 <tr><td>500</td><td>Internal server error!!</td></td>
 </table>
 
+#Templates
+<p>
+Templates are standard formats for your communications to clients so that you don’t have to worry about writing it for each and ever client.
+</p>
+##Create an email template
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3000/api/template/create"
+payload = "{\n\t\"html\":\"<h4>Your mobile:{{mobile}} has been added  to our enterprise.</h4>\",\n\t\"template_name\":\"mobile_added\",\n\t\"com_type\":\"email\",\n\t\"event\":\"user_details\",\n\t\"last_used_at\":\"2020-04-16T11:22:21.603Z\",\n\t\"times_used\":0,\n\t\"regions\":[\"IN\",\"US\",\"UK\"],\n\t\"lang\":\"en\",\n\t\"sender\":\"ninja@teknicus.com\",\n\t\"subject\":\"Registration of mobile\",\n\t\"text\":\"Hello this is to inform you that your mobile:{{mobile}} has been added to our enterprise\",\n\t\"short_codes\":[\n\t\t{\n\t\t\"id\":\"5e983fed88942b1ddd6b389e\",\n\t\t\"details\":{\n\t\t\t\"name\": \"mobile\",\n        \t\"context\": \"user_details\",\n        \t\"createdAt\": \"2020-04-16T11:22:21.603Z\",\n        \t\"updatedAt\": \"2020-04-16T11:22:21.603Z\"\n\t\t}\n\t\t}\n\t]\n\t\n}\t"
+headers = {
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'postman-token': "a38cd1c5-e84e-a187-a9d1-2b4a9e0dc745"
+    }
+response = requests.request("POST", url, data=payload, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3000/api/template/create")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Post.new(url)
+request["content-type"] = 'application/json'
+request["cache-control"] = 'no-cache'
+request["postman-token"] = 'df3d703a-9f66-d550-dee8-44aeb3d3efb7'
+request.body = "{\n\t\"html\":\"<h4>Your mobile:{{mobile}} has been added  to our enterprise.</h4>\",\n\t\"template_name\":\"mobile_added\",\n\t\"com_type\":\"email\",\n\t\"event\":\"user_details\",\n\t\"last_used_at\":\"2020-04-16T11:22:21.603Z\",\n\t\"times_used\":0,\n\t\"regions\":[\"IN\",\"US\",\"UK\"],\n\t\"lang\":\"en\",\n\t\"sender\":\"ninja@teknicus.com\",\n\t\"subject\":\"Registration of mobile\",\n\t\"text\":\"Hello this is to inform you that your mobile:{{mobile}} has been added to our enterprise\",\n\t\"short_codes\":[\n\t\t{\n\t\t\"id\":\"5e983fed88942b1ddd6b389e\",\n\t\t\"details\":{\n\t\t\t\"name\": \"mobile\",\n        \t\"context\": \"user_details\",\n        \t\"createdAt\": \"2020-04-16T11:22:21.603Z\",\n        \t\"updatedAt\": \"2020-04-16T11:22:21.603Z\"\n\t\t}\n\t\t}\n\t]\n\t\n}\t"
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+var data = JSON.stringify({
+  "html": "<h4>Your mobile:{{mobile}} has been added  to our enterprise.</h4>",
+  "template_name": "mobile_added",
+  "com_type": "email",
+  "event": "user_details",
+  "last_used_at": "2020-04-16T11:22:21.603Z",
+  "times_used": 0,
+  "regions": [
+    "IN",
+    "US",
+    "UK"
+  ],
+  "lang": "en",
+  "sender": "ninja@teknicus.com",
+  "subject": "Registration of mobile",
+  "text": "Hello this is to inform you that your mobile:{{mobile}} has been added to our enterprise",
+  "short_codes": [
+    {
+      "id": "5e983fed88942b1ddd6b389e",
+      "details": {
+        "name": "mobile",
+        "context": "user_details",
+        "createdAt": "2020-04-16T11:22:21.603Z",
+        "updatedAt": "2020-04-16T11:22:21.603Z"
+      }
+    }
+  ]
+});
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("POST", "http://52.77.255.121:3000/api/template/create");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "26ee1d54-c705-d012-c75c-f81a7d5f5ec0");
+xhr.send(data);
+
+```
+```shell
+curl -X POST \
+  http://52.77.255.121:3000/api/template/create \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 9bf8bcaf-52ed-511d-4369-23383f306590' \
+  -d '{
+	"html":"<h4>Your mobile:{{mobile}} has been added  to our enterprise.</h4>",
+	"template_name":"mobile_added",
+	"com_type":"email",
+	"event":"user_details",
+	"last_used_at":"2020-04-16T11:22:21.603Z",
+	"times_used":0,
+	"regions":["IN","US","UK"],
+	"lang":"en",
+	"sender":"ninja@teknicus.com",
+	"subject":"Registration of mobile",
+	"text":"Hello this is to inform you that your mobile:{{mobile}} has been added to our enterprise",
+	"short_codes":[
+		{
+		"id":"5e983fed88942b1ddd6b389e",
+		"details":{
+			"name": "mobile",
+        	"context": "user_details",
+        	"createdAt": "2020-04-16T11:22:21.603Z",
+        	"updatedAt": "2020-04-16T11:22:21.603Z"
+		}
+		}
+	]
+	
+}	'
+
+```
+
+>Below is a sample response
+
+```json
+{
+    "regions": [
+        "IN",
+        "US",
+        "UK"
+    ],
+    "_id": "5e98555c3ddcea249f56b4cb",
+    "html": "<h4>Your mobile:{{mobile}} has been added  to our enterprise.</h4>",
+    "template_name": "mobile_added",
+    "com_type": "email",
+    "event": "login",
+    "last_used_at": "2020-04-16T11:22:21.603Z",
+    "times_used": 0,
+    "lang": "en",
+    "sender": "ninja@teknicus.com",
+    "subject": "Registration of mobile",
+    "text": "Hello this is to inform you that your mobile:{{mobile}} has been added to our enterprise",
+    "short_codes": [
+        {
+            "_id": "5e98555c3ddcea249f56b4cc",
+            "id": "5e983fed88942b1ddd6b389e",
+            "details": {
+                "_id": "5e98555c3ddcea249f56b4cd",
+                "name": "mobile",
+                "context": "user_details",
+                "createdAt": "2020-04-16T11:22:21.603Z",
+                "updatedAt": "2020-04-16T11:22:21.603Z"
+            }
+        }
+    ],
+    "createdAt": "2020-04-16T12:53:48.275Z",
+    "updatedAt": "2020-04-16T13:17:49.354Z",
+    "__v": 0
+}
+
+```
+
+
+<h3>About the API</h3>
+<p>
+You can add new templates as your company grows thus helping you add new automated mail/sms easily.
+</p>
+<br>
+<p>`App:Communication`</p>
+<br>
+<h3>Http request</h5>
+<p>`POST : http://52.77.255.121:3000/api/template/create`</p>
+<h3>Request headers</h3>
+<table>
+<tr><th>Key</th><th>Value</th>
+<tr><td>Content-Type</td><td>application/json</td></tr>
+<tr><td>Access-Control-Allow-Credentials</td><td>true</td></tr>
+</table>
+<h3>Sample Request Body</h3>
+
+<div class="center-column"></div>
+
+```json
+{
+	"html":"<h4>Your mobile:{{mobile}} has been added  to our enterprise.</h4>",
+	"template_name":"mobile_added",
+	"com_type":"email",
+	"event":"user_details",
+	"last_used_at":"2020-04-16T11:22:21.603Z",
+	"times_used":0,
+	"regions":["IN","US","UK"],
+	"lang":"en",
+	"sender":"ninja@teknicus.com",
+	"subject":"Registration of mobile",
+	"text":"Hello this is to inform you that your mobile:{{mobile}} has been added to our enterprise",
+	"short_codes":[
+		{
+		"id":"5e983fed88942b1ddd6b389e",
+		"details":{
+			"name": "mobile",
+        	"context": "user_details",
+        	"createdAt": "2020-04-16T11:22:21.603Z",
+        	"updatedAt": "2020-04-16T11:22:21.603Z"
+		}
+		}
+	]
+	
+}
+
+```
+
+<h3>Data parameters</h3>
+<table>
+<tr><th>Parameter</th><th>Description</th><th>Type</th></tr>
+<tr><td>html</td><td>This parameter is used to forward the html template you would like to send your emails making it more appealing</td><td>required</td></tr>
+<tr><td>template_name</td><td>This parameter is used to forward the name you would like to give the template.</td><td>required</td></tr>
+<tr><td>com_type</td><td>This paramter is used to forward the type of communication, in this case it is email.</td><td>required</td></tr>
+<tr><td>event</td><td>This is used to forward the event on which you would like to fire this communication like login,signup etc .</td><td>required</td></tr>
+<tr><td>last_used_at</td><td>This is for the date the template was last used on.</td><td>optional</td></tr>
+<tr><td>times_used</td><td>This is for the no of times the template was used.</td><td>optional</td></tr>
+<tr><td>regions</td><td>This is used to forward a list of region this template is to be used for.Please remember to use ISO region codes.</td><td>required</td></tr>
+<tr><td>lang</td><td>This is used to specify the language the template is in.Please note that even languages need to be specified in ISO codes</td><td>required</td></tr>
+<tr><td>sender</td><td>This parameter is used to forward the the email of the sender.</td><td>required</td></tr>
+<tr><td>subject</td><td>This is used to forward the subject of the email.</td><td>required</td></tr>
+<tr><td>text</td><td>This is used to forward any additional text message you would like to share.</td><td>required</td></tr>
+<tr><td>short_codes</td><td>This is used to forward a list of short codes you have used in the html or text to replace with dynamic data.</td><td>required</td></tr>
+</table>
+<h3>Response Types</h3>
+<table>
+<tr><th>Status Code</th><th>Description</th></tr>
+<tr><td>200</td><td>Everything went well</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
+<tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
+<tr><td>500</td><td>Internal server error!!</td></td>
+</table>
+
+##Create a sms template
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3000/api/template/create"
+payload = "{\r\n\t\"regions\":[\"IN\",\"US\",\"UK\"],\r\n\t\"template_name\":\"signup_mobile\", \r\n\t\"com_type\":\"sms\",\r\n\t\"event\":\"signupmobile\", \r\n\t\"lang\":\"en-GB\",\r\n\t\"text\":\"This is your {{mobile}}\",\r\n\t\"short_codes\" :[{\r\n\t\t\"id\":\"5e983fed88942b1ddd6b389e\",\r\n\t\t\"details\":{\r\n\t\t\t\"name\": \"mobile\",\r\n        \t\"context\": \"user_details\",\r\n        \t\"createdAt\": \"2020-04-16T11:22:21.603Z\",\r\n        \t\"updatedAt\": \"2020-04-16T11:22:21.603Z\"\r\n\t\t}\r\n\t\t}\r\n]\r\n}"
+headers = {
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'postman-token': "c8dc0dac-3024-874d-8d99-8d9f876e7978"
+    }
+response = requests.request("POST", url, data=payload, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3000/api/template/create")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Post.new(url)
+request["content-type"] = 'application/json'
+request["cache-control"] = 'no-cache'
+request["postman-token"] = '76233c49-dec5-0ca5-dc88-829568e433e9'
+request.body = "{\r\n\t\"regions\":[\"IN\",\"US\",\"UK\"],\r\n\t\"template_name\":\"signup_mobile\", \r\n\t\"com_type\":\"sms\",\r\n\t\"event\":\"signupmobile\", \r\n\t\"lang\":\"en-GB\",\r\n\t\"text\":\"This is your {{mobile}}\",\r\n\t\"short_codes\" :[{\r\n\t\t\"id\":\"5e983fed88942b1ddd6b389e\",\r\n\t\t\"details\":{\r\n\t\t\t\"name\": \"mobile\",\r\n        \t\"context\": \"user_details\",\r\n        \t\"createdAt\": \"2020-04-16T11:22:21.603Z\",\r\n        \t\"updatedAt\": \"2020-04-16T11:22:21.603Z\"\r\n\t\t}\r\n\t\t}\r\n]\r\n}"
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+var data = JSON.stringify({
+  "regions": [
+    "IN",
+    "US",
+    "UK"
+  ],
+  "template_name": "signup_mobile",
+  "com_type": "sms",
+  "event": "signupmobile",
+  "lang": "en-GB",
+  "text": "This is your {{mobile}}",
+  "short_codes": [
+    {
+      "id": "5e983fed88942b1ddd6b389e",
+      "details": {
+        "name": "mobile",
+        "context": "user_details",
+        "createdAt": "2020-04-16T11:22:21.603Z",
+        "updatedAt": "2020-04-16T11:22:21.603Z"
+      }
+    }
+  ]
+});
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("POST", "http://52.77.255.121:3000/api/template/create");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "0b7cc5f6-4db2-510f-c75c-f61cf4438f07");
+xhr.send(data);
+
+```
+```shell
+curl -X POST \
+  http://52.77.255.121:3000/api/template/create \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 07e7bfbf-a17b-228e-8736-0544d8079742' \
+  -d '{
+	"regions":["IN","US","UK"],
+	"template_name":"signup_mobile", 
+	"com_type":"sms",
+	"event":"signupmobile", 
+	"lang":"en-GB",
+	"text":"This is your {{mobile}}",
+	"short_codes" :[{
+		"id":"5e983fed88942b1ddd6b389e",
+		"details":{
+			"name": "mobile",
+        	"context": "user_details",
+        	"createdAt": "2020-04-16T11:22:21.603Z",
+        	"updatedAt": "2020-04-16T11:22:21.603Z"
+		}
+		}
+]
+}'
+
+```
+
+>Below is a sample response
+
+```json
+{
+    "regions": [
+        "IN",
+        "US",
+        "UK"
+    ],
+    "_id": "5e985c053ddcea249f56b4cf",
+    "template_name": "signup_mobile",
+    "com_type": "sms",
+    "event": "signupmobile",
+    "lang": "en-GB",
+    "text": "This is your {{mobile}}",
+    "short_codes": [
+        {
+            "_id": "5e985c053ddcea249f56b4d0",
+            "id": "5e983fed88942b1ddd6b389e",
+            "details": {
+                "_id": "5e985c053ddcea249f56b4d1",
+                "name": "mobile",
+                "context": "user_details",
+                "createdAt": "2020-04-16T11:22:21.603Z",
+                "updatedAt": "2020-04-16T11:22:21.603Z"
+            }
+        }
+    ],
+    "createdAt": "2020-04-16T13:22:13.260Z",
+    "updatedAt": "2020-04-16T13:22:13.260Z",
+    "__v": 0
+}
+
+```
+
+
+<h3>About the API</h3>
+<p>
+You can add new templates as your company grows thus helping you add new automated mail/sms easily.
+</p>
+<br>
+<p>`App:Communication`</p>
+<br>
+<h3>Http request</h5>
+<p>`POST : http://52.77.255.121:3000/api/template/create`</p>
+<h3>Request headers</h3>
+<table>
+<tr><th>Key</th><th>Value</th>
+<tr><td>Content-Type</td><td>application/json</td></tr>
+<tr><td>Access-Control-Allow-Credentials</td><td>true</td></tr>
+</table>
+<h3>Sample Request Body</h3>
+
+<div class="center-column"></div>
+
+```json
+{
+	"regions":["IN","US","UK"],
+	"template_name":"signup_mobile", 
+	"com_type":"sms",
+	"event":"signupmobile", 
+	"lang":"en-GB",
+	"text":"This is your {{mobile}}",
+	"short_codes" :[{
+		"id":"5e983fed88942b1ddd6b389e",
+		"details":{
+			"name": "mobile",
+        	"context": "user_details",
+        	"createdAt": "2020-04-16T11:22:21.603Z",
+        	"updatedAt": "2020-04-16T11:22:21.603Z"
+		}
+		}
+]
+}	
+
+```
+
+<h3>Data parameters</h3>
+<table>
+<tr><th>Parameter</th><th>Description</th><th>Type</th></tr>
+<tr><td>html</td><td>This parameter is used to forward the html template you would like to send your emails making it more appealing</td><td>required</td></tr>
+<tr><td>template_name</td><td>This parameter is used to forward the name you would like to give the template.</td><td>required</td></tr>
+<tr><td>com_type</td><td>This paramter is used to forward the type of communication, in this case it is email.</td><td>required</td></tr>
+<tr><td>event</td><td>This is used to forward the event on which you would like to fire this communication like login,signup etc .</td><td>required</td></tr>
+<tr><td>last_used_at</td><td>This is for the date the template was last used on.</td><td>optional</td></tr>
+<tr><td>times_used</td><td>This is for the no of times the template was used.</td><td>optional</td></tr>
+<tr><td>regions</td><td>This is used to forward a list of region this template is to be used for.Please remember to use ISO region codes.</td><td>required</td></tr>
+<tr><td>lang</td><td>This is used to specify the language the template is in.Please note that even languages need to be specified in ISO codes</td><td>required</td></tr>
+<tr><td>sender</td><td>This parameter is used to forward the the email of the sender.</td><td>required</td></tr>
+<tr><td>subject</td><td>This is used to forward the subject of the email.</td><td>required</td></tr>
+<tr><td>text</td><td>This is used to forward any additional text message you would like to share.</td><td>required</td></tr>
+<tr><td>short_codes</td><td>This is used to forward a list of short codes you have used in the html or text to replace with dynamic data.</td><td>required</td></tr>
+</table>
+<h3>Response Types</h3>
+<table>
+<tr><th>Status Code</th><th>Description</th></tr>
+<tr><td>200</td><td>Everything went well</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
+<tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
+<tr><td>500</td><td>Internal server error!!</td></td>
+</table>
+
+
+
+##View all templates
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3000/api/template/find/all"
+payload = "{\n\t\"event\":\"login\"\n}"
+headers = {
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'postman-token': "f76431fd-95c1-e861-32ee-0b85c1a8c834"
+    }
+response = requests.request("GET", url, data=payload, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3000/api/template/find/all")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Get.new(url)
+request["content-type"] = 'application/json'
+request["cache-control"] = 'no-cache'
+request["postman-token"] = '9ea0826b-769e-bd6a-c1e2-ace46c7d4b02'
+request.body = "{\n\t\"event\":\"login\"\n}"
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+var data = JSON.stringify({
+  "event": "login"
+});
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("GET", "http://52.77.255.121:3000/api/template/find/all");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "899e53e8-e5a0-1f79-b29f-690b87aa4593");
+xhr.send(data);
+
+```
+```shell
+curl -X GET \
+  http://52.77.255.121:3000/api/template/find/all \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 1ad3418d-3593-9171-7f7d-4ab57dd1731b' \
+  -d '{
+	"event":"login"
+}'
+
+```
+
+>Below is a sample response
+
+```json
+[
+    {
+        "regions": [
+            "IN",
+            "US",
+            "UK"
+        ],
+        "_id": "5e98555c3ddcea249f56b4cb",
+        "html": "<h4>Your mobile:{{mobile}} has been added  to our enterprise.</h4>",
+        "template_name": "mobile_added",
+        "com_type": "email",
+        "event": "login",
+        "last_used_at": "2020-04-16T11:22:21.603Z",
+        "times_used": 0,
+        "lang": "en",
+        "sender": "ninja@teknicus.com",
+        "subject": "Registration of mobile",
+        "text": "Hello this is to inform you that your mobile:{{mobile}} has been added to our enterprise",
+        "short_codes": [
+            {
+                "_id": "5e98555c3ddcea249f56b4cc",
+                "id": "5e983fed88942b1ddd6b389e",
+                "details": {
+                    "_id": "5e98555c3ddcea249f56b4cd",
+                    "name": "mobile",
+                    "context": "user_details",
+                    "createdAt": "2020-04-16T11:22:21.603Z",
+                    "updatedAt": "2020-04-16T11:22:21.603Z"
+                }
+            }
+        ],
+        "createdAt": "2020-04-16T12:53:48.275Z",
+        "updatedAt": "2020-04-16T13:17:49.354Z",
+        "__v": 0
+    },
+    {
+        "regions": [
+            "IN",
+            "US",
+            "UK"
+        ],
+        "_id": "5e985c053ddcea249f56b4cf",
+        "template_name": "signup_mobile",
+        "com_type": "sms",
+        "event": "signupmobile",
+        "lang": "en-GB",
+        "text": "This is your {{mobile}}",
+        "short_codes": [
+            {
+                "_id": "5e985c053ddcea249f56b4d0",
+                "id": "5e983fed88942b1ddd6b389e",
+                "details": {
+                    "_id": "5e985c053ddcea249f56b4d1",
+                    "name": "mobile",
+                    "context": "user_details",
+                    "createdAt": "2020-04-16T11:22:21.603Z",
+                    "updatedAt": "2020-04-16T11:22:21.603Z"
+                }
+            }
+        ],
+        "createdAt": "2020-04-16T13:22:13.260Z",
+        "updatedAt": "2020-04-16T13:22:13.260Z",
+        "__v": 0
+    }
+]
+
+```
+
+
+<h3>About the API</h3>
+<p>
+View all templates in a single place in order to avoid creating duplicates
+</p>
+<br>
+<p>`App:Communication`</p>
+<br>
+<h3>Http request</h5>
+<p>`GET : http://52.77.255.121:3000/api/template/find/all`</p>
+<h3>Request headers</h3>
+<table>
+<tr><th>Key</th><th>Value</th>
+<tr><td>Content-Type</td><td>application/json</td></tr>
+<tr><td>Access-Control-Allow-Credentials</td><td>true</td></tr>
+</table>
+<h3>Response Types</h3>
+<table>
+<tr><th>Status Code</th><th>Description</th></tr>
+<tr><td>200</td><td>Everything went well</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
+<tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
+<tr><td>500</td><td>Internal server error!!</td></td>
+</table>
+
+
+##View a single template
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3000/api/template/find/one/signup_mobile/en-GB"
+payload = "{\n\t\"event\":\"login\"\n}"
+headers = {
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'postman-token': "4a295271-a1b2-33a2-8bd6-3a1791fb25ac"
+    }
+response = requests.request("GET", url, data=payload, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3000/api/template/find/one/signup_mobile/en-GB")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Get.new(url)
+request["content-type"] = 'application/json'
+request["cache-control"] = 'no-cache'
+request["postman-token"] = 'f3d6b0fe-fc1f-f1ca-9f93-ab8a5fd21afb'
+request.body = "{\n\t\"event\":\"login\"\n}"
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+var data = JSON.stringify({
+  "event": "login"
+});
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("GET", "http://52.77.255.121:3000/api/template/find/one/signup_mobile/en-GB");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "ac5ec25f-e009-915f-0c4d-60c35bfe9214");
+xhr.send(data);
+
+```
+```shell
+curl -X GET \
+  http://52.77.255.121:3000/api/template/find/one/signup_mobile/en-GB \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 8f2cc29e-0a43-cd0c-966e-91d1a032f5ef' \
+  -d '{
+	"event":"login"
+}'
+
+```
+
+>Below is a sample response
+
+```json
+{
+    "regions": [
+        "IN",
+        "US",
+        "UK"
+    ],
+    "_id": "5e985c053ddcea249f56b4cf",
+    "template_name": "signup_mobile",
+    "com_type": "sms",
+    "event": "signupmobile",
+    "lang": "en-GB",
+    "text": "This is your {{mobile}}",
+    "short_codes": [
+        {
+            "_id": "5e985c053ddcea249f56b4d0",
+            "id": "5e983fed88942b1ddd6b389e",
+            "details": {
+                "_id": "5e985c053ddcea249f56b4d1",
+                "name": "mobile",
+                "context": "user_details",
+                "createdAt": "2020-04-16T11:22:21.603Z",
+                "updatedAt": "2020-04-16T11:22:21.603Z"
+            }
+        }
+    ],
+    "createdAt": "2020-04-16T13:22:13.260Z",
+    "updatedAt": "2020-04-16T13:22:13.260Z",
+    "__v": 0
+}
+
+```
+
+
+<h3>About the API</h3>
+<p>
+Viewing detailed information on a template gives you a clarity in terms of what you created it for.
+</p>
+<br>
+<p>`App:Communication`</p>
+<br>
+<h3>Http request</h5>
+<p>`GET : http://52.77.255.121:3000/api/template/find/one/<Template_name>/<lang>`</p>
+<aside class="notice">
+Note:Don't forget to replace \<Template_name>,\<lang> with the name and language  of the template you would like to view.
+</aside>
+<h3>Request headers</h3>
+<table>
+<tr><th>Key</th><th>Value</th>
+<tr><td>Content-Type</td><td>application/json</td></tr>
+<tr><td>Access-Control-Allow-Credentials</td><td>true</td></tr>
+</table>
+<h3>Response Types</h3>
+<table>
+<tr><th>Status Code</th><th>Description</th></tr>
+<tr><td>200</td><td>Everything went well</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
+<tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
+<tr><td>500</td><td>Internal server error!!</td></td>
+</table>
+
+
+##Update a template
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3000/api/template/update/signup_mobile/en-GB"
+payload = "{\n\t\"text\":\"Hello and welcome to our platform your mobile {{mobile}} has been added to our platform\"\n}"
+headers = {
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'postman-token': "7e600ef7-2e35-cdbc-ed38-fdd53c8c835c"
+    }
+response = requests.request("PUT", url, data=payload, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3000/api/template/update/signup_mobile/en-GB")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Put.new(url)
+request["content-type"] = 'application/json'
+request["cache-control"] = 'no-cache'
+request["postman-token"] = 'db700e0b-d9c1-c41a-a632-eb7c677e0e34'
+request.body = "{\n\t\"text\":\"Hello and welcome to our platform your mobile {{mobile}} has been added to our platform\"\n}"
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+
+var data = JSON.stringify({
+  "text": "Hello and welcome to our platform your mobile {{mobile}} has been added to our platform"
+});
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("PUT", "http://52.77.255.121:3000/api/template/update/signup_mobile/en-GB");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "afdacca6-102b-e73e-0237-a2444be460dd");
+xhr.send(data);
+
+```
+```shell
+curl -X PUT \
+  http://52.77.255.121:3000/api/template/update/signup_mobile/en-GB \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 2755182e-353e-20ed-c8ac-3673c0b527d7' \
+  -d '{
+	"text":"Hello and welcome to our platform your mobile {{mobile}} has been added to our platform"
+}'
+
+```
+
+>Below is a sample response
+
+```json
+{
+    "regions": [
+        "IN",
+        "US",
+        "UK"
+    ],
+    "_id": "5e985c053ddcea249f56b4cf",
+    "template_name": "signup_mobile",
+    "com_type": "sms",
+    "event": "signupmobile",
+    "lang": "en-GB",
+    "text": "Hello and welcome to our platform your mobile {{mobile}} has been added to our platform",
+    "short_codes": [
+        {
+            "_id": "5e985c053ddcea249f56b4d0",
+            "id": "5e983fed88942b1ddd6b389e",
+            "details": {
+                "_id": "5e985c053ddcea249f56b4d1",
+                "name": "mobile",
+                "context": "user_details",
+                "createdAt": "2020-04-16T11:22:21.603Z",
+                "updatedAt": "2020-04-16T11:22:21.603Z"
+            }
+        }
+    ],
+    "createdAt": "2020-04-16T13:22:13.260Z",
+    "updatedAt": "2020-04-16T13:36:18.655Z",
+    "__v": 0
+}
+
+```
+
+
+<h3>About the API</h3>
+<p>
+You might want to update certain templates because you might have made a mistake.
+</p>
+<br>
+<p>`App:Communication`</p>
+<br>
+<h3>Http request</h5>
+<p>`PUT : http://52.77.255.121:3000/api/template/update/<Template_name>/<Lang>`</p>
+<aside class="notice">
+Note:Don't forget to replace \<Template_name>,\<lang> with the name and language  of the template you would like to update.
+</aside>
+<h3>Request headers</h3>
+<table>
+<tr><th>Key</th><th>Value</th>
+<tr><td>Content-Type</td><td>application/json</td></tr>
+<tr><td>Access-Control-Allow-Credentials</td><td>true</td></tr>
+</table>
+<h3>Sample Request Body</h3>
+
+<div class="center-column"></div>
+
+```json
+{
+	"text":"Hello and welcome to our platform your mobile {{mobile}} has been added to our platform"
+}
+```
+
+<h3>Data parameters</h3>
+<table>
+<tr><th>Parameter</th><th>Description</th><th>Type</th></tr>
+<tr><td>Key</td><td>This parameter is used to forward the key value pair you would like to update.</td><td>required</td></tr>
+</table>
+<aside class="notice">
+Note:Make sure you use the same key names as given in the create template section.
+</aside>
+<h3>Response Types</h3>
+<table>
+<tr><th>Status Code</th><th>Description</th></tr>
+<tr><td>200</td><td>Everything went well</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
+<tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
+<tr><td>500</td><td>Internal server error!!</td></td>
+</table>
+
+
+##Delete a short code
+
+>The below code sample shows you how to use this api
+
+```python
+import requests
+url = "http://52.77.255.121:3000/api/template/delete/mobile_added/en"
+headers = {
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'postman-token': "905a4091-3e7f-d0f4-45bb-cbb974943a5e"
+    }
+response = requests.request("DELETE", url, headers=headers)
+print(response.text)
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://52.77.255.121:3000/api/template/delete/mobile_added/en")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Delete.new(url)
+request["content-type"] = 'application/json'
+request["cache-control"] = 'no-cache'
+request["postman-token"] = '7e969038-eb17-ff33-cd08-752c9b4672d8'
+response = http.request(request)
+puts response.read_body
+
+```
+```javascript
+var data = null;
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("DELETE", "http://52.77.255.121:3000/api/template/delete/mobile_added/en");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "931c011a-8938-a9a6-222b-764263e54894");
+xhr.send(data);
+
+```
+```shell
+curl -X DELETE \
+  http://52.77.255.121:3000/api/template/delete/mobile_added/en \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: a466225a-fe7a-b31b-e832-5888e44b60b8'
+
+```
+
+>Below is a sample response
+
+```json
+{
+    "regions": [
+        "IN",
+        "US",
+        "UK"
+    ],
+    "_id": "5e98555c3ddcea249f56b4cb",
+    "html": "<h4>Your mobile:{{mobile}} has been added  to our enterprise.</h4>",
+    "template_name": "mobile_added",
+    "com_type": "email",
+    "event": "login",
+    "last_used_at": "2020-04-16T11:22:21.603Z",
+    "times_used": 0,
+    "lang": "en",
+    "sender": "ninja@teknicus.com",
+    "subject": "Registration of mobile",
+    "text": "Hello this is to inform you that your mobile:{{mobile}} has been added to our enterprise",
+    "short_codes": [
+        {
+            "_id": "5e98555c3ddcea249f56b4cc",
+            "id": "5e983fed88942b1ddd6b389e",
+            "details": {
+                "_id": "5e98555c3ddcea249f56b4cd",
+                "name": "mobile",
+                "context": "user_details",
+                "createdAt": "2020-04-16T11:22:21.603Z",
+                "updatedAt": "2020-04-16T11:22:21.603Z"
+            }
+        }
+    ],
+    "createdAt": "2020-04-16T12:53:48.275Z",
+    "updatedAt": "2020-04-16T13:17:49.354Z",
+    "__v": 0
+}
+
+```
+
+
+<h3>About the API</h3>
+<p>
+You might want to remove certain templates that you no longer use to keep your templates dashboard clear and filled with only useful templates.
+</p>
+<br>
+<p>`App:Communication`</p>
+<br>
+<h3>Http request</h5>
+<p>`DELETE : http://52.77.255.121:3000/api/template/delete/<template_name>/<lang>`</p>
+<aside class="notice">
+Note:Don't forget to replace \<Template_name>,\<lang> with the name and language  of the template you would like to delete.
+</aside>
+<h3>Request headers</h3>
+<table>
+<tr><th>Key</th><th>Value</th>
+<tr><td>Content-Type</td><td>application/json</td></tr>
+<tr><td>Access-Control-Allow-Credentials</td><td>true</td></tr>
+</table>
+<h3>Response Types</h3>
+<table>
+<tr><th>Status Code</th><th>Description</th></tr>
+<tr><td>200</td><td>Everything went well</td></tr>
+<tr><td>404</td><td>We might be on a service break, please try later</td></tr>
+<tr><td>400</td><td>Please refer the code samples to make a proper request</td></tr>
+<tr><td>500</td><td>Internal server error!!</td></td>
+</table>
+
+
 
 # Authorization 
 <%= image_tag "images/images/customer_flow.png" %>
