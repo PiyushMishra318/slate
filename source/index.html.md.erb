@@ -1922,6 +1922,102 @@ xhr.send(data);
 ```
 
 
+##Example 2
+
+>The below code sample shows you how to use this api.
+
+```python
+import requests
+url = "http://3.7.106.64:3000/api/communication/event"
+payload = "{\r\n      \"com_type\": \"otp\",\r\n      \"event\": \"otpverify\",\r\n      \"send_to\": \"8148136501\",\r\n      \"otp\":\"3126\"\r\n}"
+headers = {
+    'content-type': "application/json",
+    'cache-control': "no-cache",
+    'postman-token': "e35e3b31-891b-a604-5646-cefd52a213d3"
+    }
+response = requests.request("POST", url, data=payload, headers=headers)
+print(response.text)
+
+```
+```ruby
+require 'uri'
+require 'net/http'
+url = URI("http://3.7.106.64:3000/api/communication/event")
+http = Net::HTTP.new(url.host, url.port)
+request = Net::HTTP::Post.new(url)
+request["content-type"] = 'application/json'
+request["cache-control"] = 'no-cache'
+request["postman-token"] = 'e75db740-02df-bd62-dec9-3f9341c69063'
+request.body = "{\r\n      \"com_type\": \"otp\",\r\n      \"event\": \"otpverify\",\r\n      \"send_to\": \"8148136501\",\r\n      \"otp\":\"3126\"\r\n}"
+response = http.request(request)
+puts response.read_body
+
+
+```
+```shell
+curl -X POST \
+  http://3.7.106.64:3000/api/communication/event \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: cee70cac-4e2c-e3cd-41d6-95b8f1bf82ba' \
+  -d '{
+      "com_type": "otp",
+      "event": "otpverify",
+      "send_to": "8148136501",
+      "otp":"3126"
+}'
+
+
+```
+```javascript
+var data = JSON.stringify({
+  "com_type": "otp",
+  "event": "otpverify",
+  "send_to": "8148136501",
+  "otp": "3126"
+});
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+xhr.open("POST", "http://3.7.106.64:3000/api/communication/event");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "493f580f-c955-1ce4-6479-8d1fe06ac084");
+xhr.send(data);
+
+```
+
+
+>Below is a sample response
+
+```json
+{
+    "message": "OTP verified success",
+    "type": "success"
+}
+
+
+```
+<h3>About the API</h3>
+<p>This example shows you how to verify the requested otp.</p>
+
+<div class="center-column"></div>
+
+```json
+{
+      "com_type": "otp",
+      "event": "otpverify",
+      "send_to": "8148136501",
+      "otp":"3126"
+}
+
+```
+
+
 # Authorization 
 <%= image_tag "images/images/customer_flow.png" %>
 ## Signup
